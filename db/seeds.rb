@@ -53,17 +53,17 @@ end
 
 #generating a 15 random students
 15.times do
- student = Student.new(name: Faker::FamilyGuy.character, email: name.delete(' ') + "@papyru.com", password: "12345", address: Faker::Address.street_address, phone_number: random_phone_numbers, school_number: random_student_school_numbers)
- student.save
+  name = Faker::FamilyGuy.character
+  Student.create(name: name, email: name.delete(' ') + "@papyru.com", password: "123456", address: Faker::Address.street_address, phone_number: random_phone_numbers, school_number: random_student_school_numbers)
 end
 
 #generating a 5 random teachers
 5.times do
- teacher = Teacher.new(name: Faker::Pokemon.name, email: name.delete(' ') + "@papyru.com", password: "12345", address: Faker::Address.street_address, phone_number: random_phone_numbers, school_number: random_teacher_school_numbers)
- teacher.save
+  name = Faker::Pokemon.name
+  Teacher.create(name: name, email: name.delete(' ') + "@papyru.com", password: "123456", address: Faker::Address.street_address, phone_number: random_phone_numbers, school_number: random_teacher_school_numbers)
 end
 
 #attach subjects to teachers
 Teacher.all.each do |teacher|
-  TeacherSubject.create(user: teacher, subject: Subject.all.sample)
+  TeacherSubject.create(teacher: teacher, subject: Subject.all.sample)
 end
