@@ -1,14 +1,12 @@
 Rails.application.routes.draw do
   resources :users, only: [:show]
-
-  resources :notifications, only: [:show, :index, :destroy]
-  resources :teachersubjects do
-    resources :channels do
-      resources :messages do
-        resources :documents
-      end
-    end
+  resources :studies do
+    resources :channels, only: [:new, :create]
   end
+  resources :channels, only: [:edit, :update, :destroy] do
+    resources :messages, only: [:create, :destroy]
+  end
+  resources :subjects, only: [:new, :create]  # To allow the program to work outside the universities
   devise_for :users
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
