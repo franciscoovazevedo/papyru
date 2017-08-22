@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821140122) do
+ActiveRecord::Schema.define(version: 20170822133752) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,13 +78,6 @@ ActiveRecord::Schema.define(version: 20170821140122) do
     t.index ["teacher_subject_id"], name: "index_student_subjects_on_teacher_subject_id", using: :btree
   end
 
-  create_table "students", force: :cascade do |t|
-    t.integer  "mayor_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["mayor_id"], name: "index_students_on_mayor_id", using: :btree
-  end
-
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
     t.string   "acronym"
@@ -99,11 +92,6 @@ ActiveRecord::Schema.define(version: 20170821140122) do
     t.datetime "updated_at", null: false
     t.index ["subject_id"], name: "index_teacher_subjects_on_subject_id", using: :btree
     t.index ["teacher_id"], name: "index_teacher_subjects_on_teacher_id", using: :btree
-  end
-
-  create_table "teachers", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -124,6 +112,8 @@ ActiveRecord::Schema.define(version: 20170821140122) do
     t.string   "photo"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.integer  "mayor_id"
+    t.string   "type"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
@@ -136,9 +126,6 @@ ActiveRecord::Schema.define(version: 20170821140122) do
   add_foreign_key "messages", "users"
   add_foreign_key "notifications", "messages"
   add_foreign_key "notifications", "users"
-  add_foreign_key "student_subjects", "students"
   add_foreign_key "student_subjects", "teacher_subjects"
-  add_foreign_key "students", "mayors"
   add_foreign_key "teacher_subjects", "subjects"
-  add_foreign_key "teacher_subjects", "teachers"
 end
