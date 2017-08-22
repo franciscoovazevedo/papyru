@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   has_many :notifications
   has_many :messages
-  self.abstract_class = true
+  # self.abstract_class = true
   validates :name, presence: true, format: { with: /\A[A-Za-zçÇ ]+\z/,
     message: "only allows letters" }
   validates :address, presence: true
