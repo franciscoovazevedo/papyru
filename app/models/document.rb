@@ -1,5 +1,5 @@
 class Document < ApplicationRecord
   belongs_to :message
 
-  validates :type, presence: true
+  validates :filetype, presence: true
 end
