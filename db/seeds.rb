@@ -15,15 +15,13 @@ def fromMayorToAcronym(mayor)
     result = mayor.split('').first(3).join
   end
   result.upcase!
-  # p result
 end
 
 # Seeds - first create the subjects
 subject = ["Math", "Italian", "Portuguese", "Spanish", "Ruby", "Java", "Algebra"]
-subject.each { |subject| Subject.create(name: subject, acronym: fromMayorToAcronym(subject))}
+subject.each { |subject| Subject.create(name: subject, acronym: fromMayorToAcronym(subject)) }
 # Create the Mayors
-major =  ["Informatic Engineer", "Business and Computer Science", "Data Engineering", "Psycology"]
+major =  ["Informatic Engineer", "Business and Computer Science", "Data Engineering", "Psycology", "Finance and Strategy", "Sports Manangement"]
 major.each { |mayor| Mayor.create(name: mayor, acronym: fromMayorToAcronym(mayor)) }
 
-
-
+#
