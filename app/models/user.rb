@@ -28,9 +28,5 @@ class User < ApplicationRecord
     self.school_number = self.type.first.downcase + self.school_number
   end
 
-  def default_school_number
-    self.school_number = self.type.first.downcase + self.school_number
-  end
-
-
 end
+
