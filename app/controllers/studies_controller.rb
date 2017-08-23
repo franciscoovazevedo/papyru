@@ -4,6 +4,7 @@ class StudiesController < ApplicationController
   end
 
   def show
+    @show
   end
 
   def new
