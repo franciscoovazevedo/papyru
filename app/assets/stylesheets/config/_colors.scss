@@ -9,12 +9,12 @@ $papyru-color-7: #6B392E;
 
 // Whites, grays, blacks
 $white: #FFFFFF;
-$dark-white: #FAFBFC;
-$background-gray: #F5F5F5;
-$borders-gray: #E6E6E6;
+$white-dark: #FAFBFC;
+$gray-lighter: #F5F5F5;
+$gray-light: #E6E6E6;
 $gray: #B2B2B2;
-$dark-gray: #464646;
-$light-black: #484848;
+$gray-dark: #464646;
+$gray-darker: #484848;
 $black: #242424;
 
 // General colors
@@ -28,4 +28,4 @@ $green: #17AA1C;
 $github-color: #24292E;
 $facebook-color: #3B5998;
 $twitter-color: #1DA1F2;
-$lewagon-color: #D23333;
+$lewagon-color: $red;
