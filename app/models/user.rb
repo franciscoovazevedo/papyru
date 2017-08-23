@@ -1,4 +1,4 @@
-class User < ApplicationRecord
+  class User < ApplicationRecord
   # mount_uploader :photo, PhotoUploader
   has_many :notifications
   has_many :messages
