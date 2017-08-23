@@ -1,4 +1,4 @@
-.exercise-card {
+.card {
 
   height: 175px;
   width: 200px;
@@ -10,7 +10,7 @@
   position: relative;
   border-radius: 5%;
 }
-.card-exercise-img {
+.card-img {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -48,6 +48,6 @@
   background: black;
   opacity: 0;
 }
-.card-exercise-link:hover {
+.card-link:hover {
   opacity: 0.1;
 }
