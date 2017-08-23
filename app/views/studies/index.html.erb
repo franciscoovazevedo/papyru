@@ -1,2 +1,13 @@
-<h1>Studies#index</h1>
-<p>Find me in app/views/studies/index.html.erb</p>
+<div class="content">
+  <h2>Hello <%= current_user.name %>! You have 3 new messages!(to be worked on)</h2>
+  <div class="in-content">
+    <% current_user.subjects.each do |subject| %>
+      <%= link_to subject.name, study_path(subject) %>
+    <% end %>
+    <% if current_user.teacher? %>
+    <br><br>
+      <%= link_to "Add one subject", new_study_path, class: "btn btn-danger"  %>
+    <% end %>
+  </div>
+</div>
+
