@@ -1,4 +1,7 @@
-.card {
+.subject-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 175px;
   width:175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
@@ -10,12 +13,7 @@
   background-color: rgb(90, 90, 90);
 }
 
-.card-description {
-  position: absolute;
-  text-align: center;
-}
-
-.card-link {
+.subject-card-link {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -26,6 +24,6 @@
   opacity: 0;
   border-radius:50%;
 }
-.card-link:hover {
+.subject-card-link:hover {
   opacity: 0.3;
 }
