@@ -7,15 +7,21 @@
     <%= f.input :email, required: true, autofocus: true %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
+    <div class="hidden" id="mayor-input">
+    <%= f.input :mayor_id, as: :select, collection: Mayor.all%>
+    </div>
+    <%= f.input :address %>
+    <%= f.input :phone_number %>
     <%# f.input :mayor_id, as: :select, collection: Mayor.all %>
   </div>
   <div class="row">
   <div class="col-lg-6">
     <div class="input-group">
       <div class="input-group-btn">
-        <%= f.input :type, as: :select, collection: ["Teacher", "Student"], default: "Student", input_html: { style: "width: 300px"} %>
+        <%= f.input :type, as: :select, collection: ["Teacher", "Student"], default: "Student", input_html: { onchange: "sign_up_logic()", style: "width: 100px"} %>
       </div><!-- /btn-group -->
       <input type="text" class="form-control" aria-label="..." name="user[school_number]">
+
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 </div>
@@ -25,4 +31,3 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
--->

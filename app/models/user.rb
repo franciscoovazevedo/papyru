@@ -1,3 +1,5 @@
+
+
 class User < ApplicationRecord
   # mount_uploader :photo, PhotoUploader
   has_many :notifications
@@ -25,4 +27,6 @@ class User < ApplicationRecord
   def default_school_number
     self.school_number = self.type.first.downcase + self.school_number
   end
+
 end
+
