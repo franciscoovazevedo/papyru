@@ -1,6 +1,4 @@
 <h1>Papyru First Home Page</h1>
 <p><%= link_to "sign in", new_user_session_path %></p>
 <p><%= link_to "sign up", new_user_registration_path %></p>
-
-<%= render "shared/card_subjects" %>
-<%= render "shared/card_exercises" %>
+<p><%= link_to "sign out", destroy_user_session_path,  method: :delete %></p>
