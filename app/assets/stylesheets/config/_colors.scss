@@ -1,10 +1,31 @@
-// Define variables for your color scheme
+// Whites, grays, blacks
+$white: #FFFFFF;
+$dark-white: #FAFBFC;
+$background-gray: #F5F5F5;
+$borders-gray: #E6E6E6;
+$gray: #B2B2B2;
+$dark-gray: #464646;
+$light-black: #484848;
+$black: #242424;
 
-// For example:
-$red: #EE5F5B;
-$blue: #469AE0;
-$yellow: #FDB631;
+// General colors
+$red: #D23333;
+$blue: #2F8EED;
+$yellow: #FEC74B;
 $orange: #E67E22;
-$green: #32B796;
-$gray: #000000;
-$light-gray: #F4F4F4;
+$green: #17AA1C;
+
+// External app colors
+$github-color: #24292E;
+$facebook-color: #3B5998;
+$twitter-color: #1DA1F2;
+$lewagon-color: #D23333;
+
+
+#FFF3CD
+#F9E5AA
+#EAD69B
+#FEE064
+#FEC74B
+#88543B
+#6B392E
