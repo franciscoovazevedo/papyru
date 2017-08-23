@@ -1,15 +1,34 @@
-<h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+<div class="wrapper">
+  <div class="container">
+    <h1>Welcome</h1>
+    <div class="form">
+      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <div class="form-inputs">
+          <div class="input">
+            <%= f.input :email, required: false, label: false, input_html: { type: "email", placeholder: "Email" } %>
+          </div>
+          <div class="input">
+            <%= f.input :password, required: false, label: false, input_html: { type: 'password', placeholder: 'Password' } %>
+          </div>
+        </div>
+        <div class="form-actions">
+          <%= f.button :submit, "Log In", class: "submit", id: "login-button" %>
+        </div>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+  <ul class="bg-bubbles">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
