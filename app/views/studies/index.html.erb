@@ -1,6 +1,9 @@
 <div class="content">
   <h2>Hello <%= current_user.name %>! You have 3 new messages!(to be worked on)</h2>
   <div class="in-content">
+    <% if current_user.subjects.nil? %>
+        <%= link_to "Home Page", root_path %>
+    <% end %>
     <% current_user.subjects.each do |subject| %>
       <%= link_to subject.name, study_path(subject) %>
     <% end %>
