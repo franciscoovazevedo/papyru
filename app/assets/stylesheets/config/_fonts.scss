@@ -1,16 +1,74 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
 
-// Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "sans-serif";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+// Define LL Circular
+@font-face {
+  font-family: "Circular";
+  src: font-url('../../fonts/Circular-Book.eot');
+  src: font-url('../../fonts/Circular-Book.woff') format('woff'),
+       font-url('../../fonts/Circular-Book.ttf') format('truetype');
+  font-weight: 400, lighter;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular";
+  src: font-url('../../fonts/Circular-Book-Italic.eot');
+  src: font-url('../../fonts/Circular-Book-Italic.woff') format('woff'),
+       font-url('../../fonts/Circular-Book-Italic.ttf') format('truetype');
+  font-weight: 400, lighter;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Circular";
+  src: font-url('../../fonts/Circular-Medium.eot');
+  src: font-url('../../fonts/Circular-Medium.woff') format('woff'),
+       font-url('../../fonts/Circular-Medium.ttf') format('truetype');
+  font-weight: 500, normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular";
+  src: font-url('../../fonts/Circular-Medium-Italic.eot');
+  src: font-url('../../fonts/Circular-Medium-Italic.woff') format('woff'),
+       font-url('../../fonts/Circular-Medium-Italic.ttf') format('truetype');
+  font-weight: 500, normal;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Circular";
+  src: font-url('../../fonts/Circular-Bold.eot');
+  src: font-url('../../fonts/Circular-Bold.woff') format('woff'),
+       font-url('../../fonts/Circular-Bold.ttf') format('truetype');
+  font-weight: 700, bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular";
+  src: font-url('../../fonts/Circular-Bold-Italic.eot');
+  src: font-url('../../fonts/Circular-Bold-Italic.woff') format('woff'),
+       font-url('../../fonts/Circular-Bold-Italic.ttf') format('truetype');
+  font-weight: 700, bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Circular";
+  src: font-url('../../fonts/Circular-Black.eot');
+  src: font-url('../../fonts/Circular-Black.woff') format('woff'),
+       font-url('../../fonts/Circular-Black.ttf') format('truetype');
+  font-weight: 900, bolder;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Circular";
+  src: font-url('../../fonts/Circular-Black-Italic.eot');
+  src: font-url('../../fonts/Circular-Black-Italic.woff') format('woff'),
+       font-url('../../fonts/Circular-Black-Italic.ttf') format('truetype');
+  font-weight: 900, bolder;
+  font-style: italic;
+}
 
-// To use a font file (.woff) uncomment following lines
-// @font-face {
-//   font-family: "Font Name";
-//   src: font-url('FontFile.eot');
-//   src: font-url('FontFile.eot?#iefix') format('embedded-opentype'),
-//        font-url('FontFile.woff') format('woff'),
-//        font-url('FontFile.ttf') format('truetype')
-// }
-// $my-font: "Font Name";
+$circular-font: "Circular";
+
+// Define fonts for body and headers
+$body-font: $circular-font, "Open Sans", "Raleway", "sans-serif";
+$headers-font: $circular-font, "Open Sans", "Raleway", "sans-serif";
