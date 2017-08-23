@@ -1,16 +1,32 @@
-<div class="content">
-  <h2>Hello <%= current_user.name %>! You have 3 new messages!(to be worked on)</h2>
-  <div class="in-content">
-    <% if current_user.subjects.nil? %>
+<div class="container">
+  <div class="row">
+    <div class="content">
+      <h2>Hello <%= current_user.name %>! You have 3 new messages!(to be worked on)</h2>
+      <div class="in-content">
+        <% if current_user.subjects.nil? %>
         <%= link_to "Home Page", root_path %>
-    <% end %>
-    <% current_user.subjects.each do |subject| %>
-      <%= link_to subject.name, study_path(subject) %>
-    <% end %>
-    <% if current_user.teacher? %>
-    <br><br>
-      <%= link_to "Add one subject", new_study_path, class: "btn btn-danger"  %>
-    <% end %>
+        <% end %>
+        <% current_user.subjects.each do |subject| %>
+
+        <div class="col-sm-3">
+          <%= render "shared/card_subjects", subject: subject %>
+        </div>
+        <% end %>
+        <% if current_user.teacher? %>
+
+        <div class="col-sm-3">
+        <div class="subject-card">
+          <div class="text-center">
+            <img class="card-add-sign" src="https://cpanel.expert/wp-content/uploads/2014/05/noun_6155.png">
+          </div>
+          <%= link_to '', new_study_path, class: 'subject-card-link' %>
+        </div>
+        </div>
+
+
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>
-

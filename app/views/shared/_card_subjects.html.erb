@@ -1,7 +1,7 @@
 <div class="subject-card">
   <div class="text-center">
-    <h4>subject acronym</h4>
+    <h4> <%= subject.name %></h4>
   </div>
-  <%= link_to '', new_user_session_path, class: 'subject-card-link' %>
+  <%= link_to '', study_path(subject), class: 'subject-card-link' %>
 </div>
 
