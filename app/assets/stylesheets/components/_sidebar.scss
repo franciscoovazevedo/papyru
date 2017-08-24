@@ -1,0 +1,35 @@
+#content{
+  margin-left: 200px;
+}
+
+#sidebar {
+  background-color: #384047;
+  position: fixed;
+  left: 0px;
+  top: 70px;
+  bottom: 0px;
+  width: 250px;
+  text-align: center;
+}
+
+#sidebar ul {
+  list-style: none;
+  padding-left: 0px;
+}
+
+#sidebar li {
+  margin-top:50px;
+  margin-bottom: 50px;
+  border-bottom: 0.5px solid gray;
+}
+
+#sidebar a {
+  text-decoration: none;
+  font-size: 25px;
+  color:#788188;
+}
+
+#sidebar a:hover {
+  color: white;
+}
+
