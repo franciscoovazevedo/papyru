@@ -5,6 +5,14 @@ class Study < ApplicationRecord
   has_many :channels
   validate :checkTeacherStudent
 
+  def last_messages
+    Message.where(channel_id: all_channels.collect(&:id)).order(:created_at).limit(10)
+  end
+
+  def all_channels
+    subject.channels
+  end
+
   private
 
   def checkTeacherStudent

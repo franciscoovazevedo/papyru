@@ -1,3 +1,17 @@
-<h1>Channels for the <%= @study.subject.name %></h1>
 
-<%= @study.channels.first.name %>
+<!-- FRONT END GUYS, THIS IS THE BACKEND GURU/GENIUS TALKING AND EXPLAINING THE CODE PLEASE READ THIS WITH A LOT OF ATENTION TO UNDERSTAND EVERYTHING -->
+<!-- THIS PAGE REPRESENTS THE STUDY VIEW, AND IN HERE WE DISPLAY THE STUDY MOST RECENT THINGS, IN THE MAIN WINDOW AND THE STUDY CHANNELS IN THAT, HOPEFULY TO BE, SIDE BAR -->
+<h1>Channels for the <%= @subject %></h1>
+
+<!-- THIS IS THE MESSAGE PART OF THE STUDY VIEW, IT SHOWS THE LAST MESSAGE ON THE CHANNELS OF THIS SUBJECTS -->
+<h1>Messages</h1>
+<% @messages.each do |message| %>
+<%= message.user.class %>-<%= message.user.name %>: <%= message.content %>
+<% end %>
+
+<!-- THIS SHOWS ALL THE CHANNELS, SIDE BAR THIS -->
+<h2>SIDE BAR</h2>
+<% @channels.each do |channel| %>
+<!-- This should be a link to the channel#show -->
+<p><%= channel.name %></p>
+<% end %>

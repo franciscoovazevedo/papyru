@@ -5,6 +5,9 @@ class StudiesController < ApplicationController
   end
 
   def show
+    @subject = @study.subject.name
+    @messages = @study.last_messages
+    @channels = @study.all_channels
   end
 
   def new
