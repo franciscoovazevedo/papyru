@@ -1,9 +1,76 @@
-<h1>Papyru First Home Page</h1>
-<p><%= link_to "sign in", new_user_session_path %></p>
-<p><%= link_to "sign up", new_user_registration_path %></p>
+<div class="container-fluid">
+  <div class="row main">
+    <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5">
+      <h1>Where education happens</h1>
+      <p>When you need to kick off an exam, ask the teacher a new question, download some useful file, review an exercise, finalize next course's projects, receive a communication, plan your next step through your stuides, and more, Papyru has you covered.</p>
+      <div class="btn btn-primary">GET STARTED</div>
+      <p>Already have an account? Sign in.</p>
+    </div>
 
-<p><%= link_to "sign out", destroy_user_session_path,  method: :delete %></p>
+    <div class="col-xs-1"></div>
 
+    <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5">
+      <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1503577074/Screen_Shot_2017-08-24_at_13.17.30_fv6pjn.png", width: "100%", alt: "Edit Entry", class: "main-picture") %>
+    </div>
+  </div>
 
-<%= render "shared/cards" %>
+  <div class="row features text-center">
+    <h2>Features</h2>
+    <p>Millions of people around the world have already made Papyru the place where their studies happens.</p>
+    <div class="btn btn-primary">DISCOVER MORE NOW</div>
+  </div>
 
+  <div class="row supporting">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+      <h3>Try it now for free</h3>
+      <p>Already using Papyru? Sign in.</p>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-right">
+      <form>
+        <input type="email" style="margin-top: 20px;"></input>
+      </form>
+    </div>
+  </div>
+
+  <div class="row" style="background-color: red;">
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+      <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1503502488/logo-web.png", size: "32") %>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+      <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+      <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+      <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+
+    <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
+      <ul>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="row footer" style="height: 100px; background-color: green;">
+  </div>
+</div>
