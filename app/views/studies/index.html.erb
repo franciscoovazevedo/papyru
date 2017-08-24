@@ -6,9 +6,9 @@
         <% if current_user.subjects.nil? %>
           <%= link_to "Home Page", root_path %>
         <% end %>
-        <% current_user.subjects.each do |subject| %>
+        <% current_user.studies.each do |study| %>
           <div class="col-sm-3">
-            <%= render "shared/card_subjects", subject: subject %>
+            <%= render "shared/card_subjects", study: study %>
           </div>
         <% end %>
         <% if current_user.teacher? %>
