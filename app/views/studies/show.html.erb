@@ -1,31 +1,107 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-sm-3 col-md-3 col-lg-3 hidden-xs">
-      <%= render 'shared/sidebar' %>
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#channel-bar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Channels</a>
     </div>
+    <div class="collapse navbar-collapse" id="channel-bar">
+      <ul class="nav navbar-nav">
+        <% @channels.each do |channel| %>
+          <li><%= link_to channel.name, channel_path(channel) %></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    <div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
-      <div class="dropdown">
-        <p class="dropdown-toggle" data-toggle="dropdown">View all the channels </p>
-        <ul class="dropdown-menu dropdown-menu-left navbar-wagon-dropdown-menu">
-          <% @channels.each do |channel| %>
-            <li><%= link_to channel.name, channel_path(channel) %></li>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);">Channels</h2>
+      <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@study) %></p>
+      <ul class="nav nav-pills nav-stacked">
+        <% @channels.each do |channel| %>
+          <li><%= link_to channel.name, channel_path(channel) %></li>
+        <% end %>
+      </ul><br>
+    </div>
+    <br>
+
+    <div class="col-sm-9">
+
+      <nav class="subject-options">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Edit subject", edit_study_path %></li>
+          </ul>
+        </div>
+      </nav>
+
+      <h1 class="text-center"><%= @subject %></h1>
+      <hr/>
+
+      <div class="col-sm-6">
+
+        <div class="well">
+          <h3>Messages</h3>
+          <hr/>
+          <% @messages.each do |message| %>
+            <h4><%= message.user.name %></h4>
+            <h6><%= @subject %> <%= message.user.class %></h6>
+            <p><%= message.content %></p>
+            <p style="font-size: 12px; text-align: right;">Posted on <%= l message.created_at %></p>
+            <hr/>
           <% end %>
-        </ul>
+        </div>
+
+      </div>
+
+      <div class="col-sm-6">
+
+        <div class="well">
+          <h3>Exam</h3>
+          <hr/>
+          <% @documents.each do |document| %>
+            <% if document.filetype == "exam" %>
+              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
+              <h6>Description of the document</h6>
+              <a href="#" style="font-size: 12px;">Download</a>
+              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="well">
+          <h3>Exam</h3>
+          <hr/>
+          <% @documents.each do |document| %>
+            <% if document.filetype == "exam" %>
+              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
+              <h6>Description of the document</h6>
+              <a href="#" style="font-size: 12px;">Download</a>
+              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="well">
+          <h3>Exam</h3>
+          <hr/>
+          <% @documents.each do |document| %>
+            <% if document.filetype == "exam" %>
+              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
+              <h6>Description of the document</h6>
+              <a href="#" style="font-size: 12px;">Download</a>
+              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
+            <% end %>
+          <% end %>
+        </div>
+
       </div>
     </div>
-
-    <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9 text-center">
-      <%= render 'shared/toolbar' %>
-      <h1><%= @subject %></h1>
-    </div>
-
   </div>
 </div>
-
-<h2>Documents</h2>
-<% @documents.each do |document| %>
-  <%= document.filetype.capitalize %>
-    <!-- This is the name of the file, we should link this to the actual document, but only in the next version, for the first Demo this is enough -->
-  <%= document.name %>
-<% end %>
