@@ -16,4 +16,7 @@
 @import "pages/index";
 
 // Devise sessions
-@import "devise/sessions/new"
+@import "devise/sessions/new";
+
+// Studies CSS files
+@import "studies/show";
