@@ -1,6 +1,7 @@
 class Subject < ApplicationRecord
   has_many :studies
   has_many :teachers, through: :studies
+  has_many :channels, through: :studies
   validates :name, presence: true
   validates :name, length: { minimum: 3 }
   validates :acronym, presence: true
