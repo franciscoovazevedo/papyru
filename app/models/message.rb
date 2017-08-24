@@ -7,4 +7,7 @@ class Message < ApplicationRecord
   validates :content, presence: true
   validates :identity, presence: true
 
+  def has_document?
+    Document.where(message: self).empty? ? false : true
+  end
 end

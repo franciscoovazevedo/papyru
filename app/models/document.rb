@@ -1,6 +1,6 @@
 class Document < ApplicationRecord
   belongs_to :message
-
+  validates :name, presence: true
   validates_inclusion_of :filetype, :in => %w( exercise former-exam exam slide notification )
   before_validation :default_values
 
