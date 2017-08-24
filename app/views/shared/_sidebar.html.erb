@@ -1,7 +1,7 @@
 <div id="sidebar">
   <ul>
     <% @channels.each do |channel| %>
-      <li><a><%= channel.name %></a></li>
+      <li><%= link_to channel.name, channel_path(channel) %></li>
     <% end %>
   </ul>
 </div>
