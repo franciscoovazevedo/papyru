@@ -1,9 +1,5 @@
-#content{
-  margin-left: 200px;
-}
-
 #sidebar {
-  background-color: #384047;
+  background-color: $papyru-color-3;
   position: fixed;
   left: 0px;
   top: 70px;
@@ -18,18 +14,17 @@
 }
 
 #sidebar li {
-  margin-top:50px;
-  margin-bottom: 50px;
-  border-bottom: 0.5px solid gray;
+  margin: 50px 0;
 }
 
 #sidebar a {
   text-decoration: none;
-  font-size: 25px;
-  color:#788188;
+  font-size: 18px;
+  color: $white-dark;
 }
 
 #sidebar a:hover {
-  color: white;
+  color: $white;
+  cursor: pointer;
 }
 
