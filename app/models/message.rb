@@ -7,5 +7,4 @@ class Message < ApplicationRecord
   validates :content, presence: true
   validates :identity, presence: true
 
-
 end

@@ -4,6 +4,7 @@ class Channel < ApplicationRecord
   has_many :teachers, through: :study
   validates :name, presence: true, length: { maximum: 30}
   before_save :default_values
+  delegate :subject, to: :study
 
   def students
     Student.joins(:studies).where("studies.subject_id = ?", self.study.subject_id)
