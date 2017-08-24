@@ -7,6 +7,10 @@ class Channel < ApplicationRecord
   before_save :default_values
   delegate :subject, to: :study
 
+  def documents
+    Document.where(message_id: messages.collect(&:id)).order(:created_at)
+  end
+
   def students
     Student.joins(:studies).where("studies.subject_id = ?", self.study.subject_id)
   end
