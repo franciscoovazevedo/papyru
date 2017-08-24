@@ -1,10 +1,10 @@
 class StudiesController < ApplicationController
+  before_action :find_study, only: [:show, :edit, :update, :destroy]
   def index
    @studies = Study.all
   end
 
   def show
-    @show
   end
 
   def new
@@ -20,5 +20,15 @@ class StudiesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def study_params
+    params.require(:study).permit(:student_id, :teacher_id, :subject_id)
+  end
+
+  def find_study
+    @study = Study.find(params[:id])
   end
 end
