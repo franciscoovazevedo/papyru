@@ -2,6 +2,7 @@ class Channel < ApplicationRecord
   has_many :messages
   belongs_to :study
   has_many :teachers, through: :study
+  has_many :documents, through: :messages
   validates :name, presence: true, length: { maximum: 30}
   before_save :default_values
   delegate :subject, to: :study

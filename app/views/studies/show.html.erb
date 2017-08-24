@@ -6,12 +6,19 @@
 <!-- THIS IS THE MESSAGE PART OF THE STUDY VIEW, IT SHOWS THE LAST MESSAGE ON THE CHANNELS OF THIS SUBJECTS -->
 <h1>Messages</h1>
 <% @messages.each do |message| %>
-<%= message.user.class %>-<%= message.user.name %>: <%= message.content %>
+  <%= message.user.class %>-<%= message.user.name %>: <%= message.content %>
 <% end %>
 
 <!-- THIS SHOWS ALL THE CHANNELS, SIDE BAR THIS -->
 <h2>SIDE BAR</h2>
 <% @channels.each do |channel| %>
 <!-- This should be a link to the channel#show -->
-<p><%= channel.name %></p>
+  <p><%= channel.name %></p>
+<% end %>
+
+
+<h2>Documents</h2>
+<% @documents.each do |document| %>
+  <h3> <%=    document.filetype.capitalize %></h3>
+  <p>Description of the document</p>
 <% end %>

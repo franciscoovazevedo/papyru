@@ -9,6 +9,10 @@ class Study < ApplicationRecord
     Message.where(channel_id: all_channels.collect(&:id)).order(:created_at).limit(10)
   end
 
+  def last_documents
+    last_messages.map(&:documents)
+  end
+
   def all_channels
     subject.channels
   end
