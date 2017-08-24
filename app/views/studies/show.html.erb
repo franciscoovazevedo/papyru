@@ -14,8 +14,20 @@
         </ul>
       </div>
     </div>
-
-    <div class=""
-
   </div>
 </div>
+
+<!-- THIS SHOWS ALL THE CHANNELS, SIDE BAR THIS -->
+<h2>SIDE BAR</h2>
+<% @channels.each do |channel| %>
+
+<!-- This should be a link to the channel#show -->
+  <p><%= link_to channel.name, channel_path(channel) %></p>
+<% end %>
+
+<h2>Documents</h2>
+<% @documents.each do |document| %>
+  <h3> <%=    document.filetype.capitalize %></h3>
+    <!-- This is the name of the file, we should link this to the actual document, but only in the next version, for the first Demo this is enough -->
+  <p> <%= document.name %></p>
+<% end %>

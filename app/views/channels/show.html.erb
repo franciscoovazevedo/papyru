@@ -1,0 +1,36 @@
+
+<!-- FRONT END GUYS, THIS IS THE BACKEND GURU/GENIUS TALKING AND EXPLAINING THE CODE PLEASE READ THIS WITH A LOT OF ATENTION TO UNDERSTAND EVERYTHING -->
+<!-- THIS PAGE REPRESENTS THE STUDY VIEW, AND IN HERE WE DISPLAY THE STUDY MOST RECENT THINGS, IN THE MAIN WINDOW AND THE STUDY CHANNELS IN THAT, HOPEFULY TO BE, SIDE BAR -->
+<h1><%= @subject %></h1>
+
+<!-- THIS IS THE MESSAGE PART OF THE STUDY VIEW, IT SHOWS THE LAST MESSAGE ON THE CHANNELS OF THIS SUBJECTS -->
+<h1>Messages</h1>
+<% @messages.each do |message| %>
+  <% if message.has_document? %>
+    <h3>Messages with Documents</h3>
+    <p>We should link this to the document view (a small one)</p>
+    <br>
+    <%= message.user.class %>-<%= message.user.name %>: <%= message.content %>
+    <br>
+  <% else %>
+    <h3>Message without documents</h3>
+    <%= message.user.class %>-<%= message.user.name %>: <%= message.content %>
+  <% end %>
+<% end %>
+
+<!-- THIS SHOWS ALL THE CHANNELS, SIDE BAR THIS -->
+<h2>SIDE BAR</h2>
+<%= link_to "SuperChannel", study_path(@channel.study) %>
+<% @channel.study.channels.each do |channel| %>
+This should be a link to the channel#show
+  <p><%= link_to channel.name, channel_path(channel) %></p>
+<% end %>
+<%= link_to "New channel", new_study_channel_path(@channel.study) %>
+
+
+<h2>Documents</h2>
+<% @documents.each do |document| %>
+  <h3> <%=    document.filetype.capitalize %></h3>
+    <!-- This is the name of the file, we should link this to the actual document, but only in the next version, for the first Demo this is enough -->
+  <p> <%= document.name %></p>
+<% end %>
