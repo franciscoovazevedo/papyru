@@ -22,7 +22,7 @@
 <h2>SIDE BAR</h2>
 <% @channels.each do |channel| %>
 <!-- This should be a link to the channel#show -->
-  <p><%= channel.name %></p>
+  <p><%= link_to channel.name, channel_path(channel) %></p>
 <% end %>
 
 
