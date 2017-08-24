@@ -8,6 +8,7 @@ class StudiesController < ApplicationController
     @subject = @study.subject.name
     @messages = @study.last_messages
     @channels = @study.all_channels
+    @documents = @study.last_documents.flatten
   end
 
   def new
