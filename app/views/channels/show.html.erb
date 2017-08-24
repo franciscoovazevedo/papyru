@@ -25,6 +25,7 @@
 This should be a link to the channel#show
   <p><%= link_to channel.name, channel_path(channel) %></p>
 <% end %>
+<%= link_to "New channel", new_study_channel_path(@channel.study) %>
 
 
 <h2>Documents</h2>
