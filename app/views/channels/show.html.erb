@@ -71,15 +71,9 @@
         </div>
 
       </div>
+       <div class="col-sm-6">
 
-      <div class="col-sm-6">
-        <% if @documents.notification.any?  %>
-          <div class="well">
-            <h3>Notifications</h3>
-            <hr/>
-            <%= render @documents.notification.limit(3) %>
-          </div>
-        <% end %>
+
 
         <% if @documents.exam.any?  %>
           <div class="well">
