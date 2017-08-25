@@ -32,7 +32,7 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content, :identity, :documents_attributes => [:name, :file_types])
+    params.require(:message).permit(:content, :identity, :documents_attributes => [:name, :filetype])
   end
 
   def document_params

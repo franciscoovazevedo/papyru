@@ -3,6 +3,11 @@ class Document < ApplicationRecord
   validates :name, presence: true
   validates_inclusion_of :filetype, :in => %w( exercise former-exam exam slide notification )
   before_validation :default_values
+  scope :exercise, -> { where(filetype: 'exercise') }
+  scope :notification, -> { where(filetype: 'notification') }
+  scope :former_exam, -> { where(filetype: 'former-exam') }
+  scope :exam, -> { where(filetype: 'exam') }
+  scope :slide, -> { where(filetype: 'slide') }
 
   private
 

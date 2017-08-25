@@ -1,6 +1,7 @@
 <%= field_set_tag 'Document' do %>
   <%= f.simple_fields_for :documents do |d| %>
     <%= d.input :name %>
+    <%= d.input :filetype, as: :select, collection: %w( exercise former-exam exam slide notification ) %>
     <%= d.submit %>
   <% end %>
 <% end %>
