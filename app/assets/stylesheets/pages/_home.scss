@@ -1,4 +1,13 @@
+.main {
+  background: $white;
+}
+
 .features {
   background: $papyru-color-3;
   padding: 20px;
+}
+
+.features {
+  color: $white;
+  text-shadow: 1px 0 1px rgba(0,0,0,0.2);
 }
