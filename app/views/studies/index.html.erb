@@ -1,34 +1,30 @@
-<div id="content">
-  <div class="container-subject">
-  <div class="container container-subject">
-    <div class="row">
-      <div class="content">
-        
-        <h2>Hello <%= current_user.name %>! You have 3 new messages!(to be worked on)</h2>
-        
-        <div class="in-content">
-          <% if current_user.subjects.nil? %>
-          <%= link_to "Home Page", root_path %>
-        <% end %>
-        <% current_user.studies.each do |study| %>
-          <div class=" col-xs-6 col-sm-4 col-md-3">
-            <div class="column-center">
-              <%= render "shared/card_subjects", study: study %>
-            </div>
-          </div>
-          <% end %>
-          <% if current_user.teacher? %>
-          <div class="col-xs-6 col-sm-4 col-md-3">
-            <div class="subject-card">
-              <div class="text-center">
-                <img class="card-add-sign" src="https://cpanel.expert/wp-content/uploads/2014/05/noun_6155.png">
-              </div>
-              <%= link_to '', new_study_path, class: 'subject-card-link' %>
-            </div>
-          </div>
-          <% end %>
+<div class="container">
+  <div class="row header text-center">
+    <h1>Welcome back <%= current_user.name %>!</h1>
+    <h3>You have <span>3 new messages</span></h3>
+  </div>
+
+  <div class="row content">
+
+    <% current_user.studies.each do |study| %>
+      <div class=" col-xs-6 col-sm-4 col-md-3">
+        <div class="column-center">
+          <%= render "shared/card_subjects", study: study %>
         </div>
       </div>
+      <% end %>
+
+      <% if current_user.teacher? %>
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="subject-card">
+          <div class="text-center">
+            <img class="card-add-sign" src="http://res.cloudinary.com/gabrielecanepa/image/upload/v1503671154/noun_6155_zrhzab.png">
+          </div>
+          <%= link_to '', new_study_path, class: 'subject-card-link' %>
+        </div>
+      </div>
+      <% end %>
+
     </div>
   </div>
 </div>
