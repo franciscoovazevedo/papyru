@@ -1,5 +1,6 @@
 class StudiesController < ApplicationController
   before_action :find_study, only: [:show, :edit, :update, :destroy]
+
   def index
    @studies = Study.all
   end

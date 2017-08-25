@@ -1,0 +1,6 @@
+<%= field_set_tag 'Document' do %>
+  <%= f.simple_fields_for :documents do |d| %>
+    <%= d.input :name %>
+    <%= d.submit %>
+  <% end %>
+<% end %>
