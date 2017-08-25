@@ -1,5 +1,12 @@
 <%= simple_form_for [@channel, @message] do |f| %>
   <%= f.input :content %>
   <%= f.input :identity, as: :boolean, label: "Show identity" %>
-  <%= f.submit %>
+  <%= f.submit  id: 'create' %>
+  <div class="btn btn-primary" id="btn-doc">Add Document</div>
+  <div class="hidden" id="doc">
+    <%= render 'shared/form_document', f: f %>
+    <div class="btn btn-primary" id="doc-show">Close</div>
+  </div>
 <% end %>
+
+
