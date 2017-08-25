@@ -36,12 +36,13 @@
           <% else %>
             <li><%= link_to channel.name, channel_path(channel) %></li>
           <% end %>
+          <hr/>
         <% end %>
       </ul>
     </div>
     <br>
 
-    <div class="col-sm-9">
+    <div class="col-sm-9" id="show-content">
 
       <nav class="subject-options">
         <div class="container-fluid">
