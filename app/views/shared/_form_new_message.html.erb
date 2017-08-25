@@ -1,0 +1,5 @@
+<%= simple_form_for [@channel, @message] do |f| %>
+  <%= f.input :content %>
+  <%= f.input :identity, as: :boolean, label: "Show identity" %>
+  <%= f.submit %>
+<% end %>
