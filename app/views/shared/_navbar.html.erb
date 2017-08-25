@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon <%= 'fix-navbar' if @fix_navbar %>">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1503502488/logo-web.png", :alt => "Papyru") %>
