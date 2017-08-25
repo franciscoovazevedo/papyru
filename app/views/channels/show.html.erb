@@ -73,45 +73,46 @@
       </div>
 
       <div class="col-sm-6">
+        <% if @documents.notification.any?  %>
+          <div class="well">
+            <h3>Notifications</h3>
+            <hr/>
+            <%= render @documents.notification.limit(3) %>
+          </div>
+        <% end %>
 
-        <div class="well">
-          <h3>Exam</h3>
-          <hr/>
-          <% @documents.each do |document| %>
-            <% if document.filetype == "exam" %>
-              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
-              <h6>Description of the document</h6>
-              <a href="#" style="font-size: 12px;">Download</a>
-              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
-            <% end %>
-          <% end %>
-        </div>
+        <% if @documents.exam.any?  %>
+          <div class="well">
+            <h3>Exams</h3>
+            <hr/>
+            <%= render @documents.exam.limit(3) %>
+          </div>
+        <% end %>
 
-        <div class="well">
-          <h3>Exam</h3>
-          <hr/>
-          <% @documents.each do |document| %>
-            <% if document.filetype == "exam" %>
-              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
-              <h6>Description of the document</h6>
-              <a href="#" style="font-size: 12px;">Download</a>
-              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
-            <% end %>
-          <% end %>
-        </div>
+        <% if @documents.former_exam.any?  %>
+          <div class="well">
+            <h3>Former-exams</h3>
+            <hr/>
+            <%= render @documents.former_exam.limit(3) %>
+          </div>
+        <% end %>
 
-        <div class="well">
-          <h3>Exam</h3>
-          <hr/>
-          <% @documents.each do |document| %>
-            <% if document.filetype == "exam" %>
-              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
-              <h6>Description of the document</h6>
-              <a href="#" style="font-size: 12px;">Download</a>
-              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
-            <% end %>
-          <% end %>
-        </div>
+        <% if @documents.slide.any?  %>
+          <div class="well">
+            <h3>Slides</h3>
+            <hr/>
+            <%= render @documents.slide.limit(3) %>
+          </div>
+        <% end %>
+
+        <% if @documents.exercise.any?  %>
+          <div class="well">
+            <h3>Exercises</h3>
+            <hr/>
+            <%= render @documents.exercise.limit(3) %>
+          </div>
+        <% end %>
+
 
       </div>
     </div>
