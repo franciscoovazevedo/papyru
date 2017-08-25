@@ -10,6 +10,7 @@ class StudiesController < ApplicationController
     @messages = @study.last_messages.reverse
     @channels = @study.all_channels
     @documents = @study.last_documents
+    @fix_navbar = true
   end
 
   def new

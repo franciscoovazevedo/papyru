@@ -10,7 +10,10 @@ ul li {
 // Set gray background color and 100% height
 .sidenav {
   background-color: $papyru-color-2;
-  height: 100%;
+  height: calc(100vh - 70px);
+  position: fixed;
+  top: 70px;
+  overflow-y: scroll;
 }
 
 // On small screens, set height to 'auto' for the grid
@@ -18,4 +21,18 @@ ul li {
   .row.content {
     height: auto;
   }
+}
+
+
+#show-content {
+  position: fixed;
+  right: 0;
+  top: 70px;
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+}
+
+.fix-navbar {
+  position: fixed;
+  width: 100%;
 }
