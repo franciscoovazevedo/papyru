@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'messages/new'
+
+  get 'messages/create'
+
+  get 'messages/destroy'
+
   resources :studies do
     resources :channels, only: [:new, :create]
   end

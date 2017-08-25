@@ -6,7 +6,7 @@ class StudiesController < ApplicationController
 
   def show
     @subject = @study.subject.name
-    @messages = @study.last_messages
+    @messages = @study.last_messages.reverse
     @channels = @study.all_channels
     @documents = @study.last_documents.flatten
   end

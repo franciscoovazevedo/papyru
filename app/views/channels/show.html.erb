@@ -5,6 +5,7 @@
 
 <!-- THIS IS THE MESSAGE PART OF THE STUDY VIEW, IT SHOWS THE LAST MESSAGE ON THE CHANNELS OF THIS SUBJECTS -->
 <h1>Messages</h1>
+<%= link_to "new message", new_channel_message_path(@channel) %>
 <% @messages.each do |message| %>
   <% if message.has_document? %>
     <h3>Messages with Documents</h3>
