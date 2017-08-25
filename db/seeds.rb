@@ -69,3 +69,5 @@ Subject.all.each do |subject|
     Study.create(subject: subject, student: student)
   end
 end
+
+
