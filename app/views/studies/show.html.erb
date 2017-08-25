@@ -13,6 +13,7 @@
         <% @channels.each do |channel| %>
           <li><%= link_to channel.name, channel_path(channel) %></li>
         <% end %>
+        <li><%= link_to "New channel", new_study_channel_path(@study), class: "btn btn-primary" %></li>
       </ul>
     </div>
   </div>
@@ -22,10 +23,12 @@
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
       <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);">Channels</h2>
-      <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@study) %></p>
+      <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@study), class: "btn btn-primary" %></p>
       <ul class="nav nav-pills nav-stacked">
+        <hr/>
         <% @channels.each do |channel| %>
           <li><%= link_to channel.name, channel_path(channel) %></li>
+          <hr/>
         <% end %>
       </ul><br>
     </div>
@@ -50,7 +53,7 @@
           <h3>Messages</h3>
           <hr/>
           <% @messages.each do |message| %>
-            <h4><%= message.user.name %></h4>
+            <h4><%= message.user.name %> <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar" %></h4>
             <h6><%= @subject %> <%= message.user.class %></h6>
             <p><%= message.content %></p>
             <p style="font-size: 12px; text-align: right;">Posted on <%= l message.created_at %></p>

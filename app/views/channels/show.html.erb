@@ -1,11 +1,6 @@
-
-<!-- FRONT END GUYS, THIS IS THE BACKEND GURU/GENIUS TALKING AND EXPLAINING THE CODE PLEASE READ THIS WITH A LOT OF ATENTION TO UNDERSTAND EVERYTHING -->
-<!-- THIS PAGE REPRESENTS THE STUDY VIEW, AND IN HERE WE DISPLAY THE STUDY MOST RECENT THINGS, IN THE MAIN WINDOW AND THE STUDY CHANNELS IN THAT, HOPEFULY TO BE, SIDE BAR -->
-<h1><%= @subject %></h1>
-
-<!-- THIS IS THE MESSAGE PART OF THE STUDY VIEW, IT SHOWS THE LAST MESSAGE ON THE CHANNELS OF THIS SUBJECTS -->
+<!-- Messages -->
 <h1>Messages</h1>
-<%= link_to "new message", new_channel_message_path(@channel) %>
+
 <% @messages.each do |message| %>
   <% if message.has_document? %>
     <h3>Messages with Documents</h3>
@@ -19,19 +14,133 @@
   <% end %>
 <% end %>
 
-<!-- THIS SHOWS ALL THE CHANNELS, SIDE BAR THIS -->
-<h2>SIDE BAR</h2>
-<%= link_to "SuperChannel", study_path(@channel.study) %>
-<% @channel.study.channels.each do |channel| %>
-This should be a link to the channel#show
-  <p><%= link_to channel.name, channel_path(channel) %></p>
-<% end %>
-<%= link_to "New channel", new_study_channel_path(@channel.study) %>
-
-
+<!-- Documents -->
 <h2>Documents</h2>
 <% @documents.each do |document| %>
   <h3> <%=    document.filetype.capitalize %></h3>
-    <!-- This is the name of the file, we should link this to the actual document, but only in the next version, for the first Demo this is enough -->
   <p> <%= document.name %></p>
 <% end %>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#channel-bar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Channels</a>
+    </div>
+    <div class="collapse navbar-collapse" id="channel-bar">
+      <ul class="nav navbar-nav">
+        <% @channel.study.channels.each do |channel| %>
+          <% if channel.name == @channel.name %>
+            <li style="color: #FFF;">→ <%= @channel.name %></li>
+          <% else %>
+            <li><%= link_to channel.name, channel_path(channel) %></li>
+          <% end %>
+        <% end %>
+        <li><%= link_to "New channel", new_study_channel_path(@channel.study), class: "btn btn-primary" %></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);">Channels</h2>
+      <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@channel.study), class: "btn btn-primary" %></p>
+      <ul class="nav nav-pills nav-stacked">
+        <hr/>
+        <% @channel.study.channels.each do |channel| %>
+          <% if channel.name == @channel.name %>
+            <li style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);">→ <%= @channel.name %></li>
+          <% else %>
+            <li><%= link_to channel.name, channel_path(channel) %></li>
+          <% end %>
+          <hr/>
+        <% end %>
+      </ul><br>
+    </div>
+    <br>
+
+    <div class="col-sm-9">
+
+      <nav class="subject-options">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li><%= link_to "Go back to #{@channel.subject.name}", study_path(@channel.study) %></li>
+            <li><%= link_to "Edit channel", edit_channel_path(@channel) %></li>
+          </ul>
+        </div>
+      </nav>
+
+      <h1 class="text-center"><%= @channel.name %></h1>
+      <hr/>
+
+      <div class="col-sm-6">
+
+        <div class="well">
+          <h3>Messages</h3>
+          <%= link_to "New message", new_channel_message_path(@channel) %>
+          <hr/>
+          <% @messages.each do |message| %>
+            <h4><%= message.user.name %> <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar" %></h4>
+            <h6><%= @subject %> <%= message.user.class %></h6>
+            <p><%= message.content %></p>
+            <p style="font-size: 12px; text-align: right;">Posted on <%= l message.created_at %></p>
+            <hr/>
+          <% end %>
+        </div>
+
+      </div>
+
+      <div class="col-sm-6">
+
+        <div class="well">
+          <h3>Exam</h3>
+          <hr/>
+          <% @documents.each do |document| %>
+            <% if document.filetype == "exam" %>
+              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
+              <h6>Description of the document</h6>
+              <a href="#" style="font-size: 12px;">Download</a>
+              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="well">
+          <h3>Exam</h3>
+          <hr/>
+          <% @documents.each do |document| %>
+            <% if document.filetype == "exam" %>
+              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
+              <h6>Description of the document</h6>
+              <a href="#" style="font-size: 12px;">Download</a>
+              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
+            <% end %>
+          <% end %>
+        </div>
+
+        <div class="well">
+          <h3>Exam</h3>
+          <hr/>
+          <% @documents.each do |document| %>
+            <% if document.filetype == "exam" %>
+              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
+              <h6>Description of the document</h6>
+              <a href="#" style="font-size: 12px;">Download</a>
+              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
+            <% end %>
+          <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
