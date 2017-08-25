@@ -10,7 +10,7 @@ class Study < ApplicationRecord
   end
 
   def last_documents
-    last_messages.map(&:documents).flatten
+    last_messages.map(&:documents)
   end
 
   def all_channels

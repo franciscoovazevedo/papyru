@@ -9,7 +9,7 @@ class StudiesController < ApplicationController
     @subject = @study.subject.name
     @messages = @study.last_messages.reverse
     @channels = @study.all_channels
-    @documents = @study.last_documents.flatten
+    @documents = @study.last_documents
   end
 
   def new

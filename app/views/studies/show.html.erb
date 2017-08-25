@@ -65,44 +65,43 @@
 
       <div class="col-sm-6">
 
-        <div class="well">
-          <h3>Exam</h3>
-          <hr/>
-          <% @documents.each do |document| %>
-            <% if document.filetype == "exam" %>
-              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
-              <h6>Description of the document</h6>
-              <a href="#" style="font-size: 12px;">Download</a>
-              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
-            <% end %>
-          <% end %>
-        </div>
 
-        <div class="well">
-          <h3>Exam</h3>
-          <hr/>
-          <% @documents.each do |document| %>
-            <% if document.filetype == "exam" %>
-              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
-              <h6>Description of the document</h6>
-              <a href="#" style="font-size: 12px;">Download</a>
-              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
-            <% end %>
-          <% end %>
-        </div>
 
-        <div class="well">
-          <h3>Exam</h3>
-          <hr/>
-          <% @documents.each do |document| %>
-            <% if document.filetype == "exam" %>
-              <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
-              <h6>Description of the document</h6>
-              <a href="#" style="font-size: 12px;">Download</a>
-              <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
-            <% end %>
+        <%  @documents.each do |doc|  %>
+          <% if doc.exam.any? %>
+            <div class="well">
+              <h3>Exams</h3>
+              <hr/>
+              <%= render doc.exam.limit(3) %>
+            </div>
           <% end %>
-        </div>
+
+
+        <% if doc.former_exam.any?  %>
+          <div class="well">
+            <h3>Former-exams</h3>
+            <hr/>
+            <%= render doc.former_exam.limit(3) %>
+          </div>
+        <% end %>
+
+        <% if doc.slide.any?  %>
+          <div class="well">
+            <h3>Slides</h3>
+            <hr/>
+            <%= render doc.slide.limit(3) %>
+          </div>
+        <% end %>
+
+        <% if doc.exercise.any?  %>
+          <div class="well">
+            <h3>Exercises</h3>
+            <hr/>
+            <%= render doc.exercise.limit(3) %>
+          </div>
+        <% end %>
+         <% end %>
+
 
       </div>
     </div>
