@@ -4,7 +4,9 @@
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
       <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);">Channels</h2>
-      <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@study), class: "btn btn-primary" %></p>
+      <% if current_user.teacher? %>
+        <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@study), class: "btn btn-primary" %></p>
+      <% end %>
       <ul class="nav nav-pills nav-stacked">
         <hr/>
         <% @channels.each do |channel| %>
