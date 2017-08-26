@@ -27,13 +27,18 @@
       else
         render :new
       end
+    else
+       redirect_to studies_path
     end
-    redirect_to studies_path
   end
 
   # def add_students_to_study
 
   # end
+
+  def add_students_to_study
+
+  end
 
   def edit
   end

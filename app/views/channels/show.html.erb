@@ -27,8 +27,11 @@
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
       <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);">Channels</h2>
-      <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@channel.study), class: "btn btn-primary" %></p>
+       <% if current_user.teacher? %>
+         <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@study), class: "btn btn-primary" %></p>
+       <% end %>
       <ul class="nav nav-pills nav-stacked">
+        <%= link_to "SuperChannel #{@channel.subject.name}", study_path(@channel.study) %>
         <hr/>
         <% @channel.study.channels.each do |channel| %>
           <% if channel.name == @channel.name %>
@@ -48,7 +51,9 @@
         <div class="container-fluid">
           <ul class="nav navbar-nav">
             <li><%= link_to "Go back to #{@channel.subject.name}", study_path(@channel.study) %></li>
-            <li><%= link_to "Edit channel", edit_channel_path(@channel) %></li>
+            <% if current_user.teacher? %>
+              <li><%= link_to "Edit channel", edit_channel_path(@channel) %></li>
+             <% end %>
           </ul>
         </div>
       </nav>
