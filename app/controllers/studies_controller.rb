@@ -1,6 +1,6 @@
-class StudiesController < ApplicationController
+  class StudiesController < ApplicationController
   before_action :find_study, only: [:show, :edit, :update, :destroy]
-
+  # before_action :find_subject, only: [:new, :create]
   def index
    @studies = Study.all
   end
@@ -14,9 +14,22 @@ class StudiesController < ApplicationController
   end
 
   def new
+    @study = current_user.studies.new
   end
 
   def create
+    @study = Study.new(study_params)
+    @study.subject = Subject.find(params[:study].first.second) #don't know why I was not being able do reach the subject_id....
+    current_user.teacher? ? @study.teacher = current_user : @study.student = current_user
+    if @study.save
+      redirect_to @study
+    else
+      render :new
+    end
+  end
+
+  def add_students_to_study
+
   end
 
   def edit
@@ -30,8 +43,12 @@ class StudiesController < ApplicationController
 
   private
 
+  def find_subject
+    @subject = Subject.find(params[:subject_id])
+  end
+
   def study_params
-    params.require(:study).permit(:student_id, :teacher_id, :subject_id)
+    params.require(:study).permit(:subject_id)
   end
 
   def find_study

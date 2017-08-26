@@ -1,0 +1,4 @@
+<%= simple_form_for @study do |f| %>
+  <%= f.input :subject_id, as: :select, collection: Subject.all %>
+  <%= f.submit %>
+<% end %>
