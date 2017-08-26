@@ -21,16 +21,19 @@
     @study = Study.new(study_params)
     @study.subject = Subject.find(params[:study].first.second) #don't know why I was not being able do reach the subject_id....
     current_user.teacher? ? @study.teacher = current_user : @study.student = current_user
-    if @study.save
-      redirect_to @study
-    else
-      render :new
+    if current_user.studies.where(subject_id: params[:study].first.second).empty?
+      if @study.save
+        redirect_to @study
+      else
+        render :new
+      end
     end
+    redirect_to studies_path
   end
 
-  def add_students_to_study
+  # def add_students_to_study
 
-  end
+  # end
 
   def edit
   end
