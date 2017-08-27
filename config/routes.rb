@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'notifications/show'
+
+  get 'notifications/index'
+
+  get 'notifications/destroy'
+
   resources :studies do
     resources :channels, only: [:new, :create]
   end
