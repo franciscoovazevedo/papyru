@@ -17,6 +17,7 @@ class ChannelsController < ApplicationController
   end
 
   def show
+    @study = @channel.study
     @subject = @channel.subject.name
     @messages = @channel.messages.order(:created_at).reverse.first(3)
     @documents = @channel.documents
