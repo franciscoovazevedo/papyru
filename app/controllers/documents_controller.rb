@@ -1,10 +1,8 @@
 class DocumentsController < ApplicationController
   def new
-    @document = Document.new
   end
 
   def create
-    @document = Document.new
 
   end
 
@@ -15,5 +13,11 @@ class DocumentsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def document_params
+    params.require(:document).permit(:filetype)
   end
 end
