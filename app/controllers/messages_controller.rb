@@ -13,6 +13,9 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if message_params[:documents_attributes].first.second[:name].present?
+      if message_params[:documents_attributes].first.second[:filetype] == "notification"
+
+      end
       if @message.save
           redirect_to @channel
       else
@@ -39,5 +42,9 @@ class MessagesController < ApplicationController
 
   def document_params
     message_params.require(:documents_attributes).permit(:name, :filetype)
+  end
+
+  def notification_params
+    params.require(:notification).permit(:addressee)
   end
 end
