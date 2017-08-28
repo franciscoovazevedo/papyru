@@ -1,6 +1,9 @@
 <h1>Notifications View - THE BACKEND GENIUS STRIKES AGAIN WITH THIS NEW AMAZING FUCKING FEATURE! FRONT END FUCKERS WORK ON THIS FUCKING PAGE</h1>
 
-<h2><% @notifications.each do |notification| %></h2>
-<h3><%= notification.message.content %></h3>
-<h4><%= notification.message.user.name %></h4>
+
+<h2><% @notifications.each_with_index do |notification, ind| %></h2>
+  <h1>Notification #<%= ind + 1 %></h1>
+  <h1><%= notification.message.channel.subject.name %> - <%= notification.message.channel.name %></h1>
+  <h3><%= notification.message.content %></h3>
+  <h4><%= notification.message.user.name %></h4>
 <% end  %>
