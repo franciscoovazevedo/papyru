@@ -2,6 +2,7 @@
   @include form-card;
   font-family: "Lato", sans-serif;
   margin-top: 4rem;
+  padding-bottom: 3rem;
 }
 
 .form-card-header {
@@ -153,7 +154,6 @@
       box-shadow: none;
       background: $green;
       color: $white;
-
     }
   }
 
@@ -162,11 +162,67 @@
   }
 
   .forgot-pwd {
+    color: $blue;
+    cursor: pointer;
     margin-top: 0.5rem;
     margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+
+  .forgot-pwd-form {
+    border-top: 1px solid $gray;
+    padding-top: 2rem;
+
+    .reset-btn {
+      background: $blue;
+      color: $white;
+      font-family: "Lato", sans-serif;
+      font-size: 1.8rem;
+      line-height: 1.2rem;
+      height: 5rem;
+      font-weight: 700;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      text-decoration: none;
+      cursor: pointer;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+      border: none;
+      border-radius: .25rem;
+      box-shadow: none;
+      position: relative;
+      display: block;
+      vertical-align: bottom;
+      text-align: center;
+      width: 100%;
+      white-space: nowrap;
+      margin: 1rem auto;
+      -webkit-appearance: none;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+      -moz-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+      -ms-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+      -o-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+      transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+
+      &:hover, &:link, &:focus, &:active {
+      box-shadow: none;
+      background: $blue;
+      color: $white;
+      }
+    }
   }
 
   .line-space {
     border-bottom: 1px solid $gray;
   }
+
+  .sign-up {
+    font-weight: bold;
+  }
+}
+
+form {
+  margin: 40px 0 20px 0;
 }
