@@ -11,6 +11,7 @@ gem 'pg'
 gem 'puma'
 gem 'rails', '5.0.5'
 gem 'redis'
+gem 'similar_text'
 
 gem 'autoprefixer-rails'
 gem 'bootstrap-sass'

@@ -30,7 +30,7 @@
       <h1 class="text-center"><%= @subject %></h1>
       <hr/>
 
-      <div class="col-sm-6">
+      <div class="col-sm-2">
 
         <div class="well">
           <h3>Messages</h3>
@@ -44,6 +44,19 @@
           <% end %>
         </div>
 
+      </div>
+
+      <div class="col-sm-4">
+        <div class="form-test">
+          <h5>form test</h5>
+          <hr/>
+          <form class="form-inline" role="form" action="channel/channel_id/search" method="get">
+            <div class="form-group">
+              <input type="text" class="form-control" name="Q&A" id="search" placeholder="Search for a awnser">
+            </div>
+            <button type="submit" class="btn btn-default" id="search-btn">Search</button>
+          </form>
+        </div>
       </div>
 
       <div class="col-sm-6">
