@@ -1,8 +1,8 @@
 .navbar-wagon {
   background: white;
   transition: all 0.3s ease;
-  height: 70px;
-  padding: 0px 30px;
+  height: 7rem;
+  padding: 0 5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,17 +10,18 @@
 }
 
 .navbar-wagon-brand img {
-  height: 40px;
+  height: 4rem;
   position: relative;
+  cursor: pointer;
 }
 
 .navbar-wagon-brand img:active {
-  top: 1px;
+  top: 0.2rem;
 }
 
 .navbar-wagon .avatar {
-  height: 35px;
-  width: 35px;
+  height: 4rem;
+  width: 4rem;
   border-radius: 50%;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07);
   filter: opacity(120%);
@@ -33,7 +34,7 @@
 }
 
 .navbar-wagon .avatar:active {
-  top: 1px;
+  top: 0.2rem;
 }
 
 .navbar-wagon-right {
@@ -44,9 +45,9 @@
 
 .navbar-wagon-link {
   cursor: pointer;
-  padding: 0px 18px;
+  padding: 0 2rem;
   color: #484848;
-  font-size: 13px;
+  font-size: 1.5rem;
 }
 
 .navbar-wagon-link:link, .navbar-wagon-link:visited, .navbar-wagon-link:hover, .navbar-wagon-link:active {
@@ -54,14 +55,19 @@
   color: #484848;
 }
 
+.navbar-wagon-mobile-link {
+  padding: 0 1rem;
+}
+
 .navbar-wagon-link span {
   position: relative;
+  transition: 100ms ease-out;
 }
 
 .navbar-wagon-link span:hover {
   color: #484848;
   text-decoration: none;
-  border-bottom: 2.5px solid $papyru-color-3;
+  border-bottom: 0.4rem solid $blue;
 }
 
 .navbar-wagon-link span:active {
@@ -69,29 +75,23 @@
 }
 
 #navbar-login {
-  color: $papyru-color-3;
+  color: $blue;
   position: relative;
+  border: 1px solid $blue;
+  border-radus: 4px;
+  line-height: 1;
+  margin-left: 1.8rem;
+  padding: 1rem 3rem;
+  transition: border 420ms, color 200ms;
+}
+
+#navbar-login:hover {
+  color: #1F5385;
+  border-color: #1F5385;
 }
 
 #navbar-login:active {
   top: 1px;
-}
-
-#navbar-signup {
-  color: $papyru-color-3;
-  background-color: transparent;
-  border: 2px solid $papyru-color-3;
-  border-radius: 4px;
-  transition: background .16s;
-  -webkit-transition: background .16s;
-  padding: 8px 20px;
-  margin-left: 12px;
-}
-
-#navbar-signup:hover {
-  background-color: $papyru-color-3;
-  color: #FFF;
-  border: 2px solid $papyru-color-3;
 }
 
 .navbar-wagon-dropdown-menu {
@@ -105,7 +105,7 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: 0.3s;
   color: #767676 !important;
-  font-size: 14px !important;
+  font-size: 1.4rem !important;
   line-height: 22px !important;
   padding: 15px 100px 15px 0;
   border-bottom: 1px solid #F2F2F2;

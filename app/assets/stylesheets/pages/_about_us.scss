@@ -1,0 +1,52 @@
+.container-about-us{
+  margin-top: 25px;
+
+}
+
+.thumbnail-style {
+  background-color: #dfdfdf;
+  display: block;
+  padding: 4px;
+  margin-bottom: 20px;
+  line-height: 1.428571429;
+  height: 650px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: border 0.2s ease-in-out;
+  transition: border 0.2s ease-in-out;
+  position: relative;
+
+}
+.thumbnail-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 15%;
+  position: absolute;
+  width: 100%;
+  bottom: -15px;
+
+}
+.thumbnail-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.thumbnail-links a:hover {
+  opacity: 1;
+}
+.thumbnail .fa-heart {
+  color: #D23333;
+}
+
+.image-profile {
+  margin-top: 10px;
+  height: 35%;
+  border-radius: 50%;
+}
+
+.caption-style {
+  height: 50%;
+}

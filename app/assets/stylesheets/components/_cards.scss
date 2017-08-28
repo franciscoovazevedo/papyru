@@ -1,79 +1,79 @@
-.card {
-  height: 175px;
-  width: 200px;
-  background-color: #003366;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
-  background-size: cover !important;
-  background-position: center;
-  color: white;
-  position: relative;
-  border-radius: 5%;
-}
-.card-img {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-}
-
-.card-add-sign {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-.card-category {
-  position: absolute;
-  top: 15px;
-  left: 10px;
-  font-size: 20px;
-  text-transform: uppercase;
-}
-// .card-description {
+// .card {
+//   height: 175px;
+//   width: 200px;
+//   background-color: #003366;
+//   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+//   background-size: cover !important;
+//   background-position: center;
+//   color: white;
+//   position: relative;
+//   border-radius: 5%;
+// }
+// .card-img {
 //   position: absolute;
-//   bottom: 10px;
+//   right: 10px;
+//   top: 10px;
+//   width: 40px;
+//   height: 40px;
+//   border-radius: 50%;
+// }
+
+// .card-add-sign {
+//   width: 80px;
+//   height: 80px;
+//   border-radius: 50%;
+// }
+
+// .card-category {
+//   position: absolute;
+//   top: 15px;
 //   left: 10px;
+//   font-size: 20px;
+//   text-transform: uppercase;
 // }
-// .card-description h2 {
-//   font-size: 24px;
+// // .card-description {
+// //   position: absolute;
+// //   bottom: 10px;
+// //   left: 10px;
+// // }
+// // .card-description h2 {
+// //   font-size: 24px;
+// // }
+// // .card-description p {
+// //   font-size: 14px;
+// //   opacity: 0.7;
+// //   font-weight: lighter;
+// // }
+// .card-link {
+//   position: absolute;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   width: 100%;
+//   z-index: 2;
+//   background: black;
+//   opacity: 0;
 // }
-// .card-description p {
+// .card-link:hover {
+//   opacity: 0.1;
+// }
+
+
+
+
+
+// /* Basic navbar item */
+// .test1 {
+//   cursor: pointer;
+//   padding: 0 20px;
+// }
+
+// /* Navbar link */
+// .teste2 {
+//   color: #616668;
 //   font-size: 14px;
-//   opacity: 0.7;
-//   font-weight: lighter;
 // }
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
-.card-link:hover {
-  opacity: 0.1;
-}
-
-
-
-
-
-/* Basic navbar item */
-.test1 {
-  cursor: pointer;
-  padding: 0 20px;
-}
-
-/* Navbar link */
-.teste2 {
-  color: #616668;
-  font-size: 14px;
-}
-.teste2:hover {
-  color: #da552f;
-  text-decoration: none;
-}
+// .teste2:hover {
+//   color: #da552f;
+//   text-decoration: none;
+// }
