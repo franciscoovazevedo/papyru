@@ -36,3 +36,50 @@ ul li {
   position: fixed;
   width: 100%;
 }
+
+.form-test {
+  border: 0.1px solid gray;
+  background-color: lightgray;
+}
+
+form {
+  margin: 40px 0;
+}
+
+#search {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  display: inline;
+  font-size: 18px;
+  border-bottom: 1.5px solid #FFF;
+  padding-right: 20px;
+  transition: .16s;
+  margin-right: 20px;
+}
+
+#search:hover {
+  border-bottom: 1.5px solid #17AA1C;
+}
+
+#search:focus, #search:active {
+  border: none;
+  border-bottom: 1.5px solid #17AA1C;
+  border-radius: 0;
+  box-shadow: none;
+  outline: 0;
+  color: #FFF;
+}
+
+#search-btn {
+  margin-top: 4px;
+  color: #FFF;
+  background-color: #17AA1C;
+  border: 2px solid #17AA1C;
+  border-radius: 4px;
+  transition: background .16s;
+  -webkit-transition: background .16s;
+  padding: 6px 24px;
+  margin-left: 12px;
+}
