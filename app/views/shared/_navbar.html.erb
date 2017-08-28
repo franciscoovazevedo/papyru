@@ -11,7 +11,7 @@
     <% if user_signed_in? %>
 
       <!-- Logged in, links -->
-      <%= link_to '#', :class => 'navbar-wagon-link' do %>
+      <%= link_to notifications_path, :class => 'navbar-wagon-link' do %>
         <span>Notifications</span>
       <% end %>
       <%= link_to studies_path, :class => 'navbar-wagon-link' do %>
