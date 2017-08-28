@@ -5,6 +5,8 @@
 }
 
 .form-card-header {
+  border-bottom: 1px solid $gray;
+
   h1 {
     font-size: 3.4rem;
     line-height: 2.5rem;
@@ -153,6 +155,10 @@
       color: $white;
 
     }
+  }
+
+  .user-type, .mayor-subject {
+    margin-bottom: 2rem;
   }
 
   .forgot-pwd {

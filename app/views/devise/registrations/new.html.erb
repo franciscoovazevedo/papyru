@@ -4,76 +4,71 @@
       <div class="row form-card">
         <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
 
-          <form>
+          <div class="row form-card-header text-center">
+            <h1>Sign up to Papyru</h1>
+            <p><span>Subscribe now</span> and change your way of studying.</p>
+          </div>
 
-            <div class="form-card-header text-center">
-              <h1>Sign up to Papyru</h1>
-              <div class="row" style="padding: -1rem 0;">
-                <p><span>Subscribe now</span> and change your way of studying.</p>
+          <div class="form-card-content">
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+              <%= f.error_notification %>
+
+              <div class="input">
+                <%= f.input :name, required: true, label: false, autofocus: true, input_html: { type: "name", placeholder: "Full Name" } %>
+                <span style="left: 1.2rem;"><i class="fa fa-user-o"></i></span>
               </div>
-            </div>
 
-            <div class="form-card-content">
-              <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <div class="input">
+                <%= f.input :email, required: true, label: false, input_html: { type: "email", placeholder: "Email" } %>
+                <span><i class="fa fa-envelope-o"></i></span>
+              </div>
 
-                <%= f.error_notification %>
+              <div class="input">
+                <%= f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { type: "password", placeholder: "Password" } %>
+                <span style="font-size: 2.2rem; left: 1.4rem;"><i class="fa fa-unlock-alt"></i></span>
+              </div>
 
-                <div class="input">
-                  <%= f.input :name, required: true, label: false, autofocus: true, input_html: { type: "name", placeholder: "Full Name" } %>
-                  <span style="left: 1.2rem;"><i class="fa fa-user-o"></i></span>
-                </div>
+              <div class="input">
+                <%= f.input :password_confirmation, required: true, label: false, input_html: { type: "password", placeholder: "Confirm Your Password" } %>
+                <span style="font-size: 2.2rem; left: 1.4rem;"><i class="fa fa-lock"></i></span>
+              </div>
 
-                <div class="input">
-                  <%= f.input :email, required: true, label: false, input_html: { type: "email", placeholder: "Email" } %>
-                  <span><i class="fa fa-envelope-o"></i></span>
-                </div>
+              <div class="input">
+                <%= f.input :phone_number, required: true, label: false, input_html: { type: "phone_number", placeholder: "Phone number" } %>
+                <span style="left: 1.5rem; font-size: 2.1rem; top: 1.1rem;"><i class="fa fa-phone"></i></span>
+              </div>
 
-                <div class="input">
-                  <%= f.input :password, required: true, label: false, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length), input_html: { type: "password", placeholder: "Password" } %>
-                  <span style="font-size: 2.2rem; left: 1.4rem;"><i class="fa fa-unlock-alt"></i></span>
-                </div>
+              <div class="input">
+                <%= f.input :school_number, required: false, label: false, id: "school-number", input_html: { type: "number", placeholder: "School Identification Number" } %>
+                <span><i class="fa fa-graduation-cap"></i></span>
+              </div>
 
-                <div class="input">
-                  <%= f.input :password_confirmation, required: true, label: false, input_html: { type: "password", placeholder: "Confirm Your Password" } %>
-                  <span style="font-size: 2.2rem; left: 1.4rem;"><i class="fa fa-lock"></i></span>
-                </div>
+              <div class="input user-type">
+                <p class="text-center" style="font-size: 1.6rem;">I am a</p>
+                <%= f.input :type, as: :select, collection: ["Teacher", "Student"], default: "Teacher", label: false, input_html: { onchange: "sign_up_logic()" } %>
+              </div>
 
-                <div class="input">
-                  <%= f.input :address, required: true, label: false, input_html: { type: "address", placeholder: "Complete Address" } %>
-                  <span><i class="fa fa-user-o"></i></span>
-                </div>
+              <div class="input hidden mayor-subject" id="mayor-input">
+                <p class="text-center" style="font-size: 1.6rem;">I am studying</p>
+                <%= f.input :mayor_id, as: :select, collection: Mayor.all, label: false, default: "" %>
+              </div>
 
-                <div class="remember">
-                  <%= f.input :remember_me, class: "remember-me", as: :boolean if devise_mapping.rememberable? %>
-                </div>
+              <div class="form-actions">
+                <%= f.button :submit, "Sign up →", class: "btn submit-btn" %>
+              </div>
 
-                <div class="form-actions">
-                  <%= f.button :submit, "Continue →", class: "btn submit-btn" %>
-                </div>
+              <br/>
 
-                <div class="forgot">
-                  <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-                    <%= link_to "Forgot password?", new_password_path(resource_name), class: "pull-right forgot-pwd" %>
-                  <% end -%>
-                </div>
+              <div class="sign-up-form">
+                <p style="display: inline;">Already have an account?</p>
+                <%- if controller_name != 'sessions' %>
+                  <%= link_to "Log in", new_session_path(resource_name) %><br />
+                <% end -%>
+              </div>
 
-                <div class="row line-space">
-                </div>
-
-                <br/>
-
-                <div class="sign-up-form">
-                  <p style="display: inline;">Don't have an account?</p>
-                  <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-                    <%= link_to "Sign up", new_registration_path(resource_name), class: 'sign-up' %>
-                  <% end -%>
-
-                </div>
-
-              <% end %>
-            </div>
-
-          </form>
+            <% end %>
+          </div>
 
         </div>
       </div>
