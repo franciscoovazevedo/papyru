@@ -1,7 +1,8 @@
 function sign_up_logic(){
-  if ($("#user_type").val() === "Student"){
+  if ($("#user_type").val() === "Student") {
     $("#mayor-input").removeClass("hidden");
-  }else{
+  }
+  else {
     $("#mayor-input").addClass("hidden");
   }
 };
