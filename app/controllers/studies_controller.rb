@@ -1,6 +1,6 @@
   class StudiesController < ApplicationController
   before_action :find_study, only: [:show, :edit, :update, :destroy]
-  # before_action :find_subject, only: [:new, :create]
+  before_action :find_subject, only: [:add_students_to_study]
   def index
    @studies = Study.all
   end
@@ -37,7 +37,28 @@
   # end
 
   def add_students_to_study
+    file = params[:file]
+    workbook = RubyXL::Parser.parse(file.path)
+    worksheet = workbook[0]
+    first_row = worksheet[0]
 
+    # iterate over each row
+    worksheet.each_with_index do |row, row_index|
+
+      # iterate over each cell
+      row && row.cells.each_with_index do |cell, cell_index|
+
+          # save cell value to variable
+        val = cell && cell.value
+        byebug
+        student = Student.where(email: val)
+        unless student.empty?
+          Study.create(subject: @subject, student: student.first)
+        end
+      end
+    end
+
+      redirect_to studies_path, notice: 'Students successful uploaded'
   end
 
   def edit
@@ -56,7 +77,7 @@
   end
 
   def study_params
-    params.require(:study).permit(:subject_id)
+    params.require(:study).permit(:subject_id, :csv_file, :csv_file_path)
   end
 
   def find_study

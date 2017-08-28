@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  post 'studies/upload_students', to: "studies#add_students_to_study"
   resources :notifications, only: [:index]
   resources :studies do
     resources :channels, only: [:new, :create]
