@@ -1,0 +1,152 @@
+.page-body {
+  background: #F5F5F5;
+  height: calc(85vh - 82px);
+}
+
+.form-container {
+  width: 420px;
+  margin: 12px auto;
+  background: #FFF;
+  border: 1px solid #E6E6E6;
+}
+
+.simple-form {
+  width: 350px;
+  margin: 0 auto;
+}
+
+.social-btn {
+  text-align: center;
+  width: 40%;
+}
+
+.line-container {
+  overflow: hidden;
+  text-align: center;
+  top: 10px;
+}
+
+.line-content {
+  position: relative;
+  padding: 16px;
+}
+
+.line-content::before {
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid #E4E4E4;
+  top: 50%;
+  right: 100%;
+  width: 5000px;
+}
+
+.line-text {
+  color: #464646;
+  margin: 0;
+  word-wrap: break-word;
+  line-height: 18px;
+  letter-spacing: 0.2px;
+  padding: 0;
+  display: inline;
+}
+
+.line-content::after {
+    content: '';
+    position: absolute;
+    border-bottom: 1px solid #E4E4E4;
+    top: 50%;
+    left: 100%;
+    width: 5000px;
+}
+
+.input {
+  position: relative;
+  width: 350px;
+  margin: 20px auto;
+
+  span {
+    position: absolute;
+    display: block;
+    color: #B2B2B2;
+    left: 10px;
+    top: 5px;
+    font-size: 20px;
+  }
+
+  #lock {
+    left: 15px;
+    top: 6px;
+  }
+
+  input {
+    width: 100%;
+    padding: 18px 5px 18px 40px;
+    display: block;
+    border: 1px solid #B2B2B2;
+    border-radius: 4px;
+    transition: 0.2s ease-out;
+    color: #454545;
+    box-shadow: none;
+
+    &:focus {
+      padding: 18px 5px 18px 10px;
+      outline: 0;
+      border-color: #17AA1C;
+      box-shadow: none;
+    }
+  }
+}
+
+.remember {
+  padding-bottom: 4px;
+
+  .remember-me {
+    color: #464646;
+  }
+}
+
+.submit {
+  width: 350px;
+  height: 40px;
+  display: block;
+  margin: 0 auto;
+  background: #17AA1C;
+  color: #FFF;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  border: none;
+
+  &:hover, &:focus {
+    background: #17AA1C;
+    color: #FFF;
+    outline: 0;
+  }
+}
+
+.forgot {
+  width: 350px;
+  margin: 0 auto;
+  border-bottom: 1px solid #E4E4E4;
+
+  .forgot-pwd {
+    padding: 18px 0;
+    color: #17AA1C;
+
+    &:hover, &:focus {
+      color: #17AA1C;
+    }
+  }
+}
+
+.sign-up-form {
+  padding-top: 18px;
+
+  .sign-up {
+    color: #17AA1C;
+
+    &:hover, &:focus {
+      color: #17AA1C;
+    }
+  }
+}

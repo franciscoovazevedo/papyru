@@ -1,20 +1,47 @@
-<div class="wrapper">
+<div class="page-body">
   <div class="container">
-    <h1>Welcome</h1>
-    <div class="form">
-      <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-        <div class="form-inputs">
-          <div class="input">
-            <%= f.input :email, required: false, label: false, input_html: { type: "email", placeholder: "Email" } %>
-          </div>
-          <div class="input">
-            <%= f.input :password, required: false, label: false, input_html: { type: 'password', placeholder: 'Password' } %>
-          </div>
-        </div>
-        <div class="form-actions">
-          <%= f.button :submit, "Log In", class: "submit", id: "login-button" %>
-        </div>
-      <% end %>
-      <%= render "devise/shared/links" %>
+    <div class="form-container row">
+      <div class="simple-form col-xs-12 col-sm-10 col-md-8">
+        <form>
+          <h1>Sign in to Papyru</h1>
+
+            <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+              <div class="input">
+                <%= f.input :email, required: true, label: false, input_html: { type: "email", placeholder: "Email" } %>
+                <span><i class="fa fa-envelope-o"></i></span>
+              </div>
+
+              <div class="input">
+                <%= f.input :password, required: true, label: false, input_html: { type: "password", placeholder: "Password" } %>
+                <span><i class="fa fa-lock"></i></span>
+              </div>
+
+              <div class="remember">
+                <%= f.input :remember_me, class: "remember-me", as: :boolean if devise_mapping.rememberable? %>
+              </div>
+
+              <div class="form-actions">
+                <%= f.button :submit, "Log In", class: "submit" %>
+              </div>
+
+              <div class="forgot row">
+                <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+                <%= link_to "Forgot password?", new_password_path(resource_name), class: "pull-right forgot-pwd" %>
+                <% end -%>
+              </div>
+
+              <div class="sign-up-form">
+                <p style="display: inline;">Don't have an account? </p>
+                <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+                  <%= link_to "Sign up", new_registration_path(resource_name), class: 'sign-up' %>
+                <% end -%>
+
+              </div>
+
+            <% end %>
+        </form>
+      </div>
     </div>
   </div>
+</div>
