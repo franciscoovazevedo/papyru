@@ -2,6 +2,8 @@
   <%= f.simple_fields_for :documents do |d| %>
     <%= d.input :name %>
     <%= d.input :filetype, as: :select, collection: %w( exercise former-exam exam slide notification ) %>
+    <%= d.input :file, as: :file %>
+    <%= d.input :file_cache, as: :hidden %>
     <%= d.submit %>
   <% end %>
 <% end %>

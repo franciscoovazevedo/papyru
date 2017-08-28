@@ -13,6 +13,7 @@ class MessagesController < ApplicationController
     @message.user = current_user
 
     if message_params[:documents_attributes].first.second[:name].present?
+      byebug
       if message_params[:documents_attributes].first.second[:filetype] == "notification"
 
       end
@@ -37,11 +38,11 @@ class MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:message).permit(:content, :identity, :documents_attributes => [:name, :filetype])
+    params.require(:message).permit(:content, :identity, :documents_attributes => [:name, :filetype, :file, :file_cache])
   end
 
   def document_params
-    message_params.require(:documents_attributes).permit(:name, :filetype)
+    message_params.require(:documents_attributes).permit(:name, :filetype, :file, :file_cache)
   end
 
   def notification_params
