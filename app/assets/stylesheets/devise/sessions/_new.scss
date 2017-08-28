@@ -1,6 +1,7 @@
 .form-card {
   @include form-card;
   font-family: "Lato", sans-serif;
+  margin-top: 4rem;
 }
 
 .form-card-header {
@@ -109,12 +110,13 @@
       font-size: 2rem;
       left: 1rem;
       top: 1rem;
+      overflow: hidden;
     }
   }
 
   .submit-btn {
     background: $green;
-    color: #FFF;
+    color: $white;
     font-family: "Lato", sans-serif;
     font-size: 1.8rem;
     line-height: 1.2rem;
@@ -144,38 +146,21 @@
     -ms-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
     -o-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
     transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+
+    &:hover, &:link, &:focus, &:active {
+      box-shadow: none;
+      background: $green;
+      color: $white;
+
+    }
   }
-
-}
-
-
-
-/*
-
-.forgot {
-  width: 350px;
-  margin: 0 auto;
-  border-bottom: 1px solid #E4E4E4;
 
   .forgot-pwd {
-    padding: 18px 0;
-    color: #17AA1C;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+  }
 
-    &:hover, &:focus {
-      color: #17AA1C;
-    }
+  .line-space {
+    border-bottom: 1px solid $gray;
   }
 }
-
-.sign-up-form {
-  padding-top: 18px;
-
-  .sign-up {
-    color: #17AA1C;
-
-    &:hover, &:focus {
-      color: #17AA1C;
-    }
-  }
-}
-*/
