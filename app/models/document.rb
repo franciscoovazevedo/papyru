@@ -1,4 +1,6 @@
 class Document < ApplicationRecord
+  mount_uploader :file, FileUploader
+
   belongs_to :message
   validates :name, presence: true
   validates_inclusion_of :filetype, :in => %w( exercise former-exam exam slide notification )
