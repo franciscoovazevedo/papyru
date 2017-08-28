@@ -165,6 +165,10 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 4.0)
       netrc (~> 0.8)
+    rubyXL (3.3.26)
+      nokogiri (>= 1.4.4)
+      rubyzip (>= 1.1.6)
+    rubyzip (1.2.1)
     sass (3.5.1)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -238,6 +242,7 @@ DEPENDENCIES
   puma
   rails (= 5.0.5)
   redis
+  rubyXL
   sass-rails
   similar_text
   simple_form

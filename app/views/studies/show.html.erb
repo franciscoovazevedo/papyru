@@ -18,14 +18,15 @@
     <br>
 
     <div class="col-sm-9" id="show-content">
-
-      <nav class="subject-options">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Edit subject", edit_study_path %></li>
-          </ul>
-        </div>
-      </nav>
+      <% if current_user.teacher? %>
+        <nav class="subject-options">
+          <div class="container-fluid">
+            <ul class="nav navbar-nav">
+              <li> <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">Add Students</button></li>
+            </ul>
+          </div>
+        </nav>
+      <% end %>
 
       <h1 class="text-center"><%= @subject %></h1>
       <hr/>
@@ -103,3 +104,5 @@
     </div>
   </div>
 </div>
+
+<%= render 'shared/add_students_modal' %>
