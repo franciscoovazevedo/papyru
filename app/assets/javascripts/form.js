@@ -5,5 +5,3 @@ $( ".input" ).focusin(function() {
 $( ".input" ).focusout(function() {
   $( this ).find( "span" ).animate({"opacity":"1"}, 300);
 });
-
-
