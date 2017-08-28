@@ -46,10 +46,10 @@
     <% else %>
 
       <!-- Logged out, links -->
-      <%= link_to '#', :class => 'navbar-wagon-link' do %>
+      <%= link_to why_papyru_path :class => 'navbar-wagon-link' do %>
         <span>Why Papyru?</span>
       <% end %>
-      <%= link_to '#', :class => 'navbar-wagon-link' do %>
+      <%= link_to about_us_path, :class => 'navbar-wagon-link' do %>
         <span>About Us</span>
       <% end %>
       <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-wagon-link", id: "navbar-login" %>
