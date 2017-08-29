@@ -34,13 +34,14 @@
                 <p class="pull-right forgot-pwd" id="forgot-pwd">Forgot Password?</p>
               </div>
 
+              <!--
               <br/>
 
               <div class="row input hidden forgot-pwd-form" id="forgot-pwd-form">
                 <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |p| %>
                   <p class="text-center" style="font-size: 1.6rem;">Enter your email and we'll send you a recovery link:</p>
                   <div class="input">
-                    <%= p.input :email, required: true, label: false, autofocus: false, input_html: { type: "email", placeholder: "Email" } %>
+                    <%= p.input :email, required: false, label: false, autofocus: false, input_html: { type: "email", placeholder: "Email" } %>
                     <span style="left: 1.4rem;"><i class="fa fa-question-circle-o"></i></span>
                   </div>
                   <div class="form-actions">
@@ -48,6 +49,7 @@
                   </div>
                 <% end %>
               </div>
+              -->
 
               <div class="row line-space">
               </div>
