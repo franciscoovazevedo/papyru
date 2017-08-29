@@ -12,9 +12,9 @@
           <%= render "shared/card_subjects", study: study %>
         </div>
       </div>
-      <% end %>
+    <% end %>
 
-      <% if current_user.teacher? %>
+    <% if current_user.teacher? %>
       <div class="col-xs-6 col-sm-4 col-md-3">
         <div class="subject-card">
           <div class="text-center">
@@ -23,8 +23,8 @@
           <%= link_to '', new_study_path, class: 'subject-card-link' %>
         </div>
       </div>
-      <% end %>
+    <% end %>
 
-    </div>
   </div>
+</div>
 </div>
