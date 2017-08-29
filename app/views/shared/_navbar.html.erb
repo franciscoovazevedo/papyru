@@ -17,7 +17,7 @@
       <!-- #Notifications -->
       <div class="dropdown">
         <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
-          <span><span class="badge"><%= @notifications %></span><i class="fa fa-bell-o" aria-hidden="true"></i></span>
+          <span>Notifications<span class="badge"><%= @notifications %></span></span>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-papyru-dropdown-menu">
           <li>
@@ -45,10 +45,10 @@
 
       <!-- #Subjects -->
       <div class="dropdown">
-        <%= content_tag :div, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
-          <span style="margin-right: 1rem;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Subjects</span>
+        <%= content_tag :div, :class => 'dropdown-btn btn', id: "navbar-subjects", "data-toggle" => "dropdown" do %>
+          Your Subjects
         <% end %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" style="margin-top: 24px; margin-right: 28px;">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" style="margin-top: 15px; margin-right: 22px;">
           <% if current_user.teacher? %>
             <li>
               <%= link_to "Add a New Subject +", new_study_path, class: "nav-new-subject" %>
@@ -101,7 +101,7 @@
       <%= link_to about_us_path, :class => 'navbar-wagon-link' do %>
         <span>About Us</span>
       <% end %>
-      <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-wagon-link btn", id: "navbar-login" %>
+      <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "dropdown-btn btn" %>
     <% end %>
   </div>
 
