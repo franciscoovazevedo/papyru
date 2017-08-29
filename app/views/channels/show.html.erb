@@ -78,42 +78,7 @@
 
       </div>
        <div class="col-sm-6">
-
-
-
-        <% if @documents.exam.any?  %>
-          <div class="well">
-            <h3>Exams</h3>
-            <hr/>
-            <%= render @documents.exam.limit(3) %>
-          </div>
-        <% end %>
-
-        <% if @documents.former_exam.any?  %>
-          <div class="well">
-            <h3>Former-exams</h3>
-            <hr/>
-            <%= render @documents.former_exam.limit(3) %>
-          </div>
-        <% end %>
-
-        <% if @documents.slide.any?  %>
-          <div class="well">
-            <h3>Slides</h3>
-            <hr/>
-            <%= render @documents.former_exam.limit(3) %>
-          </div>
-        <% end %>
-
-        <% if @documents.exercise.any?  %>
-          <div class="well">
-            <h3>Exercises</h3>
-            <hr/>
-            <%= render @documents.exercise.limit(3) %>
-          </div>
-        <% end %>
-
-
+        <%= render 'shared/documents_channel_show' %>
       </div>
     </div>
   </div>
