@@ -101,9 +101,7 @@
           <div class="well">
             <h3>Slides</h3>
             <hr/>
-            <% @documents.slide.limit(3).each do |document| %>
-            <%= link_to document.name, cl_image_path(document.file) %>
-            <% end %>
+            <%= render @documents.former_exam.limit(3) %>
           </div>
         <% end %>
 
