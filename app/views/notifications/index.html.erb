@@ -3,14 +3,14 @@
     <div class="col-xs-12">
 
       <div class="card-notification">
-        <h2><% @notifications.each_with_index do |notification, ind| %></h2>
+        <h2><% @notifications_unread.each_with_index do |notification, ind| %></h2>
         <h1 class="notification-index">Notification #<%= ind + 1 %></h1>
         <div class="card w-75">
           <div class="card-body">
             <h4 class="card-title"><%= notification.message.channel.subject.name %> - <%= notification.message.channel.name %></h4>
             <p class="card-text"><%= notification.message.content %></p>
             <h4><%= notification.message.user.name %></h4>
-            <a href="#" class="btn btn-primary">Button</a>
+            <%= link_to "Read", change_status_notification_path(notification), class: "btn btn-primary", method: :patch%>
           </div>
         </div>
 
