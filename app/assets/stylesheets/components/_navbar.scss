@@ -103,7 +103,7 @@
 }
 
 .navbar-wagon-dropdown-menu {
-  margin-top: 15px;
+  margin-top: 14px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
   padding: 0 20px;
@@ -138,12 +138,7 @@
   border-top: 1px solid #E6E6E6;
 }
 
-#navbar-login-mobile {
+#color-dropdown-link {
   color: $blue;
   border-bottom: 1px solid $blue;
-}
-
-#navbar-login-mobile:hover {
-  color: $blue-dark;
-  border-bottom: 1px solid $blue-dark;
 }
