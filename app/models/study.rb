@@ -4,6 +4,9 @@ class Study < ApplicationRecord
   belongs_to :teacher, optional: true
   belongs_to :student, optional: true
   has_many :channels
+  has_many :messages, through: :channels
+  has_many :documents, through: :messages
+
   validate :checkTeacherStudent
 
   def last_messages
