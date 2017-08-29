@@ -1,11 +1,15 @@
-s<%= render 'shared/sidebar' %>
+<%= render 'shared/sidebar' %>
 
 <div class="container-fluid">
   <div class="row content">
     <div class="col-sm-3 sidenav hidden-xs">
       <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);">Channels</h2>
       <% if current_user.teacher? %>
-        <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@study), class: "btn btn-primary" %></p>
+        <p style="color: #464646; font-size: 12px;">
+        <% if current_user.teacher? %>
+          <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">New Channel</button>
+        <% end %>
+          </p>
       <% end %>
       <ul class="nav nav-pills nav-stacked">
         <hr/>
@@ -55,5 +59,5 @@ s<%= render 'shared/sidebar' %>
     </div>
   </div>
 </div>
-
+<%= render 'shared/modal_new_channel' %>
 <%= render 'shared/add_students_modal' %>

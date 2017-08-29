@@ -11,11 +11,10 @@
     <div class="collapse navbar-collapse" id="channel-bar">
       <ul class="nav navbar-nav">
         <% @channels.each do |channel| %>
+
           <li><%= link_to channel.name, channel_path(channel) %></li>
         <% end %>
-        <% if current_user.teacher? %>
-          <li><%= link_to "New channel", new_study_channel_path(@study), class: "btn btn-primary" %></li>
-        <% end %>
+
       </ul>
     </div>
   </div>
