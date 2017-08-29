@@ -15,6 +15,7 @@
 
       <!-- #Notifications -->
       <div class="dropdown">
+<<<<<<< HEAD
 
         <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', id: "navbar-papyru-menu", "data-toggle" => "dropdown" do %>
         <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
@@ -31,6 +32,9 @@
           <span><span class="badge"><%= @notifications %></span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
 
         <% end %>
+=======
+        <span class="navbar-wagon-link dropdown-toggle" data-toggle="dropdown"><span class="badge"><%= @notifications %></span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
+>>>>>>> 06b0b95b1b6c14c48ce7a0034cdc058a88301c4d
         <ul class="dropdown-menu dropdown-menu-right navbar-papyru-dropdown-menu">
           <li>
             <%= link_to edit_user_registration_path do %>
