@@ -12,8 +12,21 @@
 
       <!-- #Links -->
       <div class="dropdown">
+
+        <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', id: "navbar-papyru-menu", "data-toggle" => "dropdown" do %>
+        <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
+
         <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
+<<<<<<< HEAD
+          <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
+
+
+        <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
+          <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
+
+=======
           <span><span class="badge"><%= @notifications %></span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
+>>>>>>> 05481777b628c8bbfd464e20f7f44f75459fd92e
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-papyru-dropdown-menu">
           <li>
@@ -44,9 +57,20 @@
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" style="margin-top: 24px; margin-right: 28px;">
           <% if current_user.teacher? %>
+
+
           <li>
             <%= link_to "Add a New Subject +", new_study_path, class: "nav-new-subject" %>
           </li>
+
+            <li>
+              <%= link_to "Add a New Subject +", new_study_path, class: "nav-new-subject", id: "color-dropdown-link" %>
+            </li>
+
+          <li>
+            <%= link_to "Add a New Subject +", new_study_path, class: "nav-new-subject" %>
+          </li>
+
           <% end %>
           <% current_user.studies.each do |study| %>
           <li>
