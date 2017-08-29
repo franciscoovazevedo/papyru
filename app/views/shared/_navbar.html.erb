@@ -1,7 +1,10 @@
 <div class="navbar-wagon <%= 'fix-navbar' if @fix_navbar %> ">
   <!-- Logo -->
-  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= link_to root_path, class: "navbar-wagon-brand hidden-xs" do %>
    <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1504028424/logo-text2_kayrkv.png", :alt => "Papyru") %>
+  <% end %>
+  <%= link_to root_path, class: "navbar-wagon-brand hidden-sm hidden-md hidden-lg" do %>
+   <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1503502488/logo-web.png", :alt => "Papyru") %>
   <% end %>
 
   <!-- ###Desktop view -->
@@ -10,7 +13,7 @@
     <!-- ##Logged in -->
     <% if user_signed_in? %>
 
-      <!-- #Links -->
+      <!-- #Notifications -->
       <div class="dropdown">
         <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
           <span><span class="badge"><%= @notifications %></span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
@@ -38,6 +41,8 @@
           </li>
         </ul>
       </div>
+
+      <!-- #Subjects -->
       <div class="dropdown">
         <%= content_tag :div, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
         <span style="margin-right: 1rem;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Subjects</span>
