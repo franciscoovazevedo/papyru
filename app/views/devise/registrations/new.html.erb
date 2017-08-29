@@ -60,10 +60,15 @@
 
               <br/>
 
+              <div class="row line-space">
+              </div>
+
+              <br/>
+
               <div class="sign-up-form">
                 <p style="display: inline;">Already have an account?</p>
                 <%- if controller_name != 'sessions' %>
-                  <%= link_to "Log in", new_session_path(resource_name) %><br />
+                  <%= link_to "Log in", new_session_path(resource_name), class: "sign-up" %><br />
                 <% end -%>
               </div>
 
