@@ -1,7 +1,13 @@
 class NotificationsController < ApplicationController
 
   def index
-    @notifications = current_user.notifications
+    @notifications_unread = current_user.notifications.unread
+    # @notifications_read
+  end
+
+  def change_status
+    Notification.find(params[:id]).change_status!
+    redirect_to notifications_path
   end
 
   def destroy

@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
 
-  post 'studies/upload_students', to: "studies#add_students_to_study"
-  resources :notifications, only: [:index]
+  post 'studies/upload_students', to: "studies#add_students_to_study" #member this TODO
+  resources :notifications, only: [:index]  do
+    member do
+      patch 'change_status'
+  end
+  end
   resources :studies do
     resources :channels, only: [:new, :create]
   end
