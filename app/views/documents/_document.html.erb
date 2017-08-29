@@ -1,2 +1,2 @@
- <h4><a href="#"><%= document.name %></a> <%= image_tag("http://www.dilekceornegi.org/wp-content/uploads/2015/01/pdf-logo.png", size: "32") %></h4>
+<%= document.file.file ? link_to(document.name, cl_image_path(document.file)) : document.name %>
  <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
