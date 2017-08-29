@@ -14,7 +14,7 @@
       <!-- #Links -->
       <div class="dropdown">
         <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
-          <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
+          <span><span class="badge"><%= @notifications %></span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-papyru-dropdown-menu">
           <li>

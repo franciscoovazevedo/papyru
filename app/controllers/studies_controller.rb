@@ -14,7 +14,7 @@
   end
 
   def new
-    @study = current_user.studies.new
+    @study = Study.new
   end
 
   def create
