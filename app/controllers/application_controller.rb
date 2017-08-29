@@ -1,7 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authenticate_user!
+  before_action :unread_notifications, if: :user_signed_in?
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def unread_notifications
+    @notifications = current_user.notifications.unread.count
+  end
 
   def after_sign_in_path_for(resource)
     studies_path

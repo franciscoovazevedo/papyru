@@ -1,0 +1,9 @@
+.badge {
+  background-color: $brand-danger;
+
+  &:hover {
+    border-bottom: none !important;
+    background-color: darken($brand-danger, 10%) !important;
+    color: white !important;
+  }
+}
