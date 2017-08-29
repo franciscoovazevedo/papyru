@@ -12,6 +12,7 @@
     @channels = @study.all_channels
     @documents = @study.documents
     @fix_navbar = true
+    @channel = @study.channels.new
   end
 
   def new
