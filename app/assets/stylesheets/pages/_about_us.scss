@@ -50,3 +50,15 @@
 .caption-style {
   height: 50%;
 }
+
+.social-icon {
+  transition: 500ms;
+}
+
+.github-icon:hover {
+  color: $github-color;
+}
+
+.linkedin-icon:hover {
+  color: #0077B5;
+}
