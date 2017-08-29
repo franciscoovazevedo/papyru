@@ -1,4 +1,5 @@
 class Message < ApplicationRecord
+  attr_accessor :notify
   belongs_to :channel
   belongs_to :user
 
@@ -9,8 +10,9 @@ class Message < ApplicationRecord
   validates :identity, presence: true
 
   after_save :send_notifications, :if => :notification?
+
   #
-  accepts_nested_attributes_for :documents
+  accepts_nested_attributes_for :documents, reject_if: proc { |doc| doc["name"].blank? }
 
   def has_document?
     Document.where(message: self).empty? ? false : true
@@ -19,38 +21,30 @@ class Message < ApplicationRecord
   private
 
   def notification?
-    self.documents.last.filetype == "notification" if self.has_document?
+    @notify.present?
+    # self.documents.last.filetype == "notification" if self.has_document?
   end
 
   def send_notifications
+    byebug
     regex = /#[^ ]*/
     students = self.channel.students
-    emails = self.content.scan(regex)
-    if emails.first == "#all"
-      students.each do |student|
-        Notification.create(message: self, user: student)
-      end
+    recipients = if @notify.include?('#all')
+      channel.students
     else
-      emails.each do |email|
+      notify.scan(regex).map do |email|
         email[0] = ''
-        student = students.where(email: email)
-        if student.any?
-          Notification.create(message: self, user: student.first)
-        end
-      # byebug
-      # students.each do |student|
-
-      #   emails.each do |email|
-      #     send_notification_preparation(students, email) ? send_noti_to_user(student) : email_dont_exist(student)
-      #   end
+        students.where(email: email).first
       end
     end
+
+    recipients.each { |student| notifications.create(user: student) }
   end
 
-  def email_dont_exist(student)
-    # flash.now[:alert] = "#{student.email} not found!"
+  # def email_dont_exist(student)
+  #   # flash.now[:alert] = "#{student.email} not found!"
 
-  end
+  # end
 
   def send_notification_preparation(students, email)
     byebug
@@ -58,14 +52,6 @@ class Message < ApplicationRecord
     emailsStudents = students.map { |student| student.email }
     emailsStudents.include? email ? true : false
   end
-
-  # def check_email_students(students, email)
-  #   email = email[0] = ''
-  #   students.each do |student|
-  #     student.email == email
-  #     send_noti_to_user(student)
-  #   end
-
 
   def send_noti_to_user(student)
     Notification.create(user: student, message: self)
