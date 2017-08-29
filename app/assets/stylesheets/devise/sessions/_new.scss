@@ -218,8 +218,12 @@
     border-bottom: 1px solid $gray;
   }
 
-  .sign-up {
-    font-weight: bold;
+  .sign-up-form {
+    font-size: 1.6rem;
+
+    .sign-up {
+      font-weight: bold;
+    }
   }
 }
 
