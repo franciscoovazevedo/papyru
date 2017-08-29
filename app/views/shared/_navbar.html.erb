@@ -11,12 +11,50 @@
     <% if user_signed_in? %>
 
       <!-- #Links -->
-      <%= link_to notifications_path, :class => 'navbar-wagon-link' do %>
-        <span>Notifications</span>
-      <% end %>
-      <%= link_to studies_path, :class => 'navbar-wagon-link' do %>
-        <span>Subjects</span>
-      <% end %>
+      <div class="dropdown">
+        <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', id: "navbar-papyru-menu", "data-toggle" => "dropdown" do %>
+          <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
+        <% end %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-papyru-dropdown-menu">
+          <li>
+            <%= link_to edit_user_registration_path do %>
+              <%= t(".profile", default: "Account Settings") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to about_us_path do %>
+              <%= t("#", default: "About Us") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to help_path do %>
+              <%= t("#", default: "Help") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to destroy_user_session_path, method: :delete do %>
+              <%= t(".sign_out", default: "Log out") %>
+            <% end %>
+          </li>
+        </ul>
+      </div>
+      <div class="dropdown">
+        <%= content_tag :div, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
+          <span style="margin-right: 1rem;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Subjects</span>
+        <% end %>
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <% if current_user.teacher? %>
+            <li>
+              <%= link_to "Add a New Subject +", new_study_path, class: "nav-new-subject" %>
+            </li>
+          <% end %>
+          <% current_user.studies.each do |study| %>
+            <li>
+              <%= link_to study.subject.name, study_path(study), class: "nav-subject" %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
 
       <!-- #Avatar with dropdown menu -->
       <div class="navbar-wagon-item">

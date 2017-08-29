@@ -99,21 +99,22 @@
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
   padding: 0 20px;
-  border-radius: 0;
+  border-radius: 4px;
 }
 
 .navbar-wagon-dropdown-menu li > a {
   transition: 0.3s;
-  color: #767676 !important;
+  color: #767676;
   font-size: 1.4rem !important;
   line-height: 22px !important;
   padding: 15px 100px 15px 0;
   border-bottom: 1px solid #F2F2F2;
-}
 
-.navbar-wagon-dropdown-menu li > a:hover {
-  background: transparent !important;
-  border-bottom: 1px solid #484848;
+  &:hover, &:active, &:focus, &:after {
+    color: $blue-dark;
+    background: transparent !important;
+    border-bottom: 1px solid #484848;
+  }
 }
 
 .navbar-wagon-dropdown-menu:before {
