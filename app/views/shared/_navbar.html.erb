@@ -1,9 +1,8 @@
 <div class="navbar-wagon <%= 'fix-navbar' if @fix_navbar %> ">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-   <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1503502488/logo-web.png", :alt => "Papyru") %>
+   <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1504028424/logo-text2_kayrkv.png", :alt => "Papyru") %>
   <% end %>
-  <div class="papyru-title">PAPYRU</div>
 
   <!-- ###Desktop view -->
   <div class="navbar-wagon-right hidden-xs">
@@ -18,12 +17,16 @@
         <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
 
         <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
+<<<<<<< HEAD
           <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
 
 
         <%= link_to notifications_path, :class => 'navbar-wagon-link dropdown-toggle', "data-toggle" => "dropdown" do %>
           <span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
 
+=======
+          <span><span class="badge"><%= @notifications %></span><i class="fa fa-bell-o" aria-hidden="true"></i> Notifications</span>
+>>>>>>> 05481777b628c8bbfd464e20f7f44f75459fd92e
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-papyru-dropdown-menu">
           <li>
