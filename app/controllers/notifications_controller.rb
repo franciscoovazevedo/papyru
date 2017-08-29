@@ -2,7 +2,7 @@ class NotificationsController < ApplicationController
 
   def index
     @notifications_unread = current_user.notifications.unread
-    # @notifications_read
+    @notifications_read = current_user.notifications.read
   end
 
   def change_status

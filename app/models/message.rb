@@ -22,11 +22,9 @@ class Message < ApplicationRecord
 
   def notification?
     @notify.present?
-    # self.documents.last.filetype == "notification" if self.has_document?
   end
 
   def send_notifications
-    byebug
     regex = /#[^ ]*/
     students = self.channel.students
     recipients = if @notify.include?('#all')
@@ -41,13 +39,7 @@ class Message < ApplicationRecord
     recipients.each { |student| notifications.create(user: student) }
   end
 
-  # def email_dont_exist(student)
-  #   # flash.now[:alert] = "#{student.email} not found!"
-
-  # end
-
   def send_notification_preparation(students, email)
-    byebug
     email[0] = ''
     emailsStudents = students.map { |student| student.email }
     emailsStudents.include? email ? true : false
