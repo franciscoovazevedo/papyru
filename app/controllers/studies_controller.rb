@@ -3,6 +3,7 @@
   before_action :find_subject, only: [:add_students_to_study]
   def index
    @studies = Study.all
+   @notifications_number = current_user.notifications.unread.size
   end
 
   def show

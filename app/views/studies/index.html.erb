@@ -1,7 +1,10 @@
 <div class="container">
   <div class="row header text-center">
     <h1>Welcome back <%= current_user.name %>!</h1>
-    <h3>You have <span>3 new messages</span></h3>
+    <% unless  @notifications_number == 0 %>
+      <h3>You have <span><%= @notifications_number %> notifications to see</span></h3>
+    <% end %>
+
   </div>
 
   <div class="row content">
