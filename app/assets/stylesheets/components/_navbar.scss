@@ -128,3 +128,13 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+#navbar-login-mobile {
+  color: $blue;
+  border-bottom: 1px solid $blue;
+}
+
+#navbar-login-mobile:hover {
+  color: $blue-dark;
+  border-bottom: 1px solid $blue-dark;
+}
