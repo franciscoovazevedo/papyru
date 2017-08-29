@@ -4,13 +4,13 @@
     <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1503502488/logo-web.png", :alt => "Papyru") %>
   <% end %>
 
-  <!-- Right Navigation -->
+  <!-- ###Desktop view -->
   <div class="navbar-wagon-right hidden-xs">
 
-    <!-- Logged in -->
+    <!-- ##Logged in -->
     <% if user_signed_in? %>
 
-      <!-- Logged in, links -->
+      <!-- #Links -->
       <%= link_to notifications_path, :class => 'navbar-wagon-link' do %>
         <span>Notifications</span>
       <% end %>
@@ -18,7 +18,7 @@
         <span>Subjects</span>
       <% end %>
 
-      <!-- Logged in, avatar with dropdown menu -->
+      <!-- #Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
@@ -47,10 +47,10 @@
         </div>
       </div>
 
-    <!-- Logged out -->
+    <!-- ##Logged out -->
     <% else %>
 
-      <!-- Logged out, links -->
+      <!-- #Links -->
       <%= link_to why_papyru_path, :class => 'navbar-wagon-link' do %>
         <span>Why Papyru?</span>
       <% end %>
@@ -62,19 +62,21 @@
     <% end %>
   </div>
 
-  <% if user_signed_in? %>
+  <!-- ###Mobile view -->
+  <div class="navbar-wagon-right hidden-sm hidden-md hidden-lg">
 
-    <div class="navbar-wagon-right hidden-sm hidden-md hidden-lg">
+    <!-- ##Logged in -->
+    <% if user_signed_in? %>
+
+      <!-- #Links -->
       <%= link_to notifications_path, :class => 'navbar-wagon-link navbar-wagon-mobile-link' do %>
         <span>Notifications</span>
       <% end %>
       <%= link_to studies_path, :class => 'navbar-wagon-link navbar-wagon-mobile-link' do %>
         <span>Subjects</span>
       <% end %>
-    </div>
 
-    <!-- Logged in, mobile dropdown menu -->
-    <div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
+      <!-- #Dropdown menu -->
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" style="font-size: 2rem; cursor: pointer;" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
@@ -84,21 +86,20 @@
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
-    </div>
 
-  <% else %>
+    <!-- ##Logged out -->
+    <% else %>
 
-    <!-- Logged out, mobile dropdown menu -->
-    <div class="navbar-wagon-item hidden-sm hidden-md hidden-lg">
+      <!-- #Dropdown menu -->
       <div class="dropdown">
         <i class="fa fa-bars dropdown-toggle" style="font-size: 2rem; cursor: pointer;" data-toggle="dropdown"></i>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "navbar-wagon-link", id: "navbar-login" %></li>
+          <li><%= link_to t(".sign_in", default: "Log in"), new_user_session_path, id: "navbar-login-mobile" %></li>
           <li><%= link_to "Why Papyru?", why_papyru_path %></li>
           <li><%= link_to "About Us", about_us_path %></li>
         </ul>
       </div>
-    </div>
 
-  <% end %>
+    <% end %>
+  </div>
 </div>
