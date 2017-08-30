@@ -12,3 +12,23 @@
 
 
 
+<!-- teste inicio -->
+<%= simple_form_for [@channel, @message] do |f| %>
+<div class="form-card-header text-center">
+  <%= f.input :content %>
+</div>
+<div class="form-card-header text-center">
+  <%= f.input :notify %>
+</div>
+  <%= f.input :identity, as: :boolean, label: "Show identity" %>
+  <%= f.submit  id: 'create' %>
+  <div class="form-actions">
+    <div class="btn btn-primary" id="btn-doc">Add Document</div>
+  </div>
+  <div class="hidden" id="doc">
+    <%= render 'shared/form_document', f: f %>
+    <div class="btn btn-primary" id="doc-show">Close</div>
+  </div>
+<% end %>
+
+<!-- teste fim -->
