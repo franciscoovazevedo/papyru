@@ -27,7 +27,7 @@
                 </div>
                 <div class="col-xs-2" style="text-align: left;">
                   <p>
-                    <%= link_to change_status_notification_path(notification), class: "pull-right", method: :patch do%>
+                    <%= link_to change_status_notification_path(notification), remote: true, class: "pull-right", method: :patch do%>
                       <span style="margin-right: 0.5rem; margin-top: 0.4rem; color: #CC3232;">Archive&nbsp;&nbsp;<i class="fa fa-trash-o" aria-hidden="true"></i></span>
                     <% end %>
                   </p>
