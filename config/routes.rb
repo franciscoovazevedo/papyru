@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   resources :notifications, only: [:index]  do
     member do
       patch 'change_status'
-  end
+    end
+    collection do
+      get 'archive'
+    end
   end
   resources :studies do
     resources :channels, only: [:new, :create]

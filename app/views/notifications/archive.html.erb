@@ -7,14 +7,14 @@
           <div class="notifications-card-header">
             <div class="notifications-header-content row">
               <div class="col-xs-5">
-                <h1>Notifications</h1>
+                <h1>Archive</h1>
               </div>
               <div class="col-xs-5 pull-right">
-                <p style="padding-top: 1.6rem; display: inline;" class="pull-right"><%= link_to "Go to Archive", archive_notifications_path, class: "header-link" %>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1rem;">•</span>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Mark all as read", "#", class: "header-link" %></p>
+                <p style="padding-top: 1.6rem; display: inline;" class="pull-right"><%= link_to "Go to Unread Notifications", notifications_path, class: "header-link" %>&nbsp;&nbsp;&nbsp;&nbsp;</p>
               </div>
             </div>
           </div>
-            <%= render 'notifications_list', notifications: @notifications_unread %>
+            <%= render 'notifications_list', notifications: @notifications_read %>
         </div>
       </div>
     </div>

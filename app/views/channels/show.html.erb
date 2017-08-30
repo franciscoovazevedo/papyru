@@ -29,7 +29,7 @@
     <div class="col-sm-3 sidenav hidden-xs">
       <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); ">Channels</h2>
        <% if current_user.teacher? %>
-         <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">New Channel</button>
+         <button class="btn btn-primary" data-toggle="modal" data-target="#newchannel">New Channel</button>
        <% end %>
       <ul class="nav nav-pills nav-stacked">
         <%= link_to "SuperChannel #{@channel.subject.name}", study_path(@channel.study) %>
@@ -54,7 +54,9 @@
             <li><%= link_to "Go back to #{@channel.subject.name}", study_path(@channel.study) %></li>
             <% if current_user.teacher? %>
 
-              <li> <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".editchannel">Edit channel</button></li>
+              <li>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editchannel">Edit channel</button>
+              </li>
              <% end %>
           </ul>
         </div>
@@ -68,7 +70,7 @@
         <div class="well">
           <h3>Messages</h3>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".newmessage" data-whatever="Recepient" style="padding: 10px 30px;">New message</button>
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newmessage" data-whatever="Recepient" style="padding: 10px 30px;">New message</button>
 
           <hr/>
           <% @messages.each do |message| %>
