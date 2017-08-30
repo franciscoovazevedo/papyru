@@ -26,7 +26,7 @@
   <div class="row form-card">
     <div class="form-card-header text-center">
       <h1 style="line-height: 4rem;">New Message to <%= @channel.name %></h1>
-      <p><span>Post a new message</span> in this thread.</p>
+      <p><span>Post a new message</span> on this thread.</p>
     </div>
 
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
@@ -39,12 +39,43 @@
           </div>
 
           <div class="input">
-            <%= f.input :notify, required: true, label: false, autofocus: false, hint: ("Type the email of the user you want to notify preceded by # or use #all to notify all the channel"), input_html: { type: "text", placeholder: "Users" } %>
+            <%= f.input :notify, required: true, label: false, autofocus: false, hint: "Type the email of the user you want to notify preceded by # or use '#all' to notify all the channel", input_html: { type: "text", placeholder: "Users" } %>
             <span><i class="fa fa-bell-o"></i></span>
           </div>
 
+          <div class="remember">
+            <%= f.input :identity, class: "remember-me", as: :boolean, inline_label: 'Show your identity?', label: false %>
+          </div>
+
           <div class="form-actions">
-            <%= f.submit "Add +", class: 'btn submit-btn' %>
+            <div class="btn document-btn" id="btn-doc">Add Document +</div>
+          </div>
+
+          <div class="hidden" style="border-top: 1px solid #E6E6E6; margin-top: 2.5rem;" id="doc">
+
+            <h3 class="text-center">Document</h3>
+
+            <%= f.simple_fields_for :document do |d| %>
+
+              <%= d.input :file, as: :file %>
+              <%= d.input :file_cache, as: :hidden %>
+              <%= d.input :name %>
+              <%= d.input :filetype, as: :select, collection: %w( exercise former-exam exam slide notification ) %>
+
+              <div class="form-actions">
+                <%= d.submit "Create message ✓", class: 'btn submit-btn', id: "create" %>
+              </div>
+
+            <% end %>
+
+            <div class="form-actions">
+              <div class="btn close-btn" id="doc-show">Remove Document ✗</div>
+            </div>
+
+          </div>
+
+          <div class="form-actions">
+            <%= f.submit "Create message ✓", class: 'btn submit-btn', id: "create" %>
           </div>
 
         <% end %>

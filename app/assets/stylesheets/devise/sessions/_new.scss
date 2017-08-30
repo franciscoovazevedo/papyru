@@ -157,6 +157,86 @@
     }
   }
 
+  .document-btn {
+    background: $blue;
+    color: $white;
+    font-family: "Lato", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.2rem;
+    height: 5rem;
+    font-weight: 700;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    border: none;
+    border-radius: .25rem;
+    box-shadow: none;
+    position: relative;
+    display: block;
+    vertical-align: bottom;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    margin: 1rem auto;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    -moz-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    -ms-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    -o-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+
+    &:hover, &:link, &:focus, &:active {
+      box-shadow: none;
+      background: $blue;
+      color: $white;
+    }
+  }
+
+  .close-btn {
+    background: $red;
+    color: $white;
+    font-family: "Lato", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.2rem;
+    height: 5rem;
+    font-weight: 700;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    text-decoration: none;
+    cursor: pointer;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+    border: none;
+    border-radius: .25rem;
+    box-shadow: none;
+    position: relative;
+    display: block;
+    vertical-align: bottom;
+    text-align: center;
+    width: 100%;
+    white-space: nowrap;
+    margin: 1rem auto;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    -moz-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    -ms-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    -o-transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+    transition: .3s cubic-bezier(.175,.885,.32,1.275) !important;
+
+    &:hover, &:link, &:focus, &:active {
+      box-shadow: none;
+      background: $red;
+      color: $white;
+    }
+  }
+
   .user-type, .mayor-subject {
     margin-bottom: 2rem;
   }
