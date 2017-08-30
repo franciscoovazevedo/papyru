@@ -28,7 +28,7 @@
     <div class="col-sm-3 sidenav hidden-xs">
       <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); ">Channels</h2>
        <% if current_user.teacher? %>
-         <p style="color: #464646; font-size: 12px;"><%= link_to "New channel", new_study_channel_path(@study), class: "btn btn-primary" %></p>
+         <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">New Channel</button>
        <% end %>
       <ul class="nav nav-pills nav-stacked">
         <%= link_to "SuperChannel #{@channel.subject.name}", study_path(@channel.study) %>
@@ -70,12 +70,14 @@
 
           <hr/>
           <% @messages.each do |message| %>
-            <% if message.show? %>
-              <h4><%= message.user.name %> <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar" %></h4>
-              <h6><%= @subject %> <%= message.user.class %></h6>
-              <p><%= message.content %></p>
-              <p style="font-size: 12px; text-align: right;">Posted on <%= l message.created_at %></p>
-              <hr/>
+            <% if message.user.teacher? %>
+              <% if message.show? %>
+                <h4><%= message.user.name %> <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar" %></h4>
+                <h6><%= @subject %> <%= message.user.class %></h6>
+                <p><%= message.content %></p>
+                <p style="font-size: 12px; text-align: right;">Posted on <%= l message.created_at %></p>
+                <hr/>
+              <% end %>
             <% end %>
           <% end %>
         </div>
@@ -88,3 +90,4 @@
   </div>
 </div>
 <%= render 'shared/modal_new_message'%>
+ <%= render 'shared/modal_new_channel'%>
