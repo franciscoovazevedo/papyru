@@ -12,6 +12,7 @@ class MessagesController < ApplicationController
       channel: @channel,
       user: current_user
     ))
+    @message.change_show! if @message.notify_all?
     save_message(@message, @channel)
   end
 

@@ -18,6 +18,23 @@ class Message < ApplicationRecord
     Document.where(message: self).empty? ? false : true
   end
 
+  def show?
+    self.show
+  end
+
+
+
+
+
+  def notify_all?
+    @notify.include?("#all")
+
+  end
+
+  def change_show!
+    self.show = true
+  end
+
   private
 
   def notification?
@@ -27,12 +44,13 @@ class Message < ApplicationRecord
   def send_notifications
     regex = /#[^ ]*/
     students = self.channel.students
-    recipients = if @notify.include?('#all')
-      channel.students
+    recipients = []
+    if @notify.include?('#all')
+      recipients = channel.students
     else
-      notify.scan(regex).map do |email|
+      recipients = @notify.scan(regex).map do |email|
         email[0] = ''
-        students.where(email: email).first
+        students.find_by_email(email)
       end
     end
 

@@ -66,14 +66,15 @@
         <div class="well">
           <h3>Messages</h3>
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".newmessage" data-whatever="Recepient">New message</button>
-          <%= link_to "New message", new_channel_message_path(@channel) %>
           <hr/>
           <% @messages.each do |message| %>
-            <h4><%= message.user.name %> <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar" %></h4>
-            <h6><%= @subject %> <%= message.user.class %></h6>
-            <p><%= message.content %></p>
-            <p style="font-size: 12px; text-align: right;">Posted on <%= l message.created_at %></p>
-            <hr/>
+            <% if message.show? %>
+              <h4><%= message.user.name %> <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar" %></h4>
+              <h6><%= @subject %> <%= message.user.class %></h6>
+              <p><%= message.content %></p>
+              <p style="font-size: 12px; text-align: right;">Posted on <%= l message.created_at %></p>
+              <hr/>
+            <% end %>
           <% end %>
         </div>
 

@@ -52,7 +52,6 @@
 
           # save cell value to variable
         val = cell && cell.value
-        byebug
         student = Student.where(email: val)
         unless student.empty?
           Study.create(subject: @subject, student: student.first)
