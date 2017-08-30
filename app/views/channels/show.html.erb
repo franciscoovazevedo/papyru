@@ -54,7 +54,9 @@
             <li><%= link_to "Go back to #{@channel.subject.name}", study_path(@channel.study) %></li>
             <% if current_user.teacher? %>
 
-              <li> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editchannel">Edit channel</button></li>
+              <li>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editchannel">Edit channel</button>
+              </li>
              <% end %>
           </ul>
         </div>
