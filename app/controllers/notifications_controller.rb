@@ -1,3 +1,4 @@
+
 class NotificationsController < ApplicationController
 
   def index
