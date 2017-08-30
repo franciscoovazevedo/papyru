@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def unread_notifications
-    @notifications = current_user.notifications.unread.count
+    @notifications = current_user.notifications.unread
+    @notifications_number = current_user.notifications.unread.count
   end
 
   def after_sign_in_path_for(resource)

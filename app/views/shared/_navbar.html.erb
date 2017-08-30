@@ -17,29 +17,21 @@
       <!-- #Notifications -->
       <div class="dropdown">
         <%= link_to notifications_path, :class => 'dropdown-notifications dropdown-toggle', "data-toggle" => "dropdown" do %>
-          <span>Notifications<span class="badge"><%= @notifications %></span></span>
+          <span>Notifications<span class="badge"><%= @notifications_number %></span></span>
         <% end %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu" style="margin-top: 15px; margin-right: 16px;">
+        <ul class="dropdown-menu dropdown-menu-right navbar-notifications-dropdown-menu">
           <li>
-            <%= link_to edit_user_registration_path do %>
-            <%= t(".profile", default: "Account Settings") %>
-            <% end %>
+            <%= link_to "Unread", notifications_path %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Archive", "#" %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Mark all as read", "#" %>
           </li>
-          <li>
-            <%= link_to about_us_path do %>
-            <%= t("#", default: "About Us") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to help_path do %>
-            <%= t("#", default: "Help") %>
-            <% end %>
-          </li>
-          <li>
-            <%= link_to destroy_user_session_path, method: :delete do %>
-            <%= t(".sign_out", default: "Log out") %>
-            <% end %>
-          </li>
+          <% @notifications.each_with_index do |notification, ind| %>
+            <li class="container-fluid">
+              <div class="row">
+                <div class="teacher-avatar-container col-xs-1">
+                  <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
+                </div>
+              </div>
+            </li>
+          <% end %>
         </ul>
       </div>
 
