@@ -20,8 +20,11 @@ class ChannelsController < ApplicationController
   def show
     @study = @channel.study
     @subject = @channel.subject.name
+    @message = @channel.messages.new(notify: "#all")
     @messages = @channel.messages.order(:created_at).reverse.first(3)
     @documents = @channel.documents
+    @document = @channel.documents.build
+
   end
 
   def edit
