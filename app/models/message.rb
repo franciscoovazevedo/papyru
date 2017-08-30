@@ -45,18 +45,40 @@ class Message < ApplicationRecord
     regex = /#[^ ]*/
     students = self.channel.students
     recipients = []
+    teachers = self.channel.teachers
+
+    if self.user.teacher?
+      if @notify.include?('#all')
+        recipients = channel.students
+      else
+        recipients = @notify.scan(regex).map do |email|
+          email[0] = ''
+          students.find_by_email(email)
+        end
+      end
+    else
+      if @notify.include?('#all')
+        recipients = channel.teachers
+      else
+        recipients = @notify.scan(regex).map do |email|
+          email[0] = ''
+          teachers.find_by_email(email)
+        end
+      end
+    recipients.each { |user| notifications.create(user: user) }
+    end
+  end
+
+  def noti_code(type)
     if @notify.include?('#all')
-      recipients = channel.students
+      recipients = channel.type
     else
       recipients = @notify.scan(regex).map do |email|
         email[0] = ''
         students.find_by_email(email)
       end
     end
-
-    recipients.each { |student| notifications.create(user: student) }
   end
-
   def send_notification_preparation(students, email)
     email[0] = ''
     emailsStudents = students.map { |student| student.email }

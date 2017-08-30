@@ -15,6 +15,10 @@ class Channel < ApplicationRecord
     Student.joins(:studies).where("studies.subject_id = ?", self.study.subject_id)
   end
 
+  def teachers
+    Teacher.joins(:studies).where("studies.subject_id = ?", self.study.subject_id)
+  end
+
   private
 
   def default_values
