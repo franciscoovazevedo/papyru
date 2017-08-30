@@ -8,7 +8,6 @@ class Message < ApplicationRecord
 
   validates :content, presence: true
   validates :identity, presence: true
-
   after_save :send_notifications, :if => :notification?
 
   #
@@ -21,10 +20,6 @@ class Message < ApplicationRecord
   def show?
     self.show
   end
-
-
-
-
 
   def notify_all?
     @notify.include?("#all")
@@ -66,6 +61,7 @@ class Message < ApplicationRecord
         end
       end
     recipients.each { |user| notifications.create(user: user) }
+
     end
   end
 
