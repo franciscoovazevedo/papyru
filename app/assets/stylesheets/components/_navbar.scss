@@ -167,8 +167,9 @@
     color: #767676;
     font-size: 1.4rem;
     line-height: 22px;
-    padding: 15px 100px 15px 0;
+    padding: 15px 0 15px 0;
     border-bottom: 1px solid #F2F2F2;
+    min-width: 22rem;
 
     &:hover, &:active, &:focus, &:after {
       color: $blue-dark;
