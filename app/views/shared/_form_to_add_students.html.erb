@@ -2,14 +2,14 @@
   <div class="row form-card">
     <div class="form-card-header text-center">
       <h1>Add Students to the Class</h1>
-      <p><span>Let them access your class</span> in a few clicks.</p>
+      <p><span>Add your students</span> with a simple CSV file.</p>
     </div>
 
     <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
       <div class="form-card-content">
         <%= form_tag studies_upload_students_path, multipart: true do %>
           <%= file_field_tag :file, style: 'display: inline-block; margin-bottom: 2rem;' %>
-          <%= hidden_field_tag :subject_id, Subject.where(name:@subject).first.id, style: 'height: 200px;' %>
+          <%= hidden_field_tag :subject_id, Subject.where(name:@subject).first.id %>
           <br>
 
           <div class="form-actions">
