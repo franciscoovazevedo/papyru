@@ -7,71 +7,75 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $gray-light;
-}
 
-.navbar-wagon-brand img {
-  height: 4rem;
-  position: relative;
-  cursor: pointer;
-}
+  img {
+    height: 4rem;
+    position: relative;
+    cursor: pointer;
 
-.navbar-wagon-brand img:active {
-  top: 0.2rem;
-}
+    &:active {
+      top: 0.2rem;
+    }
+  }
 
-.navbar-wagon .avatar {
-  height: 4rem;
-  width: 4rem;
-  border-radius: 50%;
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07);
-  filter: opacity(120%);
-  margin-left: 12px;
-  position: relative;
-}
+  .avatar {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07);
+    filter: opacity(120%);
+    margin-left: 12px;
+    position: relative;
 
-.navbar-wagon .avatar:hover {
-  cursor: pointer;
-}
+    &:hover {
+      cursor: pointer;
+    }
 
-.navbar-wagon .avatar:active {
-  top: 0.2rem;
+    &:active {
+      top: 0.2rem;
+    }
+  }
 }
 
 .navbar-wagon-right {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
 
-.navbar-wagon-link {
-  cursor: pointer;
-  padding: 0 2rem;
-  color: #484848;
-  font-size: 1.5rem;
-}
+  .navbar-wagon-link {
+    cursor: pointer;
+    padding: 0 2rem;
+    color: #484848;
+    font-size: 1.5rem;
 
-.navbar-wagon-link:link, .navbar-wagon-link:visited, .navbar-wagon-link:hover, .navbar-wagon-link:active {
-  text-decoration: none;
-  color: #484848;
-}
+    &:link, &:visited, &:hover, &:active {
+      text-decoration: none;
+      color: #484848;
+    }
+  }
 
-.navbar-wagon-mobile-link {
-  padding: 0 1rem;
-}
+  .navbar-wagon-mobile-link {
+    padding: 0 1rem;
 
-.navbar-wagon-link span {
-  position: relative;
-  transition: 100ms ease-out;
-}
+    span {
+      position: relative;
+      transition: 100ms ease-out;
 
-.navbar-wagon-link span:hover {
-  color: #484848;
-  text-decoration: none;
-  border-bottom: 0.4rem solid $blue;
-}
+      &:hover {
+        color: #484848;
+        text-decoration: none;
+        border-bottom: 0.4rem solid $blue;
+      }
 
-.navbar-wagon-link span:active {
-  top: 1px;
+      &:active {
+        top: 1px;
+      }
+
+      &:last-child {
+        padding-right: 2.2rem;
+      }
+    }
+  }
 }
 
 .dropdown-notifications {
@@ -234,14 +238,12 @@
     padding: 15px 100px 15px 0;
     border-bottom: 1px solid #F2F2F2;
 
-    a {
-      padding: 0 15px;
-
-      &:hover {
-        color: $blue-dark;
-        background: transparent !important;
-      }
+    .teacher-avatar {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 4px;
     }
+
 
     &:hover, &:active, &:focus, &:after {
       background: transparent !important;
@@ -262,6 +264,7 @@
       }
 
       a {
+        padding: 0 15px;
         color: $blue-dark;
         font-size: 1.3rem;
         font-weight: bold;
@@ -270,6 +273,7 @@
         &:hover {
           color: $blue-dark;
           text-decoration: underline;
+          background: transparent;
         }
       }
     }
