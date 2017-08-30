@@ -17,7 +17,8 @@
             <li><%= link_to channel.name, channel_path(channel) %></li>
           <% end %>
         <% end %>
-        <li><%= link_to "New channel", new_study_channel_path(@channel.study), class: "btn btn-primary" %></li>
+         <li> <button class="btn btn-primary" data-toggle="modal" data-target=".newchannel">New Channel</button>
+        </li>
       </ul>
     </div>
   </div>
@@ -52,7 +53,8 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "Go back to #{@channel.subject.name}", study_path(@channel.study) %></li>
             <% if current_user.teacher? %>
-              <li><%= link_to "Edit channel", edit_channel_path(@channel) %></li>
+
+              <li> <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".editchannel">Edit channel</button></li>
              <% end %>
           </ul>
         </div>
@@ -90,4 +92,5 @@
   </div>
 </div>
 <%= render 'shared/modal_new_message'%>
- <%= render 'shared/modal_new_channel'%>
+<%= render 'shared/modal_new_channel'%>
+<%= render 'channels/edit' %>

@@ -31,7 +31,7 @@ class MessagesController < ApplicationController
 
   def save_message(message, channel)
     if message.save
-      redirect_to channel
+      redirect_to channel, notify: "Message sent"
     else
      render :new
     end
