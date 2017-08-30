@@ -1,5 +1,3 @@
-
-
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
@@ -8,29 +6,29 @@
 
           <div class="notifications-card-header">
             <div class="notifications-header-content row">
-              <div class="col-xs-10">
-                <h1><%= link_to "All", "#", class: "header-link" %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Mentions", "#", class: "header-link" %></h1>
+              <div class="col-xs-5">
+                <h1>Notifications</h1>
               </div>
-              <div class="col-xs-2 pull-right">
-                <p style="padding-top: 1.6rem;"><%= link_to "Clear All", "#", class: "header-link pull-right" %></p>
+              <div class="col-xs-5 pull-right">
+                <p style="padding-top: 1.6rem; display: inline;" class="pull-right"><%= link_to "Go to Archive", "#", class: "header-link" %>&nbsp;&nbsp;&nbsp;&nbsp;<span style="font-size: 1rem;">•</span>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to "Mark all as read", "#", class: "header-link" %></p>
               </div>
             </div>
           </div>
 
           <div class="notifications-card-content">
-            <% @notifications_unread.each_with_index do |notification, ind| %>
+            <% @notifications_unread.each do |notification| %>
               <div class="notifications-body-content row">
                 <div class="teacher-avatar-container col-xs-1">
                   <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
                 </div>
-                <div class="col-xs-10">
-                  <p><span class="notification-user"><%= notification.message.user.name %></span> posted a new message in <span class="notification-channel"><%= notification.message.channel.name %> (<%= notification.message.channel.subject.name %>)</span><span class="notification-date">・<%= notification.message.created_at.strftime('%d %b %Y at %H:%M') %></span></p>
-                  <p class="notification-message"><%= notification.message.content %></p>
+                <div class="col-xs-9 notification-message-container">
+                  <p><a class="notification-user"><%= notification.message.user.name %></a> posted a new message in <a class="notification-channel"><%= notification.message.channel.name %> (<%= notification.message.channel.subject.name %>)</a><span class="notification-date">・<%= notification.message.created_at.strftime('%d %b %Y at %H:%M') %></span></p>
+                  <i class="fa fa-pencil" aria-hidden="true" style="font-size: 1.7rem; color: #2AB27B;">&nbsp;</i>&nbsp;<p class="notification-message" style="display: inline;"><%= notification.message.content %></p>
                 </div>
-                <div class="col-xs-1 pull-right">
+                <div class="col-xs-2" style="text-align: right;">
                   <p>
                     <%= link_to change_status_notification_path(notification), class: "pull-right", method: :patch do%>
-                      <i class="fa fa-trash-o" aria-hidden="true"></i>
+                      <span style="margin-right: 0.5rem; margin-top: 0.4rem; color: #CC3232;">Archive&nbsp;&nbsp;<i class="fa fa-trash-o" aria-hidden="true"></i></span>
                     <% end %>
                   </p>
                 </div>

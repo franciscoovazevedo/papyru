@@ -1,6 +1,15 @@
 ul li {
   list-style-type: none;
+  font-size: 18px;
+  display: flex;
+  justify-content:center;
 }
+.nav > li > a {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+}
+
 
 // Set height of the grid so .sidenav can be 100% (adjust as needed)
 .row.content {
@@ -15,6 +24,7 @@ ul li {
   position: fixed;
   top: 70px;
   overflow-y: scroll;
+  width: 20%;
 }
 
 // On small screens, set height to 'auto' for the grid
@@ -31,6 +41,7 @@ ul li {
   top: 70px;
   height: calc(100vh - 70px);
   overflow-y: scroll;
+  width: 78%;
 }
 
 .fix-navbar {

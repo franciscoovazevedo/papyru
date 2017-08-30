@@ -1,0 +1,28 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+CALSCALE:GREGORIAN
+PRODID:iCalendar-Ruby
+BEGIN:VEVENT
+URL;VALUE=URI:https://ti.to/websummit/2017-web-summit
+CREATED:20161103T170438
+DESCRIPTION:In six years Web Summit grew from 400 to over 53\,000 attendees
+  from more than 166 different countries. Web Summit has been called "the be
+ st technology conference on the planet"\, but we think it's just different.
+ \n\nThat difference works for our attendees\, ranging from Fortune 500 comp
+ anies to the world's most exciting tech companies plus 2\,000 of the world'
+ s leading media. Our speakers may be world class\, but our networking is "s
+ imply legendary".\n\nWe're excited to return to Lisbon for the second time.
+ \n\nQuestions? Call us on +353 1 4433170 or email tickets@websummit.com
+DTEND;VALUE=DATE:20171110
+DTSTAMP:20170821T082100Z
+DTSTART;VALUE=DATE:20171106
+CLASS:PUBLIC
+LAST-MODIFIED:20170821T082054
+LOCATION:Lisbon\, Portugal
+ORGANIZER:MAILTO:tickets@websummit.com
+SEQUENCE:0
+SUMMARY:2017 Web Summit
+UID:KU50ug
+URL:https://ti.to/websummit/2017-web-summit
+END:VEVENT
+END:VCALENDAR
