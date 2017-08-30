@@ -44,12 +44,12 @@
                 <span><i class="fa fa-graduation-cap"></i></span>
               </div>
 
-              <div class="input user-type">
+              <div class="input user-type form-group-lg">
                 <p class="text-center" style="font-size: 1.6rem;">I am a</p>
                 <%= f.input :type, as: :select, collection: ["Teacher", "Student"], default: "Teacher", label: false, input_html: { onchange: "sign_up_logic()" } %>
               </div>
 
-              <div class="input hidden mayor-subject" id="mayor-input">
+              <div class="input hidden form-group-lg mayor-subject" id="mayor-input">
                 <p class="text-center" style="font-size: 1.6rem;">I am studying</p>
                 <%= f.input :mayor_id, as: :select, collection: Mayor.all, label: false, default: "" %>
               </div>
