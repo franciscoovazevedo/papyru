@@ -55,6 +55,7 @@
   }
 
   .navbar-wagon-mobile-link {
+    color: $black;
     padding: 0 1rem;
 
     span {
@@ -72,7 +73,7 @@
       }
 
       &:last-child {
-        padding-right: 2.2rem;
+        margin-right: 2.2rem;
       }
     }
   }
@@ -214,7 +215,7 @@
 .navbar-notifications-dropdown-menu {
   margin-top: 15px;
   margin-right: 16px;
-  box-shadow: 1px 1px 4px #E6E6E6;
+  box-shadow: 1px 1px 1px #E6E6E6;
   border-color: #E6E6E6;
   border-radius: 4px;
 
@@ -231,52 +232,64 @@
     border-top: 1px solid #E6E6E6;
   }
 
-  li {
+  .notifications-dropdown-header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    clear: both;
+    text-align: center;
+    border-bottom: 2px solid $blue-dark;
+
+    p {
+      color: $black;
+      font-size: 1.6rem;
+      font-weight: bold;
+      display: inline;
+    }
+
+    a {
+      padding: 0 15px;
+      color: $blue-dark;
+      font-size: 1.3rem;
+      font-weight: bold;
+      display: inline;
+
+      &:hover {
+        color: $blue-dark;
+        text-decoration: underline;
+        background: transparent;
+      }
+    }
+  }
+
+  .notifications-dropdown-link {
+    cursor: pointer;
+
+    &:hover {
+      background: $gray-lighter;
+    }
+  }
+
+  .notifications-dropdown-content {
     transition: 0.3s;
     color: #767676;
     font-size: 1.4rem;
     line-height: 22px;
-    padding: 15px 100px 15px 0;
+    padding: 15px;
     border-bottom: 1px solid #F2F2F2;
 
     .teacher-avatar {
       width: 4rem;
       height: 4rem;
       border-radius: 4px;
+
+      &:hover {
+        background: transparent;
+      }
     }
 
-
-    &:hover, &:active, &:focus, &:after {
-      background: transparent !important;
-      border-bottom: 1px solid $blue-dark;
-    }
-
-    &:first-child {
-      border-bottom: 2px solid $blue-dark;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      clear: both;
-
-      p {
-        color: $black;
-        font-size: 1.6rem;
-        font-weight: bold;
-        display: inline;
-      }
-
-      a {
-        padding: 0 15px;
-        color: $blue-dark;
-        font-size: 1.3rem;
-        font-weight: bold;
-        display: inline;
-
-        &:hover {
-          color: $blue-dark;
-          text-decoration: underline;
-          background: transparent;
-        }
-      }
+    .notification-dropdown-content-message {
+      font-size: 1.3rem;
+      color: $gray-darker;
     }
   }
 }

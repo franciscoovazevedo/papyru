@@ -16,7 +16,7 @@
           </div>
 
           <div class="notifications-card-content">
-            <% @notifications_unread.each do |notification| %>
+            <% @notifications_unread.reverse_each do |notification| %>
               <div class="notifications-body-content row">
                 <div class="teacher-avatar-container col-xs-1">
                   <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
@@ -25,7 +25,7 @@
                   <p><a class="notification-user"><%= notification.message.user.name %></a> posted a new message in <a class="notification-channel"><%= notification.message.channel.name %> (<%= notification.message.channel.subject.name %>)</a><span class="notification-date">・<%= notification.message.created_at.strftime('%d %b %Y at %H:%M') %></span></p>
                   <i class="fa fa-pencil" aria-hidden="true" style="font-size: 1.7rem; color: #2AB27B;">&nbsp;</i>&nbsp;<p class="notification-message" style="display: inline;"><%= notification.message.content %></p>
                 </div>
-                <div class="col-xs-2" style="text-align: right;">
+                <div class="col-xs-2" style="text-align: left;">
                   <p>
                     <%= link_to change_status_notification_path(notification), class: "pull-right", method: :patch do%>
                       <span style="margin-right: 0.5rem; margin-top: 0.4rem; color: #CC3232;">Archive&nbsp;&nbsp;<i class="fa fa-trash-o" aria-hidden="true"></i></span>

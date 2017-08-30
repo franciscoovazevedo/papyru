@@ -16,22 +16,29 @@
 
       <!-- #Notifications -->
       <div class="dropdown">
-        <%= link_to notifications_path, :class => 'dropdown-notifications dropdown-toggle', "data-toggle" => "dropdown" do %>
+        <%= link_to "#", :class => 'dropdown-notifications dropdown-toggle', "data-toggle" => "dropdown" do %>
           <span>Notifications<span class="badge"><%= @notifications_number %></span></span>
         <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-notifications-dropdown-menu">
-          <li>
-            <%= link_to "Unread", notifications_path %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Archive", "#" %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Mark all as read", "#" %>
+          <li class="notifications-dropdown-header">
+            <%= link_to "Show unread (" + @notifications_number.to_s + ")", "#" %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Archive", "#" %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Mark all as read", "#" %>
           </li>
-          <% @notifications.each do |notification| %>
-            <%= link_to notifications_path do %>
-              <li>
-                <div class="container-fluid">
-                  <div class="row">
-                    <div class="col-xs-1">
-                      <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
-                    </div>
-                  </div>
+          <% @notifications.reverse_each do |notification| %>
+            <%= link_to notifications_path, class: "notifications-dropdown-link" do %>
+              <li class="notifications-dropdown-content">
+                <div style="display: inline-block; width: 10%;">
+                  <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
+                </div>
+                <div style="display: inline-block; width: 70%;">
+                  <p class="notification-dropdown-content-message">
+                    <a style="color: #2F8EED; font-weight: bold;"><%= notification.message.user.name %></a> posted a new message in <a style="color: #1F5385;"><%= notification.message.channel.name %> (<%= notification.message.channel.subject.name %>)</a>
+                  </p>
+                  <p style="font-size: 1.1rem; color: #999;">Posted <%= time_ago_in_words(notification.message.created_at, include_seconds: true) %> ago</p>
+                </div>
+                <div style="display: inline-block; width: 5%;">
+                  <%= link_to change_status_notification_path(notification), class: "pull-right", method: :patch do%>
+                    <i class="fa fa-trash-o" aria-hidden="true" style="margin-right: 0.5rem; margin-top: 0.4rem; color: #CC3232;"></i>
+                  <% end %>
                 </div>
               </li>
             <% end %>
@@ -94,10 +101,10 @@
     <% else %>
 
       <!-- #Links -->
-      <%= link_to why_papyru_path, :class => 'navbar-wagon-link' do %>
+      <%= link_to why_papyru_path, :class => 'navbar-wagon-mobile-link' do %>
         <span>Why Papyru?</span>
       <% end %>
-      <%= link_to about_us_path, :class => 'navbar-wagon-link' do %>
+      <%= link_to about_us_path, :class => 'navbar-wagon-mobile-link' do %>
         <span>About Us</span>
       <% end %>
       <%= link_to t(".sign_in", default: "Log in"), new_user_session_path, class: "dropdown-btn btn" %>
