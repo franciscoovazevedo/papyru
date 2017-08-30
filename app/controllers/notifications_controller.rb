@@ -8,7 +8,10 @@ class NotificationsController < ApplicationController
 
   def change_status
     Notification.find(params[:id]).change_status!
-    redirect_to notifications_path
+    respond_to do |format|
+      format.html { redirect_to notifications_path unless request.xhr? }
+      format.js
+    end
   end
 
   def destroy

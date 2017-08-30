@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def unread_notifications
-    @notifications = current_user.notifications.unread
+    @notifications = current_user.notifications.unread.reverse_order
     @notifications_number = current_user.notifications.unread.count
   end
 

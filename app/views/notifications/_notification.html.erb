@@ -1,0 +1,18 @@
+<li class="notifications-dropdown-content">
+  <%= link_to notifications_path, class: "notifications-dropdown-link" do %>
+  <% end %>
+  <div style="display: inline-block; width: 10%;">
+    <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
+  </div>
+  <div style="display: inline-block; width: 70%;">
+    <p class="notification-dropdown-content-message">
+      <a style="color: #2F8EED; font-weight: bold;"><%= notification.message.user.name %></a> posted a new message in <a style="color: #1F5385;"><%= notification.message.channel.name %> (<%= notification.message.channel.subject.name %>)</a>
+    </p>
+    <p style="font-size: 1.1rem; color: #999;">Posted <%= time_ago_in_words(notification.message.created_at, include_seconds: true) %> ago</p>
+  </div>
+  <div style="display: inline-block; width: 5%;">
+    <%= link_to change_status_notification_path(notification), remote: true, class: "pull-right archive-link", method: :patch do %>
+      <i class="fa fa-trash-o" aria-hidden="true" style="margin-right: 0.5rem; margin-top: 0.4rem; color: #CC3232;"></i>
+    <% end %>
+  </div>
+</li>

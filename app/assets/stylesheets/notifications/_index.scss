@@ -2,7 +2,7 @@
   @include form-card;
   font-family: "Lato", sans-serif;
   margin-top: 4rem;
-  padding-bottom: 3rem;
+  padding-bottom: 1rem;
 }
 
 .notifications-card-header {
@@ -46,6 +46,10 @@
   .notifications-body-content {
     padding: 2rem 0;
     border-bottom: 1px solid $gray-light;
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   .teacher-avatar-container {
@@ -63,6 +67,10 @@
 
   .teacher-avatar:hover {
     cursor: pointer;
+  }
+
+  .notification-message-container {
+    padding-left: 4rem;
   }
 
   .notification-user {
@@ -92,7 +100,6 @@
   .notification-message {
     padding: 0.5rem 0;
     font-size: 1.7rem;
-    //border-left: 0.25em solid $blue-dark;
     color: $github-color;
 
     &:before, &:after {

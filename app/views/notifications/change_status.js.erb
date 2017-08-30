@@ -1,0 +1,6 @@
+var number = <%= current_user.notifications.unread.count %>
+$('#notifications-number').html(number)
+$('#notifications').html('<%= j render @notifications %>')
+<% if current_user.notifications.unread.count.zero? %>
+  $('#notifications-number').hide()
+<% end %>
