@@ -1,3 +1,5 @@
+<!--
+
 <%= simple_form_for [@channel, @message] do |f| %>
   <%= f.input :content %>
   <%= f.input :notify %>
@@ -5,30 +7,48 @@
   <%= f.submit  id: 'create' %>
   <div class="btn btn-primary" id="btn-doc">Add Document</div>
   <div class="hidden" id="doc">
-    <%= render 'shared/form_document', f: f %>
-    <div class="btn btn-primary" id="doc-show">Close</div>
+    <%= f.simple_fields_for :document do |d| %>
+      <%= d.input :name %>
+      <%= d.input :filetype, as: :select, collection: %w( exercise former-exam exam slide notification ) %>
+      <%= d.input :file, as: :file %>
+      <%= d.input :file_cache, as: :hidden %>
+      <%= d.submit %>
+    <% end %>
+  <div class="btn btn-primary" id="doc-show">Close</div>
   </div>
 <% end %>
 
+-->
 
 
-<!-- teste inicio -->
-<%= simple_form_for [@channel, @message] do |f| %>
-<div class="form-card-header text-center">
-  <%= f.input :content %>
-</div>
-<div class="form-card-header text-center">
-  <%= f.input :notify %>
-</div>
-  <%= f.input :identity, as: :boolean, label: "Show identity" %>
-  <%= f.submit  id: 'create' %>
-  <div class="form-actions">
-    <div class="btn btn-primary" id="btn-doc">Add Document</div>
+
+<div class="container-fluid" style="background: #F5F5F5;">
+  <div class="row form-card">
+    <div class="form-card-header text-center">
+      <h1 style="line-height: 4rem;">New Message to <%= @channel.name %></h1>
+      <p><span>Post a new message</span> in this thread.</p>
+    </div>
+
+    <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+      <div class="form-card-content">
+        <%= simple_form_for [@channel, @message] do |f| %>
+
+          <div class="input">
+            <%= f.input :content, as: :text, required: true, label: false, autofocus: true, input_html: { type: "textarea", placeholder: "Your Message", rows: 5, class: "simple-form-text-area" } %>
+            <span style="margin-top: -0.6rem;"><i class="fa fa-commenting-o"></i></span>
+          </div>
+
+          <div class="input">
+            <%= f.input :notify, required: true, label: false, autofocus: false, hint: ("Type the email of the user you want to notify preceded by # or use #all to notify all the channel"), input_html: { type: "text", placeholder: "Users" } %>
+            <span><i class="fa fa-bell-o"></i></span>
+          </div>
+
+          <div class="form-actions">
+            <%= f.submit "Add +", class: 'btn submit-btn' %>
+          </div>
+
+        <% end %>
+      </div>
+    </div>
   </div>
-  <div class="hidden" id="doc">
-    <%= render 'shared/form_document', f: f %>
-    <div class="btn btn-primary" id="doc-show">Close</div>
-  </div>
-<% end %>
-
-<!-- teste fim -->
+ </div>

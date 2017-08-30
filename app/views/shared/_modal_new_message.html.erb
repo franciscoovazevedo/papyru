@@ -1,35 +1,8 @@
 <div class="modal fade newmessage" id="newmessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-       <center> <h1 class="modal-title" id="exampleModalLabel">New message</h1> </center>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= simple_form_for [@channel, @message] do |f| %>
-          <%= f.input :content %>
-          <%= f.input :notify %>
-          <%= f.input :identity, as: :boolean, label: "Show identity" %>
-          <%= f.submit  id: 'create' %>
-          <div class="btn btn-primary" id="btn-doc">Add Document</div>
-          <div class="hidden" id="doc">
-            <%= f.simple_fields_for :document do |d| %>
-              <%= d.input :name %>
-              <%= d.input :filetype, as: :select, collection: %w( exercise former-exam exam slide notification ) %>
-              <%= d.input :file, as: :file %>
-              <%= d.input :file_cache, as: :hidden %>
-              <%= d.submit %>
-            <% end %>
-          <div class="btn btn-primary" id="doc-show">Close</div>
-          </div>
-      <% end %>
-      </div>
-     <!--  <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
-      </div> -->
+      <%= render 'shared/form_new_message' %>
     </div>
   </div>
 </div>
+

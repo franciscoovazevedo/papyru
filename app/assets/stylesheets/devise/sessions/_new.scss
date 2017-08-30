@@ -230,3 +230,34 @@
 form {
   margin: 40px 0 20px 0;
 }
+
+.simple-form-text-area {
+  width: 100%;
+  height: 5rem;
+  display: block;
+  font-size: 1.5rem;
+  line-height: normal;
+  border: 1px solid $gray-dark;
+  border-radius: .25rem;
+  box-shadow: none;
+  color: $gray-dark;
+  background-color: $papyru-color-1;
+  margin: 0 0 .5rem;
+  padding: 1rem 0.5rem 1rem 4rem;
+  flex-shrink: 10;
+  flex-grow: 10;
+  outline: 0;
+  -webkit-transition: 200ms ease-out;
+  -moz-transition: 200ms ease-out;
+  transition: 200ms ease-out;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: 0;
+    border-color: $blue;
+    box-shadow: none;
+    padding: 1rem 0.5rem 1rem 1rem;
+  }
+}
