@@ -60,9 +60,9 @@ class Message < ApplicationRecord
           teachers.find_by_email(email)
         end
       end
+    end
     recipients.each { |user| notifications.create(user: user) }
 
-    end
   end
 
   def noti_code(type)
