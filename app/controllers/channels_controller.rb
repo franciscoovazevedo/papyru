@@ -6,7 +6,6 @@ class ChannelsController < ApplicationController
   end
 
   def create
-    byebug
     @channel = Channel.new(channel_params)
     @study = Study.find(params[:study_id])
     @channel.study = @study
