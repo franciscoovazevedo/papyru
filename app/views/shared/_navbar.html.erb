@@ -23,14 +23,18 @@
           <li>
             <%= link_to "Unread", notifications_path %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Archive", "#" %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Mark all as read", "#" %>
           </li>
-          <% @notifications.each_with_index do |notification, ind| %>
-            <li class="container-fluid">
-              <div class="row">
-                <div class="teacher-avatar-container col-xs-1">
-                  <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
+          <% @notifications.each do |notification| %>
+            <%= link_to notifications_path do %>
+              <li>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-xs-1">
+                      <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
+            <% end %>
           <% end %>
         </ul>
       </div>
