@@ -89,7 +89,7 @@ photos = [
 ]
 
 photos.each_with_index do |p, i|
-  u = USer.find(i-1)
+  u = User.find(i+1)
   u.remote_photo_url = p
   if u.save
     puts "Saved #{u.name}'s photo"
