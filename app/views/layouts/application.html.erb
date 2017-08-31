@@ -9,8 +9,9 @@
     <meta name='keywords'
       content='papyru,students,education,teachers,platform,e-learning' />
 
-    <title> <%= yield(:title).blank? ? "Papyru - Teaching Platform" : yield(:title)   %></title>
+    <title> <%= yield(:title).blank? ? "Papyru | Teaching Platform" : yield(:title)   %></title>
 
+    <%= favicon_link_tag 'favicon.png' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
