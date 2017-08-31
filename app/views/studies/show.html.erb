@@ -1,50 +1,16 @@
-<%= render 'shared/sidebar' %>
-
 <div class="container-fluid">
   <div class="row content">
-    <div class="col-sm-3 sidenav hidden-xs">
-      <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);">Channels</h2>
-      <% if current_user.teacher? %>
-        <p style="color: #464646; font-size: 12px;">
-        <% if current_user.teacher? %>
-          <button class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">New Channel</button>
-        <% end %>
-        </p>
-      <% end %>
-      <ul class="nav nav-pills nav-stacked">
-        <hr/>
-        <% @channels.each do |channel| %>
-          <li><%= link_to channel.name, channel_path(channel) %></li>
-          <hr/>
-        <% end %>
-      </ul>
-    </div>
-    <br>
 
-    <div class="col-sm-9" id="show-content">
-      <% if current_user.teacher? %>
-        <nav class="subject-options">
-          <div class="container-fluid">
-            <ul class="nav navbar-nav">
-              <li>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addstudents">Add Students</button>
-              </li>
-            </ul>
-          </div>
-        </nav>
-      <% end %>
+    <%= render 'shared/sidebar' %>
 
-      <h1 class="text-center"><%= @subject %></h1>
-
+    <div class="col-md-9 page-content">
 
       <div class="col-sm-6">
-
         <div class="well">
           <h3>Messages</h3>
           <hr/>
           <% @messages.each do |message| %>
             <% if message.show? %>
-
               <h4><%= message.user.name %>
                 <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar" %>
               </h4>
@@ -55,14 +21,12 @@
             <% end %>
           <% end %>
         </div>
-
       </div>
 
       <div class="col-sm-6">
-
         <%= render 'shared/documents_channel_show' %>
-
       </div>
+
     </div>
   </div>
 </div>

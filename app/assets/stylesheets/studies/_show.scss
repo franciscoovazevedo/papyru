@@ -1,97 +1,23 @@
-ul li {
-  list-style-type: none;
-  font-size: 18px;
-  display: flex;
-  justify-content:center;
-}
-.nav > li > a {
-  display: flex;
-  justify-content:center;
-  align-items: center;
-}
-
-
-// Set height of the grid so .sidenav can be 100% (adjust as needed)
-.row.content {
-  height: 1000px;
-  z-index: -1;
-}
-
-// Set gray background color and 100% height
-.sidenav {
-  background-color: $papyru-color-2;
-  height: calc(100vh - 70px);
-  position: fixed;
-  top: 70px;
-  overflow-y: scroll;
-  width: 20%;
-}
-
-// On small screens, set height to 'auto' for the grid
-@media screen and (max-width: 767px) {
-  .row.content {
-    height: auto;
-  }
-}
-
-
-#show-content {
-  position: fixed;
-  right: 0;
-  top: 70px;
-  height: calc(100vh - 70px);
-  overflow-y: scroll;
-  width: 78%;
-}
-
 .fix-navbar {
   position: fixed;
   width: 100%;
 }
 
+.page-content {
+  position: fixed;
+  right: 0;
+  top: 70px;
+  min-height: calc(100vh - 70px);
+  width: 80%;
+  z-index: -1;
+  margin-top: 3rem;
+}
+
 .form-test {
   border: 0.1px solid gray;
-  background-color: lightgray;
+  background-color: $gray-light;
 }
 
 form {
   margin: 40px 0;
-}
-
-#search {
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  display: inline;
-  font-size: 18px;
-  border-bottom: 1.5px solid #FFF;
-  padding-right: 20px;
-  transition: .16s;
-  margin-right: 20px;
-}
-
-#search:hover {
-  border-bottom: 1.5px solid #17AA1C;
-}
-
-#search:focus, #search:active {
-  border: none;
-  border-bottom: 1.5px solid #17AA1C;
-  border-radius: 0;
-  box-shadow: none;
-  outline: 0;
-  color: #FFF;
-}
-
-#search-btn {
-  margin-top: 4px;
-  color: #FFF;
-  background-color: #17AA1C;
-  border: 2px solid #17AA1C;
-  border-radius: 4px;
-  transition: background .16s;
-  -webkit-transition: background .16s;
-  padding: 6px 24px;
-  margin-left: 12px;
 }
