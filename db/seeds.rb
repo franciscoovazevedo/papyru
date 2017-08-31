@@ -53,7 +53,7 @@ def random_teacher_school_numbers
   school_number
 end
 
-teachers = %w(Carlos\ Mendes Cyrille\ Labesse Nick\ Major Joao\ Viana Andre\ Brás Mafalda\ Sequeira Andre\ Costa)
+teachers = %w(Carlos\ Mendes Cyrille\ Labesse Nick\ Major Joao\ Viana Andre\ Bras Mafalda\ Sequeira Andre\ Costa)
 students = %w(Francisco\ Azevedo Gabriele\ Canepa Manuel\ Sepulveda)
 # #generating a 15 random students
 
