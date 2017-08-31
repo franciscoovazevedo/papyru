@@ -8,7 +8,7 @@
     <meta name='keywords'
       content='papyru,students,education,teachers,platform,e-learning' />
 
-    <title>Papyru</title>
+    <title> <%= yield(:title).blank? ? "Papyru - Teaching Platform" : yield(:title)   %></title>
 
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
