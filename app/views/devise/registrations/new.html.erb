@@ -44,6 +44,10 @@
                 <span><i class="fa fa-graduation-cap"></i></span>
               </div>
 
+              <div class="input">
+                <%= f.input :photo %>
+              </div>
+
               <div class="input user-type form-group-lg">
                 <p class="text-center" style="font-size: 1.6rem;">I am a</p>
                 <%= f.input :type, as: :select, collection: ["Teacher", "Student"], default: "Teacher", label: false, input_html: { onchange: "sign_up_logic()" } %>

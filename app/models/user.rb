@@ -1,7 +1,7 @@
 
 
 class User < ApplicationRecord
-  # mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
   has_many :notifications
   has_many :messages
   # self.abstract_class = true

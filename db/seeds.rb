@@ -18,10 +18,12 @@ def fromMayorToAcronym(mayor)
 end
 
 # Seeds - first create the subjects
-subject = ["Math", "Italian", "Portuguese", "Spanish", "Ruby", "Java", "Algebra"]
-subject.each { |subject| Subject.create(name: subject, acronym: fromMayorToAcronym(subject)) }
+subject = %w(Ruby JAVA Database\ Basics Software\ Engineer Digital\ Networks Portuguese Italian
+   English Math History Psycology\ Introdution Music French Database\ Concepts Economics
+   Finance Statistics Marketing Yoga)
+subject.each { |subject| Subject.create(name: subject, acronym: "ABC") }
 # Create the Mayors
-major =  ["Informatic Engineer", "Business and Computer Science", "Data Engineering", "Psycology", "Finance and Strategy", "Sports Manangement"]
+major =  ["Informatic Engineer", "Languages", "Data Enginering", "Psycology", "Finance and Strategy", "Sports Manangement"]
 major.each { |mayor| Mayor.create(name: mayor, acronym: fromMayorToAcronym(mayor)) }
 
 # generating a random phone number
@@ -51,23 +53,32 @@ def random_teacher_school_numbers
   school_number
 end
 
+teachers = %w(Carlos\ Mendes Cyrille\ Labesse Nick\ Major Joao\ Viana Andre\ Brás Mafalda\ Sequeira Andre\ Costa)
+students = %w(Francisco\ Azevedo Gabriele\ Canepa Manuel\ Sepulveda)
 # #generating a 15 random students
-15.times do
-  name = Faker::FamilyGuy.character
+
+teachers.each { |teacher| Teacher.create(name: teacher, email: teacher.delete(' ') + "@lewagon.com",
+                     password: "123456", address: Faker::Address.street_address,
+                     phone_number: random_phone_numbers, school_number: random_student_school_numbers)
+              }
+
+students.each { |student| Student.create(name: student, email: student.delete(' ') + "@lewagon.com",
+                     password: "123456", address: Faker::Address.street_address,
+                     phone_number: random_phone_numbers, school_number: random_student_school_numbers,
+                     mayor: Mayor.all.sample)
+              }
+30.times do
+  name = Faker::HarryPotter.character
   Student.create(name: name, email: name.delete(' ') + "@papyru.com", password: "123456", address: Faker::Address.street_address, phone_number: random_phone_numbers, school_number: random_student_school_numbers, mayor: Mayor.first)
 end
 
 # #generating a 5 random teachers
-5.times do
-  name = Faker::Pokemon.name
-  Teacher.create(name: name, email: name.delete(' ') + "@papyru.com", password: "123456", address: Faker::Address.street_address, phone_number: random_phone_numbers, school_number: random_teacher_school_numbers)
-end
+subject = subject.first(6)
+studies = Subject.all.first(6)
+students_used_demo = Student.all.first(6)
 
-Subject.all.each do |subject|
-  Study.create(subject: subject, teacher: Teacher.order("RANDOM()").first)
-  Student.all.each do |student|
-    Study.create(subject: subject, student: student)
-  end
+studies.each do |subject|
+  Teacher.all.each { |teacher| Study.create(subject: subject, teacher: teacher)}
+  students_used_demo.each { |student| Study.create(subject: subject, student: student)}
 end
-
 
