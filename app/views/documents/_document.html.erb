@@ -1,2 +1,6 @@
-<%= document.file.file ? link_to(document.name, cl_image_path(document.file)) : document.name %>
- <p style="font-size: 12px; text-align: right;">Posted on <%= l document.created_at %></p>
+<div class="tabs-container">
+  <p><i class="fa fa-pencil" aria-hidden="true"></i>&nbsp; <%= document.name %></p>
+  <p><i class="fa fa-file-text-o" aria-hidden="true"></i>&nbsp; <%= document.file.file ? link_to("Download", cl_image_path(document.file)) : "Document not available for download" %></p>
+  <p style="font-size: 12px; text-align: right;" class="message-posted-at">Posted by <%= document.message.user.name %> (<%= @subject %> <%= document.message.user.class %>) on <%= l document.created_at %></p>
+</div>
+

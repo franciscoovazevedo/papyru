@@ -1,5 +1,4 @@
 .sidebar {
-  font-size: 'Roboto';
   background-color: $blue-dark;
   height: calc(100vh - 70px);
   position: fixed;
@@ -50,6 +49,11 @@
 
       a {
         color: $white;
+        transition: 300ms;
+
+        &:hover {
+          color: $papyru-color-4;
+        }
       }
     }
   }

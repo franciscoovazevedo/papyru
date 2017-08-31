@@ -7,17 +7,56 @@
   position: fixed;
   right: 0;
   top: 70px;
-  min-height: calc(100vh - 70px);
   width: 80%;
   z-index: -1;
   margin-top: 3rem;
+
+  h3 {
+    color: $blue-dark;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $gray;
+    font-weight: bold;
+  }
+
+  h4 {
+    font-weight: bold;
+
+    span {
+      font-weight: normal;
+    }
+  }
+
+  h5 {
+    font-size: 2rem;
+  }
+
+  .message-container {
+    border-bottom: 1px solid $gray-light;
+    padding-top: 1rem;
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .message-content {
+    color: $gray-darker;
+  }
+
+  .message-posted-at {
+    color: $gray-dark;
+  }
 }
 
-.form-test {
-  border: 0.1px solid gray;
-  background-color: $gray-light;
-}
+.tabs-container {
+  border-bottom: 1px solid $gray-light;
+  padding: 2rem 0;
 
-form {
-  margin: 40px 0;
+  &:last-child {
+    border-bottom: none;
+  }
 }
