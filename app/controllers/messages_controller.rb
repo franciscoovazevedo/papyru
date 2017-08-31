@@ -1,11 +1,4 @@
 class MessagesController < ApplicationController
-
-  def new
-    @channel = Channel.find(params[:channel_id])
-    @message = @channel.messages.new(notify: "#all")
-    @message.documents.build
-  end
-
   def create
     @channel = Channel.find(params[:channel_id])
     @message = Message.new(message_params.merge(
