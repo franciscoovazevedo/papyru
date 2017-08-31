@@ -1,102 +1,63 @@
-<% content_for :title, "#{@channel.name} | #{@subject} | Papyru" %>
-
-<nav class="navbar navbar-inverse visible-xs">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#channel-bar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#" >Channels</a>
-    </div>
-    <div class="collapse navbar-collapse" id="channel-bar">
-      <ul class="nav navbar-nav">
-        <% @channel.study.channels.each do |channel| %>
-          <% if channel.name == @channel.name %>
-            <li style="color: #FFF;">→ <%= @channel.name %></li>
-          <% else %>
-            <li><%= link_to channel.name, channel_path(channel) %></li>
-          <% end %>
-        <% end %>
-         <li> <button class="btn btn-primary" data-toggle="modal" data-target=".newchannel">New Channel</button>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<% content_for :title, "#{@channel.name} - #{@subject} | Papyru" %>
 
 <div class="container-fluid">
   <div class="row content">
-    <div class="col-sm-3 sidenav hidden-xs">
-      <h2 style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2); ">Channels</h2>
-       <% if current_user.teacher? %>
-         <button class="btn btn-primary" data-toggle="modal" data-target="#newchannel">New Channel</button>
-       <% end %>
-      <ul class="nav nav-pills nav-stacked">
-        <%= link_to "SuperChannel #{@channel.subject.name}", study_path(@channel.study) %>
-        <hr/>
+
+    <div class="sidebar">
+      <h3><%= link_to "#{@channel.subject.name} Channel", study_path(@channel.study) %></h3>
+
+      <p><%= link_to "< Back to #{@channel.subject.name} general channel", study_path(@channel.study), class: "go-back" %><p>
+
+      <a data-toggle="modal" data-target="#newmessage" class="add-links" data-whatever="Recepient"><i class="fa fa-commenting-o" aria-hidden="true"></i> New message</a><br/>
+
+      <% if current_user.teacher? %>
+        <a data-toggle="modal" data-target="#editchannel" class="add-links"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit channel</a><br/>w
+        <a data-toggle="modal" data-target=".bd-example-modal-lg" class="add-links"><i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 1.9rem; margin-right: 0.2rem; margin-bottom: 1rem;"></i> New thread</a><br/>
+      <% end %>
+
+      <div class="threads-nav">
+        <h4>Threads</h4>
         <% @channel.study.channels.each do |channel| %>
           <% if channel.name == @channel.name %>
-            <li style="color: white; text-shadow: 1px 1px 1px rgba(0,0,0,0.2);display: flex;justify-content: center;">Thread: <%= @channel.name %></li>
+            <p id="thread-name" style="color: #FEE064;">📜&nbsp; <%= @channel.name %></p>
           <% else %>
-            <li><%= link_to channel.name, channel_path(channel) %></li>
+            <p id="thread-name"><%= link_to channel.name, channel_path(channel) %></p>
           <% end %>
-          <hr/>
         <% end %>
-      </ul>
+      </div>
     </div>
-    <br>
 
-    <div class="col-sm-9" id="show-content">
-
-      <nav class="subject-options">
-        <div class="container-fluid">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Go back to #{@channel.subject.name}", study_path(@channel.study) %></li>
-            <% if current_user.teacher? %>
-
-              <li>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editchannel">Edit channel</button>
-              </li>
-             <% end %>
-          </ul>
-        </div>
-      </nav>
-
-      <h1 class="text-center"><%= @channel.name %></h1>
-      <hr/>
+    <div class="col-md-9 page-content">
 
       <div class="col-sm-6">
-
         <div class="well">
+
           <h3>Messages</h3>
 
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#newmessage" data-whatever="Recepient" style="padding: 10px 30px;">New message</button>
-
-          <hr/>
           <% @messages.each do |message| %>
+            <div class="message-container">
             <% if message.user.teacher? %>
               <% if message.show? %>
-                <h4><%= message.user.name %> <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "avatar" %></h4>
-                <h6><%= @subject %> <%= message.user.class %></h6>
-                <p><%= message.content %></p>
-                <p style="font-size: 12px; text-align: right;">Posted on <%= l message.created_at %></p>
-                <hr/>
+                <h4><%= message.user.name %> <span style="font-size: 12px;">(<%= @subject %> <%= message.user.class %>)</span>
+                  <%= image_tag avatar_url(current_user), class: "avatar" %>
+                </h4>
+                <p class="message-content"><%= message.content %></p>
+                <p style="font-size: 12px; text-align: right;" class="message-posted-at">Posted on <%= l message.created_at %></p>
               <% end %>
+              </div>
             <% end %>
           <% end %>
         </div>
-
       </div>
-       <div class="col-sm-6">
+
+      <div class="col-sm-6">
         <%= render 'shared/documents_channel_show' %>
       </div>
+
     </div>
   </div>
 </div>
+
 <%= render 'shared/modal_new_message'%>
 <%= render 'shared/modal_new_channel'%>
 <%= render 'channels/edit' %>
-
-

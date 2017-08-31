@@ -1,0 +1,21 @@
+<div class="sidebar">
+  <h3><%= link_to "#{@channel.subject.name} Channel", study_path(@channel.study) %></h3>
+
+  <a data-toggle="modal" data-target="#newmessage" class="add-links" data-whatever="Recepient"><i class="fa fa-commenting-o" aria-hidden="true"></i> New message</a>
+
+  <% if current_user.teacher? %>
+    <a data-toggle="modal" data-target="#editchannel" class="add-links"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit channel</a>
+    <a data-toggle="modal" data-target=".bd-example-modal-lg" class="add-links"><i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 1.9rem; margin-right: 0.2rem; margin-bottom: 1rem;"></i> New thread</a><br/>
+  <% end %>
+
+  <div class="threads-nav">
+    <h4>Threads</h4>
+    <% @channel.study.channels.each do |channel| %>
+      <% if channel.name == @channel.name %>
+        <p id="thread-name" style="color: #FEE064;">📜 <%= @channel.name %></p>
+      <% else %>
+        <p id="thread-name"><%= link_to channel.name, channel_path(channel) %></p>
+      <% end %>
+    <% end %>
+  </div>
+</div>

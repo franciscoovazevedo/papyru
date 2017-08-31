@@ -10,7 +10,7 @@
   <div class="threads-nav">
     <h4>Threads</h4>
     <% @channels.each do |channel| %>
-      <p id="thread-name"><span class="hidden" id="papyrus-icon">📜</span><%= link_to channel.name, channel_path(channel) %></p>
+      <p id="thread-name"><%= link_to channel.name, channel_path(channel) %></p>
     <% end %>
   </div>
 
