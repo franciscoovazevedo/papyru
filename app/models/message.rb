@@ -14,7 +14,7 @@ class Message < ApplicationRecord
   accepts_nested_attributes_for :documents, reject_if: proc { |doc| doc["name"].blank? }
 
   def has_document?
-    Document.where(message: self).empty? ? false : true
+    !Document.where(message: self).empty?
   end
 
   def show?
