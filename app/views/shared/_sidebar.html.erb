@@ -1,21 +1,17 @@
-<nav class="navbar navbar-inverse visible-xs">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#channel-bar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#" >Channels</a>
-    </div>
-    <div class="collapse navbar-collapse" id="channel-bar">
-      <ul class="nav navbar-nav">
-        <% @channels.each do |channel| %>
+<div class="sidebar">
 
-          <li><%= link_to channel.name, channel_path(channel) %></li>
-        <% end %>
+  <h3><%= @subject %> Channel</h3>
 
-      </ul>
-    </div>
+  <% if current_user.teacher? %>
+    <a data-toggle="modal" data-target=".bd-example-modal-lg" class="add-links"><i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 1.9rem; margin-right: 0.2rem; margin-bottom: 1rem;"></i> New thread</a><br/>
+    <a data-toggle="modal" data-target="#addstudents" class="add-links"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Add students</a>
+  <% end %>
+
+  <div class="threads-nav">
+    <h4>Threads</h4>
+    <% @channels.each do |channel| %>
+      <p><%= link_to channel.name, channel_path(channel) %></p>
+    <% end %>
   </div>
-</nav>
+
+</div>

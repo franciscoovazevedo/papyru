@@ -1,29 +1,56 @@
-#sidebar {
-  background-color: $papyru-color-3;
+.sidebar {
+  font-size: 'Roboto';
+  background-color: $blue-dark;
+  height: calc(100vh - 70px);
   position: fixed;
-  left: 0px;
   top: 70px;
-  bottom: 0px;
-  text-align: center;
-}
+  overflow-y: scroll;
+  width: 20%;
+  padding: 0 2rem;
+  z-index: 1;
 
-#sidebar ul {
-  list-style: none;
-  padding-left: 0px;
-}
+  h3 {
+    color: $papyru-color-5;
+    margin-bottom: 1rem;
+  }
 
-#sidebar li {
-  margin: 50px 0;
-}
+  .add-links {
+    color: $white;
+    cursor: pointer;
+    position: relative;
+    transition: 200ms;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
 
-#sidebar a {
-  text-decoration: none;
-  font-size: 18px;
-  color: $white-dark;
-}
+    .fa-plus-circle {
+      color: $green;
+      font-size: 1.5rem;
+      margin-left: 0.1rem;
+    }
 
-#sidebar a:hover {
-  color: $white;
-  cursor: pointer;
-}
+    .fa-graduation-cap {
+      color: $black;
+    }
 
+    &:hover {
+      left: 1rem;
+    }
+  }
+
+  .threads-nav {
+    margin-top: 4rem;
+
+    h4 {
+      font-size: 2.1rem;
+      color: $papyru-color-5;
+    }
+
+    p {
+      font-size: 1.7rem;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}
