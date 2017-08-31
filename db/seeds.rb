@@ -1,10 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 def fromMayorToAcronym(mayor)
   result = ""
   if mayor.split(' ').length > 1
@@ -26,7 +19,7 @@ subject.each { |subject| Subject.create(name: subject, acronym: "ABC") }
 major =  ["Informatic Engineer", "Languages", "Data Enginering", "Psycology", "Finance and Strategy", "Sports Manangement"]
 major.each { |mayor| Mayor.create(name: mayor, acronym: fromMayorToAcronym(mayor)) }
 
-# generating a random phone number
+# Generating a random phone number
 def random_phone_numbers
   phone_number = "9"
   8.times do
@@ -35,7 +28,7 @@ def random_phone_numbers
   phone_number
 end
 
-# generating a random school number for students
+# Generating a random school number for students
 def random_student_school_numbers
   school_number = "s"
   5.times do
@@ -44,7 +37,7 @@ def random_student_school_numbers
   school_number
 end
 
-#generating a random school number for teachers
+# Generating a random school number for teachers
 def random_teacher_school_numbers
   school_number = "t"
   5.times do
@@ -55,7 +48,7 @@ end
 
 teachers = %w(Carlos\ Mendes Cyrille\ Labesse Nick\ Major Joao\ Viana Andre\ Bras Mafalda\ Sequeira Andre\ Costa)
 students = %w(Francisco\ Azevedo Gabriele\ Canepa Manuel\ Sepulveda)
-# #generating a 15 random students
+# Generating a 15 random students
 
 teachers.each { |teacher| Teacher.create(name: teacher, email: teacher.delete(' ') + "@lewagon.com",
                      password: "123456", address: Faker::Address.street_address,
@@ -72,7 +65,7 @@ students.each { |student| Student.create(name: student, email: student.delete(' 
   Student.create(name: name, email: name.delete(' ') + "@papyru.com", password: "123456", address: Faker::Address.street_address, phone_number: random_phone_numbers, school_number: random_student_school_numbers, mayor: Mayor.first)
 end
 
-# #generating a 5 random teachers
+# Generating a 5 random teachers
 subject = subject.first(6)
 studies = Subject.all.first(6)
 students_used_demo = Student.all.first(6)

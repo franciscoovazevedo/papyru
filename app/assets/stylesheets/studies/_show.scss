@@ -4,12 +4,13 @@
 }
 
 .page-content {
-  position: fixed;
+  position: absolute;
   right: 0;
   top: 70px;
   width: 80%;
   z-index: -1;
   margin-top: 3rem;
+  overflow-y: auto;
 
   h3 {
     color: $blue-dark;
