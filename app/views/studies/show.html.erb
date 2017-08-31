@@ -15,7 +15,7 @@
             <div class="message-container">
             <% if message.show? %>
               <h4><%= message.user.name %> <span style="font-size: 12px;">(<%= @subject %> <%= message.user.class %>)</span>
-                <%= image_tag avatar_url(current_user), class: "avatar" %>
+                <%= image_tag avatar_url(message.user), class: "avatar" %>
               </h4>
               <p class="message-content"><%= message.content %></p>
               <p style="font-size: 12px; text-align: right;" class="message-posted-at">Posted on <%= l message.created_at %></p>
