@@ -22,20 +22,21 @@
           <div class="remember">
             <%= f.input :identity, class: "remember-me", as: :boolean, inline_label: 'Show your identity?', label: false %>
           </div>
+          <% if current_user.teacher? %>
 
-          <div class="form-actions">
-            <div class="btn document-btn" id="btn-doc">Add Document +</div>
-          </div>
+            <div class="form-actions">
+              <div class="btn document-btn" id="btn-doc">Add Document +</div>
+            </div>
 
           <div class="hidden" style="border-top: 1px solid #E6E6E6; margin-top: 2.5rem;" id="doc">
+              <h3 class="text-center">Document</h3>
+              <%= f.simple_fields_for :documents do |d| %>
 
-            <h3 class="text-center">Document</h3>
-            <%= f.simple_fields_for :documents do |d| %>
+                <%= d.input :file, as: :file %>
+                <%= d.input :file_cache, as: :hidden %>
+         
 
               <br/>
-
-              <%= d.input :file, as: :file, label: false %>
-              <%= d.input :file_cache, as: :hidden %>
 
               <div class="input">
                 <%= d.input :name, as: :text, required: false, label: false, autofocus: false, input_html: { type: "textarea", placeholder: "Description", rows: 3, class: "simple-form-text-area" } %>
@@ -46,12 +47,12 @@
                 <p class="text-center" style="font-size: 1.6rem;">Document Type</p>
                 <%= d.input :filetype, as: :select, collection: [["Exercise", "exercise"], ["Lecture", "lecture"], ["Slides", "slide"], ["Communication", "notification"], ["Exam Results", "exam"], ["Other", "former-exam"]], default: "Exercise", label: false %>
               </div>
-
               <div class="form-actions">
-                <%= d.submit "Create message ✓", class: 'btn submit-btn', id: "create" %>
-              </div>
+                  <%= d.submit "Create message ✓", class: 'btn submit-btn', id: "create" %>
+                </div>
 
-            <% end %>
+              <% end %>
+
 
             <div class="form-actions">
               <div class="btn close-btn" id="doc-show">Remove Document ✗</div>
@@ -59,9 +60,11 @@
 
           </div>
 
+           <% end %>
           <div class="form-actions">
             <%= f.submit "Create message ✓", class: 'btn submit-btn', id: "create" %>
           </div>
+
 
         <% end %>
       </div>
