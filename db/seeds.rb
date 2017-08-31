@@ -75,3 +75,24 @@ studies.each do |subject|
   students_used_demo.each { |student| Study.create(subject: subject, student: student)}
 end
 
+photos = [
+  "http://res.cloudinary.com/flyradical/image/upload/v1504207706/test/13423984_1315779935116832_8274100993163418548_n.jpg",
+  "http://res.cloudinary.com/flyradical/image/upload/v1504207741/test/19029697_10155425728567803_1374897217921636789_n.jpg",
+  "http://res.cloudinary.com/flyradical/image/upload/v1504207773/test/18556153_1406085619438487_5557006912658018322_n.jpg",
+  "http://res.cloudinary.com/flyradical/image/upload/v1504207814/test/185934_1726723059756_2474149_n.jpg",
+  nil,
+  nil,
+  nil,
+  "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/yfnsdqkamwrr1s8mpkfm.jpg",
+  "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wlebdl90gtmmbklz7abi.jpg",
+  "https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/auigwptfjhfdaptu8xj0.jpg"
+]
+
+photos.each_with_index do |p, i|
+  u = USer.find(i-1)
+  u.remote_photo_url = p
+  if u.save
+    puts "Saved #{u.name}'s photo"
+  end
+end
+
