@@ -5,7 +5,7 @@
         <%= image_tag 'http://res.cloudinary.com/gabrielecanepa/image/upload/v1503073103/btsjxodlff6haw7glxsg.jpg', class: "teacher-avatar" %>
       </div>
       <div class="col-xs-9 notification-message-container">
-        <p><a class="notification-user"><%= notification.message.user.name %></a> posted a new message in <a class="notification-channel"><%= notification.message.channel.name %> (<%= notification.message.channel.subject.name %>)</a><span class="notification-date">・<%= notification.message.created_at.strftime('%d %b %Y at %H:%M') %></span></p>
+        <p><a class="notification-user"><%= notification.message.user.name %></a> posted a new message in <a class="notification-channel"><%= link_to notification.message.channel.name, channel_path(notification.message.channel) %> (<%= link_to notification.message.channel.subject.name, study_path(notification.message.channel.study) %>)</a><span class="notification-date">・<%= notification.message.created_at.strftime('%d %b %Y at %H:%M') %></span></p>
         <i class="fa fa-pencil" aria-hidden="true" style="font-size: 1.7rem; color: #2AB27B;">&nbsp;</i>&nbsp;<p class="notification-message" style="display: inline;"><%= notification.message.content %></p>
       </div>
 
