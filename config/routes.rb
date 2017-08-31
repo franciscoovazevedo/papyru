@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :channels, only: [:new, :create]
   end
   resources :channels, only: [:edit, :update, :destroy, :show] do
-    resources :messages, only: [:new, :create, :destroy] do
+    resources :messages, only: [:create, :destroy] do
       resources :notifications, only: [:new, :create]
     end
   end
