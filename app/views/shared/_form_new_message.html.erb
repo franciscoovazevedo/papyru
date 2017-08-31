@@ -32,11 +32,12 @@
               <h3 class="text-center">Document</h3>
               <%= f.simple_fields_for :documents do |d| %>
 
-                <%= d.input :file, as: :file %>
-                <%= d.input :file_cache, as: :hidden %>
-         
-
               <br/>
+
+              <%= d.input :file, as: :file, label: false %>
+              <%= d.input :file_cache, as: :hidden %>
+
+
 
               <div class="input">
                 <%= d.input :name, as: :text, required: false, label: false, autofocus: false, input_html: { type: "textarea", placeholder: "Description", rows: 3, class: "simple-form-text-area" } %>
