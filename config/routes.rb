@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
 
+
+  get 'errors/not_found'
+  match "/404", :to => "errors#not_found", :via => :all
+  get 'errors/internal_server_error'
+  match "/500", :to => "errors#internal_server_error", :via => :all
+
   post 'studies/upload_students', to: "studies#add_students_to_study" #member this TODO
   resources :notifications, only: [:index]  do
     member do

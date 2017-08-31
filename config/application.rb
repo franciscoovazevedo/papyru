@@ -22,9 +22,11 @@ module Papyru
       generate.assets false
       generate.helper false
     end
+    config.exceptions_app = self.routes
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
   end
 end
+
