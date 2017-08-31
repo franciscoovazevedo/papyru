@@ -17,12 +17,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   height: 175px;
   width:175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
+  color: #6B392E;
   border-radius: 50%;
   background: url('https://abx-static.s3-us-west-2.amazonaws.com/886671/previews/poster.jpg') no-repeat center center;
 
@@ -42,4 +43,11 @@
   border-radius: 50%;
 }
 
+.strokeme{
 
+  text-shadow:
+  -1px -1px 0 #FFF,
+  1px -1px 0 #FFF,
+  -1px 1px 0 #FFF,
+  1px 1px 0 #FFF;
+}
