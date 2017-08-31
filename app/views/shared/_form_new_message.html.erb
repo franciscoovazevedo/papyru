@@ -57,10 +57,20 @@
 
             <%= f.simple_fields_for :document do |d| %>
 
-              <%= d.input :file, as: :file %>
+              <br/>
+
+              <%= d.input :file, as: :file, label: false %>
               <%= d.input :file_cache, as: :hidden %>
-              <%= d.input :name %>
-              <%= d.input :filetype, as: :select, collection: %w( exercise former-exam exam slide notification ) %>
+
+              <div class="input">
+                <%= d.input :name, as: :text, required: false, label: false, autofocus: false, input_html: { type: "textarea", placeholder: "Description", rows: 3, class: "simple-form-text-area" } %>
+                <span style="margin-top: -0.6rem;"><i class="fa fa-pencil"></i></span>
+              </div>
+
+              <div class="input user-type form-group-lg">
+                <p class="text-center" style="font-size: 1.6rem;">Document Type</p>
+                <%= d.input :filetype, as: :select, collection: ["Exercise", "Lecture", "Slides", "Communication", "Exam Results", "Other"], default: "Exercise", label: false %>
+              </div>
 
               <div class="form-actions">
                 <%= d.submit "Create message ✓", class: 'btn submit-btn', id: "create" %>
