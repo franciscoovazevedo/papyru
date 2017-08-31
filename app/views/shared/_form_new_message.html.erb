@@ -20,7 +20,7 @@
           </div>
 
           <div class="remember">
-            <%= f.input :identity, class: "remember-me", as: :boolean, inline_label: 'Show your identity?', label: false %>
+            <%= f.input :identity, class: "remember-me", required: false, as: :boolean, inline_label: 'Show your identity?', label: false %>
           </div>
           <% if current_user.teacher? %>
 
@@ -46,7 +46,7 @@
 
               <div class="input user-type form-group-lg">
                 <p class="text-center" style="font-size: 1.6rem;">Document Type</p>
-                <%= d.input :filetype, as: :select, collection: [["Exercise", "exercise"], ["Lecture", "lecture"], ["Slides", "slide"], ["Communication", "notification"], ["Exam Results", "exam"], ["Other", "former-exam"]], default: "Exercise", label: false %>
+                <%= d.input :filetype, as: :select, collection: [["Exercise", "exercise"], ["Slides", "slide"], ["Communication", "notification"], ["Exam Results", "exam"], ["Other", "former-exam"]], default: "Exercise", label: false %>
               </div>
               <div class="form-actions">
                   <%= d.submit "Create message ✓", class: 'btn submit-btn', id: "create" %>

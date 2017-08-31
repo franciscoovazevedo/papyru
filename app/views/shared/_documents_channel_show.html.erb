@@ -1,31 +1,36 @@
-<% if @documents.exam.any?  %>
-  <div class="well">
-    <h3>Exams</h3>
-    <hr/>
-    <%= render @documents.exam.limit(3) %>
-  </div>
-  <% end %>
-
-  <% if @documents.former_exam.any?  %>
-  <div class="well">
-    <h3>Former-exams</h3>
-    <hr/>
-    <%= render @documents.former_exam.limit(3) %>
-  </div>
-  <% end %>
-
-  <% if @documents.slide.any?  %>
-  <div class="well">
-    <h3>Slides</h3>
-    <hr/>
-    <%= render @documents.slide.limit(3) %>
-  </div>
-  <% end %>
-
-  <% if @documents.exercise.any?  %>
+<% if @documents.exercise.any?  %>
   <div class="well">
     <h3>Exercises</h3>
-    <hr/>
     <%= render @documents.exercise.limit(3) %>
   </div>
 <% end %>
+
+<% if @documents.slide.any?  %>
+  <div class="well">
+    <h3>Slides</h3>
+    <%= render @documents.slide.limit(3) %>
+  </div>
+<% end %>
+
+<% if @documents.notification.any?  %>
+  <div class="well">
+    <h3>Communications</h3>
+    <%= render @documents.notification.limit(3) %>
+  </div>
+<% end %>
+
+<% if @documents.exam.any?  %>
+  <div class="well">
+    <h3>Exams Results</h3>
+    <%= render @documents.exam.limit(3) %>
+  </div>
+<% end %>
+
+<% if @documents.former_exam.any?  %>
+  <div class="well">
+    <h3>Other</h3>
+    <%= render @documents.former_exam.limit(3) %>
+  </div>
+<% end %>
+
+
