@@ -15,3 +15,19 @@
 .avatar:active {
   top: 1px;
 }
+
+h3 a {
+  color: $papyru-color-5;
+
+  &:hover {
+    color: $papyru-color-4;
+  }
+}
+
+.go-back {
+  color: $papyru-color-4;
+
+  &:hover {
+    color: $papyru-color-4;
+  }
+}
