@@ -20,6 +20,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  def superchannel(study)
+    Study.where(subject: study.subject, student: nil).first
+  end
+
   def teacher?
     self.type == "Teacher"
   end

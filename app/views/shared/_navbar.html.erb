@@ -55,7 +55,7 @@
           <% end %>
           <% current_user.studies.each do |study| %>
             <li>
-              <%= link_to study.subject.name, study_path(study), class: "nav-subject" %>
+              <%= link_to study.subject.name, study_path(current_user.superchannel(study)), class: "nav-subject" %>
             </li>
           <% end %>
           <li>
