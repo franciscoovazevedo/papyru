@@ -23,15 +23,21 @@
                 <% end %>
               </span>
         <% end %>
-        <ul class="dropdown-menu dropdown-menu-right navbar-notifications-dropdown-menu">
+        <ul class="dropdown-menu dropdown-menu-right navbar-notifications-dropdown-menu" style="margin-top: 2.4rem;">
           <li class="notifications-dropdown-header">
 
-            <%= link_to "Show unread (" + @notifications_number.to_s + ")", notifications_path %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Archive", archive_notifications_path %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Mark all as read", "#" %>
+            <%= link_to "Show unread", notifications_path %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Archive", archive_notifications_path %><span style="color: #1E5080; font-size: 1.2rem;">•</span><%= link_to "Mark as read", "#" %>
 
           </li>
           <div id="notifications">
              <%= render @notifications %>
           </div>
+
+          <li class="notifications-dropdown-footer">
+
+            <%= link_to "Show all", notifications_path %><span style="color: #1E5080; font-size: 1.2rem;">
+
+          </li>
 
         </ul>
       </div>

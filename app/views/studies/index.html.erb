@@ -1,10 +1,14 @@
-<div class="container">
-  <div class="row header text-center">
+<div class="container-fluid">
+
+  <div class="row header text-center" style="margin-top: 2.5rem; margin-bottom: 2.2rem;">
     <h1>Welcome back <%= current_user.name %>!</h1>
     <% unless  @notifications_number == 0 %>
-      <h3>You have <span><%= @notifications_number %> notifications to see</span></h3>
+      <% if @notifications_number == 1 %>
+        <h3>You have <%= link_to "#{@notifications_number} unread notification", notifications_path %>!</h3>
+      <% else %>
+        <h3>You have <%= link_to "#{@notifications_number} unread notifications", notifications_path %>!</h3>
+      <% end %>
     <% end %>
-
   </div>
 
   <div class="row content">

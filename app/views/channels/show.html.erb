@@ -1,25 +1,24 @@
-<% content_for :title, "#{@channel.name} - #{@subject} | Papyru" %>
-
+<% content_for :title, "#{@channel.name} (#{@subject}) | Papyru" %>
 <div class="container-fluid">
   <div class="row content">
 
     <div class="sidebar">
-      <h3><%= link_to "#{@channel.subject.name} Channel", study_path(@channel.study) %></h3>
+      <h3><%= link_to "#{@channel.name}", study_path(@channel.study) %> <span style="font-size: 1.9rem;">(<%= @channel.subject.name %>)</span></h3>
 
-      <p><%= link_to "< Back to #{@channel.subject.name} general channel", study_path(@channel.study), class: "go-back" %><p>
+      <p style="margin-bottom: 2rem;"><%= link_to "< Back to #{@channel.subject.name} general channel", study_path(@channel.study), class: "go-back" %><p>
 
-      <a data-toggle="modal" data-target="#newmessage" class="add-links" data-whatever="Recepient"><i class="fa fa-commenting-o" aria-hidden="true"></i> New message</a><br/>
+      <a data-toggle="modal" data-target="#newmessage" class="add-links" data-whatever="Recepient"><i class="fa fa-commenting-o" aria-hidden="true" style="font-size: 1.9rem; margin-right: 0.2rem; margin-bottom: 1rem;"></i> New message</a><br/>
 
       <% if current_user.teacher? %>
-        <a data-toggle="modal" data-target="#editchannel" class="add-links"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit channel</a><br/>w
-        <a data-toggle="modal" data-target=".bd-example-modal-lg" class="add-links"><i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 1.9rem; margin-right: 0.2rem; margin-bottom: 1rem;"></i> New thread</a><br/>
+        <a data-toggle="modal" data-target="#editchannel" class="add-links"><i class="fa fa-pencil-square-o" aria-hidden="true" style="font-size: 1.9rem; margin-right: 0.2rem; margin-bottom: 1rem;"></i> Edit thread</a><br/>
+        <a data-toggle="modal" data-target=".example-modal-lg" class="add-links"><i class="fa fa-plus-circle" aria-hidden="true" style="font-size: 1.9rem; margin-right: 0.4rem; margin-bottom: 1rem;"></i> New thread</a><br/>
       <% end %>
 
-      <div class="threads-nav">
+      <div class="threads-nav-2">
         <h4>Threads</h4>
         <% @channel.study.channels.each do |channel| %>
           <% if channel.name == @channel.name %>
-            <p id="thread-name" style="color: #FEE064;">📜&nbsp; <%= @channel.name %></p>
+            <p id="thread-name" style="color: white;">📜&nbsp; <%= @channel.name %></p>
           <% else %>
             <p id="thread-name"><%= link_to channel.name, channel_path(channel) %></p>
           <% end %>
@@ -32,14 +31,14 @@
       <div class="col-sm-6">
         <div class="well">
 
-          <h3>Messages</h3>
+          <h3>Messages <span class="pull-right"><a data-toggle="modal" data-target="#newmessage" class="new-message-link" data-whatever="Recepient">New message <i class="fa fa-commenting-o" aria-hidden="true"></i></a></span></h3>
 
           <% @messages.each do |message| %>
             <div class="message-container">
             <% if message.user.teacher? %>
               <% if message.show? %>
                 <h4><%= message.user.name %> <span style="font-size: 12px;">(<%= @subject %> <%= message.user.class %>)</span>
-                  <%= image_tag avatar_url(current_user), class: "avatar" %>
+                  <%= image_tag avatar_url(message.user), class: "avatar" %>
                 </h4>
                 <p class="message-content"><%= message.content %></p>
                 <p style="font-size: 12px; text-align: right;" class="message-posted-at">Posted on <%= l message.created_at %></p>

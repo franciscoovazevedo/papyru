@@ -18,6 +18,7 @@
 
 h3 a {
   color: $papyru-color-5;
+  transition: 300ms;
 
   &:hover {
     color: $papyru-color-4;
@@ -29,5 +30,69 @@ h3 a {
 
   &:hover {
     color: $papyru-color-4;
+  }
+}
+
+.add-links {
+  color: $white;
+  cursor: pointer;
+  position: relative;
+  transition: 200ms;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+
+  .fa-plus-circle {
+    color: $green;
+    font-size: 1.5rem;
+    margin-left: 0.1rem;
+  }
+
+  .fa-pencil-square-o {
+    color: $orange;
+  }
+
+  .fa-commenting-o {
+    color: $twitter-color;
+  }
+
+  &:hover {
+    left: 1rem;
+  }
+}
+
+.message-container {
+  padding-bottom: 1.5rem;
+}
+
+.threads-nav-2 {
+  margin-top: 3rem;
+
+  h4 {
+    font-size: 2.1rem;
+    color: $papyru-color-5;
+  }
+
+  p {
+    font-size: 1.7rem;
+
+    a {
+      color: $white;
+      transition: 300ms;
+
+      &:hover {
+        color: $papyru-color-4;
+      }
+    }
+  }
+}
+
+.new-message-link {
+  font-size: 1.6rem;
+  color: $blue;
+  cursor: pointer;
+  transition: 300ms;
+
+  &:hover {
+    color: $green;
   }
 }

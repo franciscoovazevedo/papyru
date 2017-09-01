@@ -1,11 +1,31 @@
-<div class="modal fade bd-example-modal-lg" id="editchannel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
+<div class="modal fade bd-example-modal-md" id="editchannel" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-md">
     <div class="modal-content">
-       <h3>Edit <%= @channel.name %></h3>
-         <%= simple_form_for @channel do |f| %>
-          <%= f.input :name %>
-          <%= f.submit %>
-         <% end %>
+       <div class="container-fluid" style="background: #F5F5F5;">
+        <div class="row form-card">
+          <div class="form-card-header text-center">
+            <h1>Edit <%= @channel.name %> Thread</h1>
+            <p><span>Change your thread</span> name and description.</p>
+          </div>
+
+          <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2">
+            <div class="form-card-content">
+              <%= simple_form_for @channel do |f| %>
+                <div class="input">
+                  <%= f.input :name, required: true, label: false, autofocus: true, input_html: { type: "name", placeholder: "Thread Name" } %>
+                  <span><i class="fa fa-pencil-square-o"></i></span>
+                </div>
+                <br>
+
+                <div class="form-actions">
+                  <%= f.submit "Edit ✓", class: 'btn submit-btn' %>
+                </div>
+
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
