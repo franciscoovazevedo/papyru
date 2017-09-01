@@ -1,14 +1,14 @@
 .header {
   margin: 40px auto;
-  color: #464646;
 }
 
 .header h1 {
-  font-size: 48px;
+  font-size: 45px;
+  color: $papyru-color-7;
 }
 
 .header h3 span {
-  border-bottom: 6px solid $papyru-color-3;
+  border-bottom: 6px solid $blue;
 }
 
 .subject-card {
