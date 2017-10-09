@@ -1,16 +1,18 @@
 <div class="container-fluid">
   <div class="row main">
-    <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5">
-      <h1>Make education happen</h1>
+
+    <div class="col-xs-12 col-md-5">
+      <h1>Make education easier</h1>
+
       <p>When you need to kick off an exam, ask the teacher a new question, download some useful file, receive a communication, plan your next step through your studies, and more, Papyru has you covered.</p>
       <div class="btn btn-primary">GET STARTED</div>
       <p class="sign-in">Already have an account? <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %></p>
     </div>
 
-    <div class="col-xs-1"></div>
+    <div class="hidden-xs hidden-sm col-md-1"></div>
 
-    <div class="col-xs-11 col-sm-11 col-md-5 col-lg-5">
-      <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1504187325/papyru2_v1zivq.jpg", width: "100%", alt: "Edit Entry", class: "main-picture") %>
+    <div class="col-xs-12 col-md-5">
+      <%= image_tag("papyru-bg.jpg", width: "100%", alt: "Papyru", class: "main-picture") %>
     </div>
   </div>
 
@@ -20,7 +22,6 @@
     <div class="btn btn-primary">DISCOVER MORE</div>
   </div>
 
-  <!--
   <div class="row supporting">
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <h3>Try it now for free</h3>
@@ -74,7 +75,6 @@
 
   <div class="row footer" style="height: 100px; background-color: green;">
   </div>
-  -->
 
 </div>
 
