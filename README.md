@@ -1,8 +1,6 @@
-# Papyru
+# Papyru · Teaching Platform
 
-![Papyru](https://image.flaticon.com/icons/svg/210/210616.svg =250 "Papyru")
-
-<a href="https://www.papyru.online"><img src="https://image.flaticon.com/icons/svg/210/210616.svg" align="center" height="48" alt="Papyru" title="Papyru"/></a>
+<a href="https://www.papyru.online"><img src="https://image.flaticon.com/icons/svg/210/210616.svg" height="48" alt="Papyru" title="Papyru"/></a>
 
 ---
 
