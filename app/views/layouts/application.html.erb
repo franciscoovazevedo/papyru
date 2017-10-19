@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta property="og:image" content="https://www.cfmws.com/en/AboutUs/PSP/recreation/CNA/1607-04-CommunityNeedsAssessment-1200x630px-B01.jpg"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name='description'
-      content='Papyru is a modern platform, developed in Le Wagon Bootcamp Lisbon by three junior developers, that joins students and teachers in a super user firendly way. ' />
-    <meta name='keywords'
-      content='papyru,students,education,teachers,platform,e-learning' />
+    <meta charset="UTF-8"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'"/>
+    <meta name="application-name" content="Papyru"/>
+    <meta name='description' content='Papyru is a modern platform, developed in Le Wagon Bootcamp Lisbon by three junior developers, that joins students and teachers in a super user-friendly way.'/>
+    <meta name="google" content="notranslate"/>
+    <meta http-equiv="set-cookie" content="name=value; expires=date; path=url"/>
+    <meta name="geo.placename" content="Lisbon"/>
+    <meta name='keywords' content='papyru, students, education, teachers, platform, e-learning, lisbon, coding, school, wagon, lewagon, ruby, rails'/>
+    <meta property="og:url" content="http://www.papyru.online" +/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="Papyru · Teaching Platform"/>
+    <meta property="og:description" content="Papyru is a modern platform, developed in Le Wagon Bootcamp Lisbon by three junior developers, that joins students and teachers in a super user-friendly way."/>
+    <meta property="og:image" content="http://res.cloudinary.com/gabrielecanepa/image/upload/v1508425456/og-image_qd1lql.png"/>
 
-    <title> <%= yield(:title).blank? ? "Papyru | Teaching Platform" : yield(:title)   %></title>
+    <title> <%= yield(:title).blank? ? "Papyru · Teaching Platform" : yield(:title) %></title>
 
-    <%= favicon_link_tag 'favicon.png' %>
+    <%= favicon_link_tag 'favicon96x96.png' %>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
