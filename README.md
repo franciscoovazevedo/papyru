@@ -4,6 +4,6 @@
 
 ---
 
-[Live Demo](http://www.papyru.online/)
+[See Live](http://www.papyru.online/)
 
 Rails app created at [Le Wagon Lisbon coding bootcamp](https://www.lewagon.com/lisbon) by [Francisco Azevedo](https://github.com/franciscoovazevedo), [Gabriele Canepa](https://github.com/gabrielecanepa) and [Manuel Sepulveda](https://github.com/ManuelSep).
