@@ -10,12 +10,7 @@
 
   img {
     height: 4rem;
-    position: relative;
     cursor: pointer;
-
-    &:active {
-      top: 0.2rem;
-    }
   }
 
   .avatar {
@@ -55,17 +50,16 @@
   }
 
   .navbar-wagon-mobile-link {
-    color: $black;
+    color: #484848;
     padding: 0 1rem;
 
     span {
       position: relative;
-      transition: 100ms ease-out;
+      transition: 150ms ease-out;
 
       &:hover {
-        color: #484848;
+        color: #1F5385;
         text-decoration: none;
-        border-bottom: 0.4rem solid $blue;
       }
 
       &:active {

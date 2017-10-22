@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <div class="row main">
 
-    <div class="col-xs-12 col-md-5">
+    <div class="col-xs-12 col-md-7">
 
       <h1>Making education easier</h1>
       <p>When you need to prepare an exam, ask your teachers a new question, download some useful file, receive a communication, or simply plan your next step through your studies, Papyru is going to help you.</p>
@@ -9,10 +9,8 @@
       <p class="sign-in">Already have an account? <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %></p>
     </div>
 
-    <div class="hidden-xs hidden-sm col-md-1"></div>
-
-    <div class="col-xs-12 col-md-5">
-      <%= image_tag("bg-home.jpg", width: "100%", alt: "Papyru", class: "main-picture") %>
+    <div class="col-xs-12 col-md-4 col-md-offset-1">
+      <%= image_tag("bg-book.png", width: "50%", alt: "Papyru", class: "main-picture") %>
     </div>
   </div>
 
