@@ -1,6 +1,6 @@
 # Papyru · Teaching Platform
 
-<a href="http://www.papyru.online/"><img src="https://image.flaticon.com/icons/svg/210/210616.svg" height="48" alt="Papyru" title="Papyru"/></a>
+<a href="http://www.papyru.online/" target="_blank"><img src="https://image.flaticon.com/icons/svg/210/210616.svg" height="48" alt="Papyru" title="Papyru"/></a>
 
 ---
 
