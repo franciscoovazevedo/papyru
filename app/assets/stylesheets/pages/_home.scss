@@ -4,9 +4,8 @@
   padding: 2rem 4rem;
 
   h1 {
-    margin-top: 4.5rem;
-    color: #1F5385;
-    font-size: 6.9rem;
+    color: $blue-dark;
+    font-size: 7rem;
     margin-bottom: 25px;
   }
 
@@ -26,15 +25,6 @@
 
   .sign-in {
     font-size: 14px;
-  }
-
-  .main-picture-container {
-    position: relative;
-  }
-
-  .main-picture {
-    position: absolute;
-    bottom: 0;
   }
 }
 
