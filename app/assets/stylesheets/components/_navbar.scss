@@ -1,7 +1,7 @@
 .navbar-wagon {
   background: white;
   transition: all 0.3s ease;
-  height: 7rem;
+  height: 8rem;
   padding: 0 5rem;
   display: flex;
   align-items: center;
@@ -9,8 +9,8 @@
   border-bottom: 1px solid $gray-light;
 
   img {
-    height: 4rem;
-    cursor: pointer;
+    max-width: 10rem;
+    @include grow;
   }
 
   .avatar {
@@ -25,7 +25,6 @@
     &:hover {
       cursor: pointer;
     }
-
     &:active {
       top: 0.2rem;
     }
@@ -41,7 +40,7 @@
     cursor: pointer;
     padding: 0 2rem;
     color: #484848;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 
     &:link, &:visited, &:hover, &:active {
       text-decoration: none;
@@ -52,20 +51,14 @@
   .navbar-wagon-mobile-link {
     color: #484848;
     padding: 0 1rem;
+    font-size: 1.5rem;
 
     span {
-      position: relative;
-      transition: 150ms ease-out;
-
-      &:hover {
-        color: #1F5385;
-        text-decoration: none;
-      }
+      @include underline-left;
 
       &:active {
         top: 1px;
       }
-
       &:last-child {
         margin-right: 2.2rem;
       }
@@ -98,20 +91,18 @@
   color: $blue;
   position: relative;
   border: 1px solid $blue;
+  font-size: 1.5rem;
   border-radius: 4px;
   line-height: 1;
   margin-left: 1.8rem;
   padding: 1rem 3rem;
-  transition: border 420ms, color 200ms;
-}
 
-.dropdown-btn:hover {
-  color: #1F5385;
-  border-color: #1F5385;
-}
-
-.dropdown-btn:active {
-  top: 1px;
+  &:active {
+    top: 1px;
+  }
+  &:hover, &:active, &:focus {
+    color: $blue;
+  }
 }
 
 #navbar-subjects {

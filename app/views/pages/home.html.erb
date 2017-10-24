@@ -1,37 +1,40 @@
 <div class="container-fluid">
+  <!-- Main banner -->
   <div class="row main">
-
-    <div class="col-xs-12 col-md-6">
+    <div class="col-xs-12 col-lg-6 table-row">
       <h1>Making education easier</h1>
       <p>When you need to prepare an exam, ask your teachers a new question, download some useful file, receive a communication, or simply plan your next step through your studies, Papyru is here to help you.</p>
       <div class="btn btn-primary">GET STARTED</div>
       <p class="sign-in">Already have an account? <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %></p>
     </div>
 
-    <div class="col-xs-12 col-md-6">
-      <%= image_tag("test3.svg", alt: "Papyru", class: "main-picture") %>
+    <div class="col-xs-12 col-lg-6 picture-container table-row">
+      <%= image_tag("home_bg.svg", alt: "", class: "main-picture") %>
     </div>
   </div>
 
+  <!-- Supporting -->
   <div class="row features text-center">
     <h2>Your study experience is ready to change</h2>
-    <p>Millions of people around the world have already made Papyru the place where their studies happens.</p>
+    <p>Other students and teachers around the world have already made Papyru the place where their education happens.</p>
     <div class="btn btn-primary">DISCOVER MORE</div>
   </div>
 
+  <!-- Email  -->
   <div class="row supporting">
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+    <div class="col-xs-12 col-md-6">
       <h3>Try it now for free</h3>
       <p>Already using Papyru? Sign in.</p>
     </div>
 
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 pull-right">
       <form>
-        <input type="email" style="margin-top: 20px;"></input>
+        <input type="email""></input>
       </form>
     </div>
   </div>
 
+  <!-- Footer -->
   <div class="row" style="background-color: red;">
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
       <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1503502488/logo-web.png", size: "32") %>

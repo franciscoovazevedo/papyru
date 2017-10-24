@@ -1,3 +1,6 @@
+/* Keyframes */
+
+/* Mixins */
 @mixin vertical-align {
   position: relative;
   top: 50%;
@@ -15,4 +18,87 @@
   position: relative;
   border: 1px solid $gray-light;
   color: $gray-dark;
+}
+
+@mixin grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+
+  &:hover, &:focus, &:active {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@mixin underline-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 100%;
+    bottom: 0;
+    top: 1rem;
+    background: $blue;
+    opacity: 0.4;
+    height: 4px;
+    -webkit-transition-property: right;
+    transition-property: right;
+    -webkit-transition-duration: 200ms;
+    transition-duration: 200ms;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  &:hover:before, &:focus:before, &:active:before {
+    right: 0;
+  }
+}
+
+@mixin reveal($border-width, $border-color) {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  position: relative;
+  overflow: hidden;
+
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-color: $border-color;
+    border-style: solid;
+    border-width: 0;
+    -webkit-transition-property: border-width;
+    transition-property: border-width;
+    -webkit-transition-duration: 50ms;
+    transition-duration: 50ms;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+  &:hover:before, &:focus:before, &:active:before {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    border-width: $border-width;
+  }
 }
