@@ -1,11 +1,17 @@
 .main {
   background: $white;
-  min-height: 70vh;
+  max-height: 65vh;
   padding: 2rem 4rem;
+  display: table;
+
+  .table-row {
+    float: none;
+    display: table-cell;
+  }
 
   h1 {
     color: $blue-dark;
-    font-size: 7rem;
+    font-size: 7.4rem;
     margin-bottom: 25px;
   }
 
@@ -21,20 +27,57 @@
     font-size: 1.6rem;
     margin-bottom: 10px;
     padding: 2rem 4rem;
+    background-color: $blue;
+    transition: ease-out 150ms;
+
+    &:hover {
+      background-color: $blue-dark;
+    }
   }
 
   .sign-in {
     font-size: 14px;
+
+    a {
+      font-size: 15px;
+    }
+  }
+
+  .picture-container {
+    vertical-align: middle;
   }
 }
 
 .features {
-  background: $papyru-color-3;
-  padding: 40px 0 50px 0;
-  color: #6B392E;
-  text-shadow: 1px 0 0 rgba(0,0,0,0.2);
+  background: $gray-lighter;
+  padding: 4rem 0;
+
+  h2 {
+    color: $blue-dark;
+    margin-bottom: 1.8rem;
+    font-size: 3.4rem;
+  }
 
   p {
-    margin-bottom: 20px;
+    color: $gray-dark;
+    margin-bottom: 2.6rem;
+    font-size: 1.6rem;
+  }
+
+  .btn {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding: 1.8rem 3.6rem;
+    background-color: $white;
+    border: 1px solid $blue-dark;
+    color: $blue-dark;
+    @include reveal(1.6px, $blue-dark);
+
+    &:active {
+      background-color: $white;
+      border: 1px solid $blue-dark;
+      color: $blue-dark;
+    }
   }
 }
