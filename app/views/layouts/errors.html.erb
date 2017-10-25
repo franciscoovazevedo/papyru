@@ -1,3 +1,74 @@
-<%= yield %>
-<h1>ANINA ERROR</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <title>Sorry, we couldn't find the page.. ・ Papyru</title>
+
+    <%= favicon_link_tag 'favicon96x96.png' %>
+    <%= csrf_meta_tags %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+
+    <style>
+      .container-error {
+        height: 100vh;
+        background: url(/assets/gaetan.gif) no-repeat center center;
+        padding-top: 90vh;
+        text-align: right;
+      }
+      .hvr-icon-back {
+        padding: 2rem;
+        display: inline-block;
+        vertical-align: middle;
+        -webkit-transform: perspective(1px) translateZ(0);
+        transform: perspective(1px) translateZ(0);
+        box-shadow: 0 0 1px transparent;
+        position: relative;
+        padding-left: 2.2em;
+        -webkit-transition-duration: 0.1s;
+        transition-duration: 0.1s;
+        background-color: #2F8EED;
+        transition: background-color ease-out 150ms;
+        border: none;
+      }
+      .hvr-icon-back:hover, .hvr-icon-back:active {
+        background-color: #1F5385;
+      }
+      .hvr-icon-back:before {
+        content: "\f137";
+        position: absolute;
+        left: 1em;
+        padding: 0 1px;
+        font-family: FontAwesome;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        -webkit-transition-duration: 0.1s;
+        transition-duration: 0.1s;
+        -webkit-transition-property: transform;
+        transition-property: transform;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+      }
+      .hvr-icon-back:hover:before, .hvr-icon-back:focus:before, .hvr-icon-back:active:before {
+        -webkit-transform: translateX(-4px);
+        transform: translateX(-4px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container-fluid container-error">
+      <div class="row">
+        <div class="col-xs-4 col-xs-offset-8 col-sm-3 col-sm-offset-9 col-md-2 col-md-offset-10">
+          <%= link_to root_path, class: "btn btn-primary hvr-icon-back" do %>
+            Homepage
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+    <%= javascript_include_tag 'application' %>
+  </body>
+</html>

@@ -1,6 +1,8 @@
+@import url('https://fonts.googleapis.com/css?family=Catamaran');
+
 .main {
   background: $white;
-  max-height: 65vh;
+  height: calc(75vh);
   padding: 2rem 4rem;
   display: table;
 
@@ -9,46 +11,52 @@
     display: table-cell;
   }
 
-  h1 {
-    color: $blue-dark;
-    font-size: 7.4rem;
-    margin-bottom: 25px;
-  }
+  /* Header */
+  .header-container {
+    vertical-align: middle;
 
-  p {
-    color: $gray-dark;
-    font-size: 1.7rem;
-    letter-spacing: 0rem;
-    line-height: 150%;
-    margin-bottom: 25px;
-  }
+    h1 {
+      color: $blue-dark;
+      font-size: 7.4rem;
+      margin-bottom: 25px;
+    }
 
-  .btn {
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-    padding: 2rem 4rem;
-    background-color: $blue;
-    transition: ease-out 150ms;
+    p {
+      color: $gray-dark;
+      font-size: 1.7rem;
+      letter-spacing: 0rem;
+      line-height: 150%;
+      margin-bottom: 25px;
+    }
 
-    &:hover {
-      background-color: $blue-dark;
+    .btn {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      padding: 2rem 4rem;
+      background-color: $blue;
+      transition: ease-out 150ms;
+
+      &:hover {
+        background-color: $blue-dark;
+      }
+    }
+
+    .sign-in {
+      font-size: 14px;
+
+      a {
+        font-size: 15px;
+      }
     }
   }
 
-  .sign-in {
-    font-size: 14px;
-
-    a {
-      font-size: 15px;
-    }
-  }
-
+  /* Picture */
   .picture-container {
     vertical-align: middle;
   }
 }
 
-.features {
+.supporting {
   background: $gray-lighter;
   padding: 4rem 0;
 
@@ -79,5 +87,66 @@
       border: 1px solid $blue-dark;
       color: $blue-dark;
     }
+  }
+}
+
+.features {
+  margin: 4rem 0;
+
+  .device-container {
+    margin: 0 auto;
+
+    .device-picture {
+      width: 100%;
+    }
+  }
+
+  .feature-item {
+    padding: 4rem 0;
+    text-align: center;
+
+    h3 {
+      font-size: 2.6rem;
+      color: $gray-dark;
+    }
+
+    p {
+      font-size: 1.5rem;
+      color: $gray-dark;
+    }
+
+    i {
+      font-size: 8rem;
+      display: block;
+      margin-bottom: 1.6rem;
+      background: -webkit-linear-gradient(to left, $blue-dark, $blue);
+      background: linear-gradient(to left, $blue-dark, $blue);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+.email-supporting {
+  padding: 2rem;
+  color: $gray-dark;
+
+  h3 {
+    color: $blue-dark;
+    font-size: 2.8rem;
+  }
+
+  p {
+    font-size: 14px;
+
+    a {
+      font-size: 15px;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .features .device-container {
+    margin-bottom: 0;
   }
 }
