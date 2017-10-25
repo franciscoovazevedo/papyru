@@ -46,6 +46,10 @@
 
       a {
         font-size: 15px;
+
+        &:hover {
+          text-decoration: underline;
+        }
       }
     }
   }
@@ -107,7 +111,7 @@
 
     h3 {
       font-size: 2.6rem;
-      color: $gray-dark;
+      color: $blue-dark;
     }
 
     p {
@@ -119,8 +123,7 @@
       font-size: 8rem;
       display: block;
       margin-bottom: 1.6rem;
-      background: -webkit-linear-gradient(to left, $blue-dark, $blue);
-      background: linear-gradient(to left, $blue-dark, $blue);
+      @include gradient-animation($blue-dark, $blue, 2s);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }

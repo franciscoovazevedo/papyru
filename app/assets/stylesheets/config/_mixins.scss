@@ -1,4 +1,17 @@
 /* Keyframes */
+@keyframes gradients {
+    0%  {background-position: 0 0;}
+    10% {background-position: 20%;}
+    20% {background-position: 40%;}
+    30% {background-position: 60%;}
+    40% {background-position: 80%;}
+    50% {background-position: 100%;}
+    60% {background-position: 80%;}
+    70% {background-position: 60%;}
+    80% {background-position: 40%;}
+    90% {background-position: 10%;}
+    100%{background-position: 0 0;}
+}
 
 /* Mixins */
 @mixin vertical-align {
@@ -101,4 +114,13 @@
     transform: translateY(0);
     border-width: $border-width;
   }
+}
+
+@mixin gradient-animation($color1, $color2, $timing) {
+  background: linear-gradient(45deg, $color1 0%, $color2 100%);
+  background-size: 600%;
+  background-position: 0 0;
+  animation-duration: $timing;
+  animation-iteration-count: infinite;
+  animation-name: gradients;
 }
