@@ -4,7 +4,7 @@
   <div class="row main">
     <div class="col-xs-12 col-lg-6 header-container table-row">
       <h1>Making education easier</h1>
-      <p>When you need to prepare an exam, ask your teachers a new question, download some useful file, receive a communication, or simply plan your next step through your studies, Papyru is here to help you.</p>
+      <p>When you need to <span>prepare an exam</span>, <span>ask your teachers a new question</span>, <span>download some useful file</span>, <span>receive a communication</span>, or simply plan your next step through your studies, Papyru is here to help you.</p>
       <%= link_to t(".sign_in", default: "GET STARTED"), new_user_session_path, class: "btn btn-primary" %>
       <p class="sign-in">Already have an account? <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %></p>
     </div>
@@ -17,13 +17,13 @@
   <!-- Supporting -->
   <div class="row supporting text-center">
     <h2>Your studying experience is ready to change</h2>
-    <p>Other students and teachers around the world have already made Papyru the place where their education happens.</p>
+    <p>Other students and teachers like you have already made Papyru the place where their education happens.</p>
     <div class="btn btn-primary">DISCOVER MORE</div>
   </div>
 
-  <!-- SVG -->
-  <div class="row svg-container">
-    <%= image_tag("features.svg", alt: "", class: "") %>
+  <!-- Features -->
+  <div class="row features">
+    <%= image_tag("features.svg", alt: "", class: "features-picture") %>
   </div>
 
   <!-- Email supporting  -->
@@ -32,55 +32,15 @@
       <h2>Try now for free</h3>
       <p>Already using Papyru? <%= link_to t(".sign_in", default: "Sign in"), new_user_session_path %></p>
     </div>
-    <div class="col-xs-12 col-md-6 col-lg-6 email-container">
+    <div class="col-xs-12 col-md-6 email-container">
       <form class="form-inline">
-        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput" placeholder="Email">
+        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" placeholder="Email">
         <div class="btn btn-primary">GET STARTED</div>
       </form>
     </div>
   </div>
 
-  <!-- Footer -->
-  <div class="row" style="background-color: red;">
-    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-      <%= image_tag("http://res.cloudinary.com/gabrielecanepa/image/upload/v1503502488/logo-web.png", size: "32") %>
-    </div>
-
-    <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-      <ul>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-      </ul>
-    </div>
-
-    <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-      <ul>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-      </ul>
-    </div>
-
-    <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-      <ul>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-      </ul>
-    </div>
-
-    <div class="col-xs-6 col-sm-6 col-md-2 col-lg-2">
-      <ul>
-        <li>List item</li>
-        <li>List item</li>
-        <li>List item</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="row footer" style="height: 100px; background-color: green;">
-  </div>
+  <%= render 'shared/footer' %>
 
 </div>
 

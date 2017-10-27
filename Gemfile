@@ -21,7 +21,6 @@ gem 'jquery-rails'
 gem 'meta-tags'
 gem 'sass-rails'
 gem 'simple_form'
-gem 'snapsvg-rails'
 gem 'uglifier'
 
 group :development, :test do

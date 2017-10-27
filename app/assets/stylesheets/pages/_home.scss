@@ -1,3 +1,4 @@
+/* Main */
 .main {
   background: $white;
   height: 75vh;
@@ -9,7 +10,7 @@
     display: table-cell;
   }
 
-  /* Header */
+  /* ↪︎ Header */
   .header-container {
     vertical-align: middle;
 
@@ -17,6 +18,7 @@
       color: $blue-dark;
       font-size: 7.4rem;
       margin-bottom: 25px;
+      letter-spacing: 0.1rem;
     }
 
     p {
@@ -25,6 +27,11 @@
       letter-spacing: 0rem;
       line-height: 150%;
       margin-bottom: 25px;
+
+      span {
+        border-bottom: 1px dotted $blue;
+        text-decoration: none;
+      }
     }
 
     .btn {
@@ -45,20 +52,23 @@
       a {
         font-size: 15px;
         color: $blue;
+        transition: 300ms;
 
         &:hover {
           text-decoration: underline;
-          color: $blue;
+          color: $blue-dark;
         }
       }
     }
   }
 
-  /* Picture */
+  /* ↪︎ Picture */
   .picture-container {
     vertical-align: middle;
   }
 }
+
+/* Supporting */
 
 .supporting {
   background: $gray-lighter;
@@ -76,6 +86,7 @@
     color: $gray-dark;
     margin-bottom: 2.6rem;
     font-size: 1.6rem;
+    letter-spacing: 0.02rem;
   }
 
   .btn {
@@ -96,55 +107,11 @@
   }
 }
 
-.svg-container {
-  svg {
-    #final-text {
-      @include grow;
-    }
-  }
-}
-
-.features {
-  margin: 4rem 0;
-
-  .device-container {
-    margin: 0 auto;
-
-    .device-picture {
-      width: 100%;
-      padding: 6.5rem 2rem 10rem 2rem;
-    }
-  }
-
-  .feature-item {
-    padding: 4rem 0;
-    text-align: center;
-
-    h3 {
-      font-size: 2.6rem;
-      color: $blue-dark;
-    }
-
-    p {
-      font-size: 1.6rem;
-      color: $gray-dark;
-    }
-
-    i {
-      font-size: 8rem;
-      display: block;
-      margin-bottom: 1.6rem;
-      @include gradient-animation($blue-dark, $blue, 2s);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-  }
-}
-
+/* Email supporting */
 .email-supporting {
   padding: 3rem;
   color: $gray-dark;
-  background-color: $gray-lighter;
+  background-color: $white;
   border-top: 1px solid $gray-light;
   border-bottom: 1px solid $gray-light;
 
@@ -158,10 +125,11 @@
 
     a {
       color: $blue;
+      transition: 300ms;
 
       &:hover {
         text-decoration: underline;
-        color: $blue;
+        color: $blue-dark;
       }
     }
   }
@@ -170,7 +138,7 @@
     text-align: right;
 
     input {
-      width: 40rem;
+      width: 60%;
       height: 4.5rem;
       box-shadow: none;
       border: 1px solid $gray-light;
@@ -195,8 +163,9 @@
   }
 }
 
-@media (min-width: 992px) {
-  .features .device-container {
-    margin-bottom: 0;
+
+@media (min-width: 768px) {
+  .features-picture {
+    height: 80%;
   }
 }

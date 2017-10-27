@@ -186,8 +186,6 @@ GEM
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
-    snapsvg-rails (0.4.1)
-      railties (>= 3)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -249,7 +247,6 @@ DEPENDENCIES
   sass-rails
   similar_text
   simple_form
-  snapsvg-rails
   spring
   spring-watcher-listen (~> 2.0.0)
   uglifier

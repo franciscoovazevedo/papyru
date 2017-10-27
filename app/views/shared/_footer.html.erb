@@ -1,0 +1,43 @@
+<div class="row footer">
+  <div class="col-xs-12 col-md-4">
+    <%= image_tag("logo.svg") %>
+  </div>
+
+  <div class="col-xs-12 col-md-8 list-container">
+    <div class="col-xs-6 col-md-3">
+      <ul>
+        <h4>TEAM</h4>
+        <li><%= link_to about_us_path do %>About Us<% end %></li>
+        <li><a href="https://github.com/franciscoovazevedo" target="_blank">@franciscoovazevedo</a></li>
+        <li><a href="https://github.com/gabrielecanepa" target="_blank">@gabrielecanepa</a></li>
+        <li><a href="https://github.com/ManuelSep" target="_blank">@ManuelSep</a></li>
+      </ul>
+    </div>
+
+    <div class="col-xs-6 col-md-3">
+      <ul>
+        <h4>GET STARTED</h4>
+        <li><%= link_to why_papyru_path do %>Why Papyru?<% end %></li>
+        <li><a href="http://www.papyru.online/users/sign_up">Sign Up</a></li>
+        <li><%= link_to t(".sign_in", default: "Log In"), new_user_session_path %></li>
+      </ul>
+    </div>
+
+    <div class="col-xs-6 col-md-3">
+      <ul>
+        <h4>RESOURCES</h4>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+
+    <div class="col-xs-6 col-md-3">
+      <ul>
+        <h4>CONTACTS</h4>
+        <li>List item</li>
+        <li>List item</li>
+        <li>List item</li>
+      </ul>
+    </div>
+  </div>
+</div>
