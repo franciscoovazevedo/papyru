@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css?family=Catamaran');
-
 .main {
   background: $white;
-  height: calc(75vh);
+  height: 75vh;
   padding: 2rem 4rem;
   display: table;
 
@@ -46,6 +44,12 @@
 
       a {
         font-size: 15px;
+        color: $blue;
+
+        &:hover {
+          text-decoration: underline;
+          color: $blue;
+        }
       }
     }
   }
@@ -59,6 +63,8 @@
 .supporting {
   background: $gray-lighter;
   padding: 4rem 0;
+  border-top: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
 
   h2 {
     color: $blue-dark;
@@ -90,6 +96,14 @@
   }
 }
 
+.svg-container {
+  svg {
+    #final-text {
+      @include grow;
+    }
+  }
+}
+
 .features {
   margin: 4rem 0;
 
@@ -98,6 +112,7 @@
 
     .device-picture {
       width: 100%;
+      padding: 6.5rem 2rem 10rem 2rem;
     }
   }
 
@@ -107,11 +122,11 @@
 
     h3 {
       font-size: 2.6rem;
-      color: $gray-dark;
+      color: $blue-dark;
     }
 
     p {
-      font-size: 1.5rem;
+      font-size: 1.6rem;
       color: $gray-dark;
     }
 
@@ -119,8 +134,7 @@
       font-size: 8rem;
       display: block;
       margin-bottom: 1.6rem;
-      background: -webkit-linear-gradient(to left, $blue-dark, $blue);
-      background: linear-gradient(to left, $blue-dark, $blue);
+      @include gradient-animation($blue-dark, $blue, 2s);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
@@ -128,19 +142,55 @@
 }
 
 .email-supporting {
-  padding: 2rem;
+  padding: 3rem;
   color: $gray-dark;
+  background-color: $gray-lighter;
+  border-top: 1px solid $gray-light;
+  border-bottom: 1px solid $gray-light;
 
-  h3 {
+  h2 {
     color: $blue-dark;
-    font-size: 2.8rem;
+    font-size: 3.4rem;
   }
 
   p {
-    font-size: 14px;
+    font-size: 1.6rem;
 
     a {
-      font-size: 15px;
+      color: $blue;
+
+      &:hover {
+        text-decoration: underline;
+        color: $blue;
+      }
+    }
+  }
+
+  .email-container {
+    text-align: right;
+
+    input {
+      width: 40rem;
+      height: 4.5rem;
+      box-shadow: none;
+      border: 1px solid $gray-light;
+
+      &:focus {
+        box-shadow: none;
+        border: 1px solid $gray-light;
+        color: $black;
+      }
+    }
+
+    .btn {
+      font-size: 1.6rem;
+      padding: 1rem 2rem;
+      background-color: $blue;
+      transition: ease-out 150ms;
+
+      &:hover {
+        background-color: $blue-dark;
+      }
     }
   }
 }

@@ -11,13 +11,15 @@
     <meta http-equiv="set-cookie" content="name=value; expires=date; path=url"/>
     <meta name="geo.placename" content="Lisbon"/>
     <meta name='keywords' content='papyru, students, education, teachers, platform, e-learning, lisbon, coding, school, wagon, lewagon, ruby, rails'/>
-    <meta property="og:url" content="http://www.papyru.online" +/>
+    <meta property="og:url" content="http://www.papyru.online"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="Papyru · Teaching Platform"/>
-    <meta property="og:description" content="Papyru is a modern platform, developed in Le Wagon Bootcamp Lisbon by three junior developers, that joins students and teachers in a super user-friendly way."/>
+    <meta property="og:description" content="Papyru is a modern platform, developed in Le Wagon Lisbon by three junior developers, that joins students and teachers in a super user-friendly way."/>
     <meta property="og:image" content="http://res.cloudinary.com/gabrielecanepa/image/upload/v1508425456/og-image_qd1lql.png"/>
 
-    <title> <%= yield(:title).blank? ? "Papyru · Teaching Platform" : yield(:title) %></title>
+    <%= display_meta_tags site: 'Papyru' %>
+
+    <title> <%= yield(:title).blank? ? "Papyru · Making education easier" : yield(:title) %></title>
 
     <%= favicon_link_tag 'favicon96x96.png' %>
     <%= csrf_meta_tags %>
