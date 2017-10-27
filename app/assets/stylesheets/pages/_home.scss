@@ -96,6 +96,14 @@
   }
 }
 
+.svg-container {
+  svg {
+    #final-text {
+      @include grow;
+    }
+  }
+}
+
 .features {
   margin: 4rem 0;
 
