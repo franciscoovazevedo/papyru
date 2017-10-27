@@ -1,22 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Muli');
+
 .footer {
-  height: 50vh;
   padding: 5rem;
   background-color: #FFF;
 
   img {
     width: 6rem;
+    @include bob;
   }
 
-  .list-container {
+  .lists-container {
     h4 {
-      font-size: 1.6rem;
+      font-size: 1.5rem;
       color: $blue-dark;
       letter-spacing: 0.1rem;
+      font-weight: bold;
     }
 
     li {
       list-style-type: none;
+      line-height: 2.6rem;
+      letter-spacing: 0.02rem;
+      word-spacing: 0.06rem;
+      font-size: 1.4rem;
 
+      a {
+        color: $gray-dark;
+        font-family: 'Muli', sans-serif;
+        @include hvr-forward;
+      }
     }
   }
+}
+
+.bottom-footer {
+  height: 10rem;
+  background-color: $blue;
 }

@@ -24,7 +24,6 @@
     p {
       color: $gray-dark;
       font-size: 1.7rem;
-      letter-spacing: 0rem;
       line-height: 150%;
       margin-bottom: 25px;
 
@@ -142,6 +141,7 @@
       height: 4.5rem;
       box-shadow: none;
       border: 1px solid $gray-light;
+      background: #FFF;
 
       &:focus {
         box-shadow: none;
