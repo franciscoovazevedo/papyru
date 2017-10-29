@@ -20,6 +20,7 @@ gem 'font-awesome-sass'
 gem 'jquery-rails'
 gem 'meta-tags'
 gem 'sass-rails'
+gem 'sass'
 gem 'simple_form'
 gem 'uglifier'
 
