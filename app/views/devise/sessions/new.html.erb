@@ -13,7 +13,7 @@
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), method: 'post') do |f| %>
 
               <div class="input">
-                <%= f.input :email, required: true, label: false, autofocus: false, input_html: { type: "email", placeholder: "Email" } %>
+                <%= f.input :email, required: true, label: false, input_html: { type: "email", placeholder: "Email" } %>
                 <span><i class="fa fa-envelope-o"></i></span>
               </div>
 

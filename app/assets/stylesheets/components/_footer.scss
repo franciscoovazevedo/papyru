@@ -1,39 +1,101 @@
-@import url('https://fonts.googleapis.com/css?family=Muli');
+.flex-rw {
+  display: flex;
+  flex-flow: row wrap;
+}
 
-.footer {
-  padding: 5rem;
-  background-color: #FFF;
+footer {
+  margin-top: auto;
+  width: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
 
-  img {
-    width: 6rem;
-    @include bob;
+.footer-list-top {
+  width: 33.333%;
+  padding: 2rem 0;
+
+  li {
+    text-align: center;
+    padding-bottom: 1rem;
+    list-style-type: none;
+    font-size: 1.4rem;
+    line-height: 150%;
+    letter-spacing: 0.02rem;
+
+    a {
+      color: $gray-dark;
+      transition: 300ms;
+      @include underline-left;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
   }
 
-  .lists-container {
-    h4 {
-      font-size: 1.5rem;
-      color: $blue-dark;
-      letter-spacing: 0.1rem;
-      font-weight: bold;
+  .footer-list-header {
+    font-size: 2rem;
+    color: $blue-dark;
+    letter-spacing: 0.05rem;
+    padding: 1rem 0 0.6rem 0;
+  }
+}
+
+.footer-bottom-section {
+  width: 100%;
+  padding: 2rem;
+  border-top: 1px solid $gray-light;
+  background-color: $blue;
+
+  div:first-child {
+    margin-right: auto;
+  }
+
+  .footer-bottom-wrapper {
+    font-size: 1.5rem;
+    color: $white;
+
+    .footer-address {
+      display: inline;
+      font-style: normal
     }
 
-    li {
-      list-style-type: none;
-      line-height: 2.6rem;
-      letter-spacing: 0.02rem;
-      word-spacing: 0.06rem;
-      font-size: 1.4rem;
-
-      a {
-        color: $gray-dark;
-        font-family: 'Muli', sans-serif;
-        @include hvr-forward;
-      }
+    a {
+      color: $white;
     }
   }
 }
 
-.bottom-footer {
-  height: 10rem;
-  background-color: $blue;
+@media only screen and (max-width: 768px) {
+  .footer-list-header {
+    font-size: 2em
+  }
+  .footer-list-anchor {
+    font-size: 1.1em
+  }
+  .footer-social-connect {
+    font-size: 2.5em
+  }
+  .footer-social-overlap > a {
+    font-size: 2.24em
+  }
+  .footer-bottom-wrapper {
+    font-size: 1.3em
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .footer-social-overlap > a {
+    margin: auto
+  }
+  .footer-social-overlap > a:not(:first-child) {
+    margin-left: 0;
+  }
+  .footer-bottom-rights {
+    display: block
+  }
 }

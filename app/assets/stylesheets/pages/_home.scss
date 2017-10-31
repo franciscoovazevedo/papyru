@@ -5,9 +5,9 @@ h1 {
   letter-spacing: 0.1rem;
 }
 
-h2 {
+h3 {
   color: $blue-dark;
-  font-size: 3.4rem;
+  font-size: 3.6rem;
 }
 
 p {
@@ -80,7 +80,6 @@ a {
 }
 
 /* Supporting */
-
 .supporting {
   background: $gray-lighter;
   padding: 4rem 0;
@@ -116,8 +115,8 @@ a {
 /* Email supporting */
 .email-supporting {
   padding: 3rem;
-  color: $gray-dark;
   background-color: $white;
+  color: $gray-dark;
   border-top: 1px solid $gray-light;
   border-bottom: 1px solid $gray-light;
 
@@ -130,10 +129,11 @@ a {
       box-shadow: none;
       border: 1px solid $gray-light;
       background: #FFF;
+      transition: 300ms;
 
       &:focus {
         box-shadow: none;
-        border: 1px solid $gray-light;
+        border: 1px solid $gray;
         color: $black;
       }
     }

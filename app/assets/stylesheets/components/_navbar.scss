@@ -1,6 +1,6 @@
 .navbar-wagon {
   background: white;
-  transition: all 0.3s ease;
+  transition: all 300ms ease;
   height: 8rem;
   padding: 0 5rem;
   display: flex;
@@ -96,12 +96,15 @@
   line-height: 1;
   margin-left: 1.8rem;
   padding: 1rem 3rem;
+  transition: 300ms;
 
   &:active {
     top: 1px;
   }
+
   &:hover, &:active, &:focus {
-    color: $blue;
+    color: $blue-dark;
+    border: 1px solid $blue-dark;
   }
 }
 
