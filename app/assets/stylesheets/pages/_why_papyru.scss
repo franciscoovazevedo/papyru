@@ -1,7 +1,7 @@
 .why-papyru__container {
   width: 80%;
   background-color: $white;
-  padding: 4rem;
+  padding: 2rem 4rem 3.5rem 4rem;
   top: 4rem;
   margin: 4rem auto;
   border: 1px solid $gray-light;
@@ -35,8 +35,7 @@
 ul.c-faqs {
   margin: 1.5rem 0;
   padding: 0 1.5rem;
-  border-top: 1px solid transparent;
-  border-bottom: 1px solid transparent;
+  border: 1px solid transparent;
 }
 
 li.c-faq {
@@ -51,9 +50,13 @@ span.c-faq__title {
   position: relative;
   font-size: 1.7rem;
   padding: 1rem 0;
+  max-width: 40%;
 
   &:hover {
     text-decoration: underline;
+  }
+  &:last-child {
+    padding: 1rem 0 0 0;
   }
   &::after {
     white-space: nowrap;
@@ -65,7 +68,6 @@ span.c-faq__title {
     -webkit-transform: rotateZ(90deg);
     transform: rotateZ(90deg);
     display: none;
-    content: ">";
   }
 }
 
@@ -82,14 +84,15 @@ span.c-faq__title {
 
 div.c-faq__answer {
   font-weight: normal;
-  -webkit-transition: ease-out 300ms;
-  transition: ease-out 300ms;
+  -webkit-transition: ease 0ms;
+  transition: ease 0ms;
   font-size: 1.4rem;
   color: #505050;
   opacity: 0;
+  min-height: 32rem;
 
   span {
-    color: $blue;
+    border-bottom: 0.3rem solid $blue;
   }
 }
 
@@ -101,23 +104,36 @@ div.c-faq__answer {
   font-weight: 300;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  -webkit-transition: all 150ms;
-  transition: all 150ms;
+  -webkit-transition: ease 0ms;
+  transition: ease 0ms;
   border: 1px solid transparent;
   border-top: 1px solid $blue;
   padding: 2rem;
 }
 
 .c-faq__icon {
-  width: 10rem;
+  width: 12rem;
   height: auto;
   display: block;
   margin: auto;
   margin-bottom: 3rem;
+  @include bob;
+  display: block;
+
+  &:first-child {
+    width: 10rem;
+  }
 }
 
 .c-faq__paragraph {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
+  padding: 0 1rem;
+  font-weight: lighter;
+  line-height: 150%;
+
+  strong {
+    color: $blue-dark;
+  }
 }
 
 @media (min-width: 780px) {
@@ -142,15 +158,11 @@ div.c-faq__answer {
     display: inline-block;
   }
 
-  .c-faq .c-faq__title::after {
-    display: none;
-  }
-
   .c-faq .c-faq__answer {
     position: absolute;
-    left: 50%;
-    width: 50%;
-    border-top-color: transparent;
+    left: 40%;
+    width: 60%;
     border-left: 0.2rem solid $blue;
+    border-top-color: transparent;
   }
 }
