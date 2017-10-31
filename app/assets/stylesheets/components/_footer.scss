@@ -12,6 +12,7 @@ footer {
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
+  position: absolute;
 }
 
 .footer-list-top {
@@ -56,7 +57,7 @@ footer {
   }
 
   .footer-bottom-wrapper {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: $white;
 
     .footer-address {
