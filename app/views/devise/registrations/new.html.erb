@@ -6,7 +6,7 @@
 
           <div class="row form-card-header text-center">
             <h1>Sign up to Papyru</h1>
-            <p><span>Subscribe now</span> and change your way of studying.</p>
+            <p>Subscribe and <span>change the way you study</span>.</p>
           </div>
 
           <div class="form-card-content">
@@ -45,7 +45,7 @@
               </div>
 
               <div>
-                <p class="text-center" style="font-size: 1.8rem; margin-bottom: 2.2rem;">Profile picture</p>
+                <p class="text-center" style="font-size: 1.8rem; padding-bottom: 2.6rem;">Profile picture</p>
                 <%= f.input :photo, label: false, input_html: { style: "margin-left: 7rem;" } %>
               </div>
 
@@ -71,10 +71,11 @@
               <br/>
 
               <div class="sign-up-form">
-                <p style="display: inline;">Already have an account?</p>
-                <%- if controller_name != 'sessions' %>
-                  <%= link_to "Log in", new_session_path(resource_name), class: "sign-up" %><br />
-                <% end -%>
+                <p style="display: inline;" class="form-bottom">Already have an account?
+                  <%- if controller_name != 'sessions' %>
+                    <%= link_to "Log in", new_session_path(resource_name), class: "sign-up" %><br />
+                  <% end -%>
+                </p>
               </div>
 
             <% end %>

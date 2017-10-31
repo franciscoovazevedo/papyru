@@ -1,11 +1,156 @@
-.column-text {
-  column-count: 2;
-  display: block;
-  line-height: 1.8;
+.why-papyru__container {
+  width: 80%;
+  background-color: $white;
+  padding: 4rem;
+  top: 4rem;
+  margin: 4rem auto;
+  border: 1px solid $gray-light;
+  color: #505050;
 }
 
-.column-text p {
-      line-height: 1.8;
-    font-size: 15px;
+.section__container {
+  text-align: center;
 
+  .section__headline {
+    font-family: "Varela Round", sans-serif;
+    font-size: 6.3rem;
+    color: $blue-dark;
+    padding-top: 1rem;
+  }
+
+  .section__picture {
+    margin: 4rem 0;
+    width: 80%;
+  }
+
+  .section__paragraph {
+    font-size: 1.7rem;
+
+    span {
+      color: $blue;
+    }
+  }
+}
+
+ul.c-faqs {
+  margin: 1.5rem 0;
+  padding: 0 1.5rem;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+}
+
+li.c-faq {
+  font-family: "Varela Round", sans-serif;
+  list-style: none;
+  margin: 1rem 0 0.5rem;
+}
+
+span.c-faq__title {
+  cursor: pointer;
+  font-weight: 500;
+  position: relative;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+
+  &:hover {
+    text-decoration: underline;
+  }
+  &::after {
+    white-space: nowrap;
+    font-weight: 300;
+    padding-left: 0.5rem;
+    opacity: 0;
+    -webkit-transform-origin: 1rem;
+    transform-origin: 1rem;
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+    display: none;
+    content: ">";
+  }
+}
+
+.c-faq--active .c-faq__title {
+  color: $blue;
+
+  &::after {
+    opacity: 1;
+    -webkit-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+    display: inline-block;
+  }
+}
+
+div.c-faq__answer {
+  font-weight: normal;
+  -webkit-transition: ease-out 300ms;
+  transition: ease-out 300ms;
+  font-size: 1.4rem;
+  color: #505050;
+  opacity: 0;
+
+  span {
+    color: $blue;
+  }
+}
+
+.c-faq--active .c-faq__answer {
+  opacity: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  -webkit-transition: all 150ms;
+  transition: all 150ms;
+  border: 1px solid transparent;
+  border-top: 1px solid $blue;
+  padding: 2rem;
+}
+
+.c-faq__icon {
+  width: 10rem;
+  height: auto;
+  display: block;
+  margin: auto;
+  margin-bottom: 3rem;
+}
+
+.c-faq__paragraph {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 780px) {
+  .c-faqs {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+  }
+
+  .c-faqs::before {
+    opacity: 0.2;
+  }
+
+  .c-faq {
+    margin: 1.5rem 0;
+  }
+
+  .c-faq .c-faq__title {
+    width: 50%;
+    padding-right: 4rem;
+    display: inline-block;
+  }
+
+  .c-faq .c-faq__title::after {
+    display: none;
+  }
+
+  .c-faq .c-faq__answer {
+    position: absolute;
+    left: 50%;
+    width: 50%;
+    border-top-color: transparent;
+    border-left: 0.2rem solid $blue;
+  }
 }
