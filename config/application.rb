@@ -12,6 +12,8 @@ require "action_cable/engine"
 require "sprockets/railtie"
 # require "rails/test_unit/railtie"
 
+config.assets.paths << "#{Rails.root}/app/assets/fonts"
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -23,6 +25,7 @@ module Papyru
       generate.helper false
     end
     config.exceptions_app = self.routes
+    config.assets.paths << "#{Rails.root}/app/assets/fonts"
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

@@ -1,34 +1,61 @@
+h1 {
+  color: $blue-dark;
+  font-size: 7.4rem;
+  margin-bottom: 25px;
+  letter-spacing: 0.1rem;
+}
+
+h3 {
+  color: $blue-dark;
+  font-size: 3.6rem;
+}
+
+p {
+  color: $gray-dark;
+  font-size: 1.7rem;
+  line-height: 150%;
+  letter-spacing: 0.02rem;
+}
+
+p.xs {
+  font-size: 1.4rem;
+}
+
+p.sm {
+  font-size: 1.5rem;
+}
+
+a {
+  color: $blue;
+  transition: 300ms;
+
+  &:hover {
+    text-decoration: underline;
+    color: $blue;
+  }
+}
+
+.table-row {
+  float: none;
+  display: table-cell;
+}
+
 /* Main */
 .main {
   background: $white;
-  height: 75vh;
+  min-height: 75vh;
   padding: 2rem 4rem;
   display: table;
-
-  .table-row {
-    float: none;
-    display: table-cell;
-  }
 
   /* ↪︎ Header */
   .header-container {
     vertical-align: middle;
 
-    h1 {
-      color: $blue-dark;
-      font-size: 7.4rem;
-      margin-bottom: 25px;
-      letter-spacing: 0.1rem;
-    }
-
     p {
-      color: $gray-dark;
-      font-size: 1.7rem;
-      line-height: 150%;
       margin-bottom: 25px;
 
       span {
-        border-bottom: 1px dotted $blue;
+        border-bottom: 2px dotted $blue;
         text-decoration: none;
       }
     }
@@ -44,21 +71,6 @@
         background-color: $blue-dark;
       }
     }
-
-    .sign-in {
-      font-size: 14px;
-
-      a {
-        font-size: 15px;
-        color: $blue;
-        transition: 300ms;
-
-        &:hover {
-          text-decoration: underline;
-          color: $blue-dark;
-        }
-      }
-    }
   }
 
   /* ↪︎ Picture */
@@ -68,7 +80,6 @@
 }
 
 /* Supporting */
-
 .supporting {
   background: $gray-lighter;
   padding: 4rem 0;
@@ -76,16 +87,11 @@
   border-bottom: 1px solid $gray-light;
 
   h2 {
-    color: $blue-dark;
     margin-bottom: 1.8rem;
-    font-size: 3.4rem;
   }
 
   p {
-    color: $gray-dark;
     margin-bottom: 2.6rem;
-    font-size: 1.6rem;
-    letter-spacing: 0.02rem;
   }
 
   .btn {
@@ -109,29 +115,10 @@
 /* Email supporting */
 .email-supporting {
   padding: 3rem;
-  color: $gray-dark;
   background-color: $white;
+  color: $gray-dark;
   border-top: 1px solid $gray-light;
   border-bottom: 1px solid $gray-light;
-
-  h2 {
-    color: $blue-dark;
-    font-size: 3.4rem;
-  }
-
-  p {
-    font-size: 1.6rem;
-
-    a {
-      color: $blue;
-      transition: 300ms;
-
-      &:hover {
-        text-decoration: underline;
-        color: $blue-dark;
-      }
-    }
-  }
 
   .email-container {
     text-align: right;
@@ -142,10 +129,11 @@
       box-shadow: none;
       border: 1px solid $gray-light;
       background: #FFF;
+      transition: 300ms;
 
       &:focus {
         box-shadow: none;
-        border: 1px solid $gray-light;
+        border: 1px solid $gray;
         color: $black;
       }
     }
