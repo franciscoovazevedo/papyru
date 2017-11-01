@@ -10,6 +10,7 @@
 
   h1 {
     font-size: 3.8rem;
+    font-weight: 500;
     margin: 0 0 1rem;
     -webkit-margin-before: 0.67em;
     -webkit-margin-after: 0.67em;
@@ -52,9 +53,9 @@
       flex-shrink: 10;
       flex-grow: 10;
       outline: 0;
-      -webkit-transition: 200ms ease-out;
-      -moz-transition: 200ms ease-out;
-      transition: 200ms ease-out;
+      -webkit-transition: 300ms;
+      -moz-transition: 300ms;
+      transition: 300ms;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;

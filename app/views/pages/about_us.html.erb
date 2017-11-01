@@ -1,54 +1,52 @@
-<div class="container container-about-us">
-  <div class="row">
-    <div class="col-md-10 col-md-offset-1">
-
-      <div class="col-md-4">
-        <div class="thumbnail thumbnail-style">
-          <img class="image-profile" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/yfnsdqkamwrr1s8mpkfm.jpg" alt="Francisco Azevedo">
-          <div class="caption caption-style">
-            <h3>Francisco Azevedo</h3>
-            <p>I'm currently studying business and IT's. I want do be a developer and be able do create my own products. And after Le Wagon I want to work in a StartUp.</p>
-          </div>
-            <div class="thumbnail-links">
-              <a href="https://github.com/franciscoovazevedo" target="_blank" class="social-icon github-icon"><i class="fa fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/francisco-azevedo-482322144/" target="_blank" class="social-icon linkedin-icon"><i class="fa fa-linkedin"></i></a>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="thumbnail thumbnail-style">
-          <img class="image-profile" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/wlebdl90gtmmbklz7abi.jpg" alt="Gabriele Canepa">
-          <div class="caption">
-            <h3>Gabriele Canepa</h3>
-            <p>I have studied Management Engineering and been teaching Mathematics and Physics to middle and high school students for over 4 years.
-              Some time ago I tried to set up a website to let students, tutors and teachers of my town connect with each other, organise their private lessons and exchange material, but I had to abandon the idea because doing it with a drag-and-drop website and with no coding experience was quite impossible.
-              So now I'm here to really learn how to code, hoping to realise all the projects I have in mind!
-            </p>
-            </div>
-            <div class="thumbnail-links">
-              <a href="https://github.com/gabrielecanepa" target="_blank" class="social-icon github-icon"><i class="fa fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/gabrielecanepa/" target="_blank" class="social-icon linkedin-icon"><i class="fa fa-linkedin"></i></a>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="thumbnail thumbnail-style">
-          <img class="image-profile" src="https://res.cloudinary.com/wagon/image/upload/c_fill,g_face,h_200,w_200/auigwptfjhfdaptu8xj0.jpg" alt="Manuel Sepúlveda">
-          <div class="caption">
-            <h3>Manuel Sepúlveda</h3>
-            <p>I'm a studying informatic engineering in ISCTE, Lisbon, and i'm a rugby player and rugby coach in a local club near Belém!
-              I wanted to learn how to code so that i could start working as a web developer as soon as possible!
-              For that purpose i join Le wagon bootcamp, with this intense 9 weeks we were able to learn not only ruby on rails but to work in groups as developers.</p>
-            </div>
-          <div class="thumbnail-links">
-            <a href="https://github.com/ManuelSep" target="_blank" class="social-icon github-icon"><i class="fa fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/manuel-sep%C3%BAlveda-a9836b144/" target="_blank" class="social-icon linkedin-icon"><i class="fa fa-linkedin"></i></a>
-          </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
+<div class="container about-us__container">
+  <div class="section__container">
+    <h1 class="section__headline">About Us</h1>
+    <p class="section__paragraph">Papyru has been coded by 3 junior developers during <a href="http://www.lewagon.com" target="_blank">Le Wagon bootcamp</a> in <span>just 10 days</span>!</p>
+    <%= image_tag("about_us.svg", alt: "", class: "section__picture") %>
+    <hr/>
   </div>
+
+  <h4 class="c-teams__headline">Meet the Team</h4>
+
+  <ul class="c-teams">
+    <li class="c-team c-team--active">
+      <span class="c-team__username">@franciscoovazevedo</span>
+      <div class="c-team__card">
+        <a href="https://github.com/franciscoovazevedo" href="_blank"><%= image_tag("cisco.jpg", alt: "", class: "c-team__picture", title: "@franciscoazevedo on GitHub") %></a>
+        <p class="c-team__paragraph"><strong>Francisco Azevedo</strong> is the main <span>back-end developer</span> behind Papyru<strong>.</strong></p>
+        <p class="c-team__paragraph">He is currently studying <em>business and IT</em> in his city, Lisbon, and joined Le Wagon last summer to become finally able to build his own products<strong>.</strong></p>
+        <p class="c-team__paragraph">He deals now everyday with <em>Java</em>, <em>Ruby</em>, <em>Rails</em> and <em>databases</em>, and his back-end is known to be <em>very strong</em><strong>.</strong></p>
+        <div class="thumbnail-links">
+          <a href="https://github.com/franciscoovazevedo" target="_blank" class="social-icon github-icon"><i class="fa fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/francisco-azevedo-482322144/" target="_blank" class="social-icon linkedin-icon"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+    </li>
+    <li class="c-team">
+      <span class="c-team__username">@gabrielecanepa</span>
+      <div class="c-team__card">
+        <a href="https://github.com/gabrielecanepa" href="_blank"><%= image_tag("gabri.jpg", alt: "", class: "c-team__picture") %></a>
+        <p class="c-team__paragraph"><strong>Gabriele Canepa</strong> focused his work on the <span>front-end side</span> of the platform<strong>.</strong></p>
+        <p class="c-team__paragraph">He comes from Italy, but, after joining Le Wagon, decided to remain in <em>Portugal</em>, where he currently works as a <em>developer</em><strong>.</strong></p>
+        <p class="c-team__paragraph">He loves to work with <em>Rails</em>, <em>CSS</em>, <em>JavaScript</em> and <em>external libraries</em>, and his works are considered <em>very catchy</em><strong>.</strong></p>
+        <div class="thumbnail-links">
+          <a href="https://github.com/gabrielecanepa" target="_blank" class="social-icon github-icon"><i class="fa fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/gabrielecanepa/" target="_blank" class="social-icon linkedin-icon"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+    </li>
+    <li class="c-team">
+      <span class="c-team__username">@ManuelSep</span>
+      <div class="c-team__card">
+        <a href="https://github.com/ManuelSep" href="_blank"><%= image_tag("manel.jpg", alt: "", class: "c-team__picture") %></a>
+        <p class="c-team__paragraph"><strong>Manuel Sepúlveda</strong> worked both on the <span>back-end</span> and the <span>front-end</span> of the application, managing also the <em>organisation</em> of the project<strong>.</strong></p>
+        <p class="c-team__paragraph">He comes from Lisbon, where he is studying <em>informatic engineering</em> at ISCTE and coaching a local rugby club<strong>.</strong></p>
+        <p class="c-team__paragraph">He codes everyday in <em>Java</em>, <em>Ruby</em>, <em>Rails</em>, <em>CSS</em>, and other languages, and he loves to deal with other developers<strong>.</strong></p>
+        <div class="thumbnail-links">
+          <a href="https://github.com/ManuelSep" target="_blank" class="social-icon github-icon"><i class="fa fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/manuel-sep%C3%BAlveda-a9836b144/" target="_blank" class="social-icon linkedin-icon"><i class="fa fa-linkedin"></i></a>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
