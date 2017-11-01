@@ -1,7 +1,7 @@
 .why-papyru__container {
   width: 80%;
   background-color: $white;
-  padding: 2rem 4rem 3.5rem 4rem;
+  padding: 2rem 4rem 8rem 4rem;
   top: 4rem;
   margin: 4rem auto;
   border: 1px solid $gray-light;
@@ -48,7 +48,7 @@ span.c-faq__title {
   cursor: pointer;
   font-weight: 500;
   position: relative;
-  font-size: 1.7rem;
+  font-size: 1.8rem;
   padding: 1rem 0;
   max-width: 40%;
 
@@ -83,16 +83,16 @@ span.c-faq__title {
 }
 
 div.c-faq__answer {
-  font-weight: normal;
+  font-weight: 500;
   -webkit-transition: ease 0ms;
   transition: ease 0ms;
   font-size: 1.4rem;
   color: #505050;
   opacity: 0;
-  min-height: 32rem;
+  min-height: 40rem;
 
   span {
-    border-bottom: 0.3rem solid $blue;
+    border-bottom: 0.4rem solid $blue;
   }
 }
 
@@ -128,11 +128,11 @@ div.c-faq__answer {
 .c-faq__paragraph {
   font-size: 1.6rem;
   padding: 0 1rem;
-  font-weight: lighter;
+  font-weight: 400;
   line-height: 150%;
 
   strong {
-    color: $blue-dark;
+    color: $blue;
   }
 }
 
