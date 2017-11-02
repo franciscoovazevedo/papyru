@@ -8,14 +8,17 @@
 .form-card-header {
   border-bottom: 1px solid $gray;
 
+  img {
+    margin: 2rem 1rem auto;
+    width: 12rem;
+    @include bob;
+  }
+
   h1 {
-    font-size: 3.8rem;
+    font-size: 5rem;
     font-weight: 500;
-    margin: 0 0 1rem;
-    -webkit-margin-before: 0.67em;
-    -webkit-margin-after: 0.67em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
+    margin-bottom: 0;
+    padding-top: 1rem;
   }
 
   p {

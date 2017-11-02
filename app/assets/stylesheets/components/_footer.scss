@@ -1,102 +1,194 @@
-@import url(https://fonts.googleapis.com/css?family=Catamaran:400,500,600|Open+Sans:400,600);
-
-.flex-rw {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-footer {
-  margin-top: auto;
-  width: 100%;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  margin: auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
-  position: absolute;
-  font-weight: medium;
-}
-
-.footer-list-top {
-  width: 33.333%;
-  padding: 2rem 0;
-
-  li {
-    text-align: center;
-    padding-bottom: 1rem;
-    list-style-type: none;
-    font-size: 1.4rem;
-
-    a {
-      color: #484848;
-      @include underline-left;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-
-  .footer-list-header {
-    font-size: 2rem;
-    color: $blue-dark;
-    letter-spacing: 0.03rem;
-    padding: 1rem 0 0.6rem 0;
-  }
-}
-
-.footer-bottom-section {
-  width: 100%;
-  padding: 2rem;
-  border-top: 1px solid $gray-light;
+.footer-distributed {
   background-color: $blue;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  width: 100%;
+  font: normal 1.5rem sans-serif;
+  text-align: left;
+  padding: 5rem 6rem 3rem;
+  overflow: hidden;
+}
 
-  div:first-child {
-    margin-right: auto;
-  }
+/* Footer left */
+.footer-distributed .footer-left{
+  float: left;
+}
 
-  .footer-bottom-wrapper {
-    font-size: 1.3rem;
-    color: $white;
+/* Logo */
+.footer-logo {
+  width: 12rem;
+  margin-bottom: 1.5rem;
+  @include grow;
+}
 
-    .footer-address {
-      display: inline;
-      font-style: normal
-    }
+/* Links */
+.footer-distributed .footer-links {
+  color: $white;
+  margin: 0 0 1rem;
+  padding: 0;
+}
 
-    a {
-      color: $white;
-    }
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.6rem;
+
+  &:hover {
+    text-decoration: underline;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .footer-list-header {
-    font-size: 2em
-  }
-  .footer-list-anchor {
-    font-size: 1.1em
-  }
-  .footer-social-connect {
-    font-size: 2.5em
-  }
-  .footer-social-overlap > a {
-    font-size: 2.24em
-  }
-  .footer-bottom-wrapper {
-    font-size: 1.3em
+.footer-distributed .footer-company-name {
+  color:  $gray-lighter;
+  font-size: 1.4rem;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+
+  .wagon-logo {
+    width: 10rem;
+    @include grow;
   }
 }
 
-@media only screen and (max-width: 480px) {
-  .footer-social-overlap > a {
-    margin: auto
+/* Social icons */
+.footer-distributed .footer-icons {
+  margin-top: 3rem;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 3.5rem;
+  height: 3.5rem;
+  cursor: pointer;
+  background-color: $blue-dark;
+  border-radius: 4px;
+  font-size: 2rem;
+  color: $white;
+  text-align: center;
+  line-height: 3.5rem;
+  margin-right: 0.4rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Footer Right */
+.footer-distributed .footer-right {
+  float: right;
+}
+
+.footer-distributed .footer-right span {
+  color: $blue-dark;
+  font-size: 4rem;
+  padding-top: 1rem;
+  padding-right: 1rem;
+  @include bob;
+}
+
+/* The contact form */
+.footer-distributed form {
+  display: inline-block;
+}
+
+.footer-distributed form input,
+.footer-distributed form textarea {
+  display: block;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color:  $white-dark;
+  border: 1px solid $gray-dark;
+  resize: none;
+  font: inherit;
+  font-size: 1.4rem;
+  font-weight: normal;
+  color: $black;
+  width: 40rem;
+  padding: 2rem;
+
+  &:active, &:focus {
+    box-shadow: none;
+    border: 1px solid $blue-dark;
+    outline: none;
   }
-  .footer-social-overlap > a:not(:first-child) {
-    margin-left: 0;
+}
+
+.footer-distributed::-webkit-input-placeholder {
+  color: $gray-dark;
+}
+
+.footer-distributed::-moz-placeholder {
+  color: $gray-dark;
+  opacity: 1;
+}
+
+.footer-distributed::-ms-input-placeholder {
+  color: $gray-dark;
+}
+
+.footer-distributed form input {
+  height: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-distributed form textarea {
+  height: 6rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-distributed form button {
+  border-radius: 4px;
+  background-color: $blue-dark;
+  color: $white;
+  border: 0;
+  padding: 1rem 3rem;
+  float: right;
+}
+
+/* Media queries */
+@media (max-width: 1000px) {
+  .footer-distributed {
+    font: normal 1.4rem sans-serif;
   }
-  .footer-bottom-rights {
-    display: block
+
+  .footer-distributed .footer-company-name {
+    font-size: 1.2rem;
+  }
+
+  .footer-distributed form input,
+  .footer-distributed form textarea {
+    width: 25rem;
+  }
+
+  .footer-distributed form button {
+    padding: 1rem 3.5rem;
+  }
+}
+@media (max-width: 800px) {
+  .footer-distributed{
+    padding: 3rem;
+  }
+
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-right {
+    float: none;
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+
+  .footer-distributed .footer-left {
+    margin-bottom: 4rem;
+  }
+
+  .footer-distributed form {
+    margin-top: 3rem;
+  }
+
+  .footer-distributed form {
+    display: block;
+  }
+
+  .footer-distributed form button {
+    float: none;
   }
 }
