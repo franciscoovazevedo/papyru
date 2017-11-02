@@ -1,39 +1,41 @@
-<footer class="flex-rw">
+<footer class="footer-distributed">
+  <div class="footer-left">
 
-  <ul class="footer-list-top">
-    <li>
-      <h4 class="footer-list-header">Get Started</h4>
-    </li>
-    <li><%= link_to why_papyru_path do %>Why Papyru?<% end %></li>
-    <li><a href="http://www.papyru.online/users/sign_up">Sign Up</a></li>
-    <li><%= link_to t(".sign_in", default: "Log In"), new_user_session_path %></li>
-  </ul>
+    <%= link_to root_path do %>
+     <%= image_tag "logo_text.png", alt: "", class: "footer-logo" %>
+    <% end %>
 
-  <ul class="footer-list-top">
-    <li>
-      <h4 class="footer-list-header">Resources</h4>
-    </li>
-    <li><a href="https://www.youtube.com/watch?v=n_1XpHJTil4&t=1875s" target="_blank">Papyru Showcase</a></li>
-    <li><a href="https://github.com/franciscoovazevedo/papyru" target="_blank">On Github</a></li>
-    <li><%= link_to about_us_path do %>About Us<% end %></li>
-  </ul>
+    <p class="footer-links">
+      <%= link_to "Home", root_path %>
+      ·
+      <%= link_to "Why Papyru", why_papyru_path %>
+      ·
+      <%= link_to "About", about_us_path %>
+      ·
+      <%= link_to "Sign up", new_user_registration_path %>
+      ·
+      <%= link_to t(".sign_in", default: "Log In"), new_user_session_path %>
+      ·
+      <a href="mailto:contact@papyru.online">Contact</a>
+    </p>
 
-  <ul class="footer-list-top">
-    <li id='help'>
-      <h4 class="footer-list-header">Meet the Team</h4>
-    </li>
-    <li><a href="https://github.com/franciscoovazevedo" target="_blank">@franciscoovazevedo</a></li>
-    <li><a href="https://github.com/gabrielecanepa" target="_blank">@gabrielecanepa</a></li>
-    <li><a href="https://github.com/ManuelSep" target="_blank">@ManuelSep</a></li>
-  </ul>
+    <p class="footer-company-name">Papyru &copy; 2017, developed @ <a href="http://www.lewagon.com" target="_blank"><%= image_tag "logo_wagon.png", class: "wagon-logo" %></a></p>
 
-  <section class="footer-bottom-section flex-rw">
-    <div class="footer-bottom-wrapper">
-      <i class="fa fa-copyright" role="copyright"></i>
-      2017 Papyru<span class="footer-bottom-rights"> - Coded in <address class="footer-address" role="company address">Lisbon</address> for <%= link_to "http://www.lewagon.com/lisbon", target: "_blank", class: "footer-wagon-logo" do %><%= image_tag("logo_wagon.png", alt: "Le Wagon", width: "100rem") %><% end %></span>
+    <div class="footer-icons">
+      <a href="https://github.com/franciscoovazevedo/papyru" target="_blank"><i class="fa fa-github"></i></a>
+      <a href="#"><i class="fa fa-facebook"></i></a>
+      <a href="#"><i class="fa fa-twitter"></i></a>
+      <a href="#"><i class="fa fa-linkedin"></i></a>
     </div>
-    <div class="footer-bottom-wrapper">
-      <a href="#" class="generic-anchor" rel="nofollow">Terms</a> | <a href="#" class="generic-anchor" rel="nofollow">Privacy</a>
-    </div>
-  </section>
+  </div>
+
+  <div class="footer-right">
+    <span class="hidden-xs">→</span>
+
+    <form>
+      <input type="text" name="email" placeholder="Email"/>
+      <textarea name="message" placeholder="Message"></textarea>
+      <button>Send</button>
+    </form>
+  </div>
 </footer>

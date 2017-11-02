@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid $gray-light;
+  z-index: 10;
 
   img {
     max-width: 10rem;
@@ -140,6 +141,11 @@
     transform: rotate(45deg);
     border-left: 1px solid #E6E6E6;
     border-top: 1px solid #E6E6E6;
+  }
+
+  .dropdown-toggle {
+    font-size: 4rem;
+    cursor: pointer;
   }
 
   li > a {
